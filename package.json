@@ -1,0 +1,33 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+      "build": "nuxt build --dotenv ./.env.production.local",
+      "dev": "nuxt dev --dotenv ./.env.development.local",
+      "generate": "nuxt generate --dotenv ./.env.production.local",
+      "postinstall": "nuxt prepare",
+      "preview": "nuxt preview"
+    },
+    "devDependencies": {
+      "@element-plus/nuxt": "^1.0.9",
+      "@kikiutils/types": "^1.0.1",
+      "@types/fs-extra": "^11.0.4",
+      "@unocss/nuxt": "^0.58.0",
+      "@volar/typescript": "^2.3.4",
+      "@vueuse/nuxt": "^10.7.0",
+      "nuxt": "^3.8.2",
+      "nuxt-purgecss": "^2.0.0",
+      "sass": "^1.69.5",
+      "typescript": "^5.5.3",
+      "vite-plugin-checker": "^0.7.2",
+      "vite-plugin-remove-console": "^2.2.0",
+      "vue": "^3.4.31",
+      "vue-router": "^4.2.5",
+      "vue-tsc": "^2.1.6"
+    },
+    "dependencies": {
+      "axios": "^1.6.3",
+      "element-plus": "^2.7.6",
+      "fs-extra": "^11.2.0"
+    }
+  }
