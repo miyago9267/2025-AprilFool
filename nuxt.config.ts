@@ -25,8 +25,12 @@ export default defineNuxtConfig({
 	},
 
 	devServer: {
-		host: process.env.DEV_SERVER_HOST,
-		port: Number(process.env.DEV_SERVER_PORT) || undefined
+		host: "0.0.0.0",
+		port: Number(process.env.DEV_SERVER_PORT) || 3000,
+		cors: {
+		  origin: "*", // 允許所有來源
+		  credentials: true
+		}
 	},
 
 	devtools: { enabled: false },

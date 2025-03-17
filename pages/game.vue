@@ -40,6 +40,7 @@ const currentScene = ref(route.query.scene || "scene1");
 const sceneData = computed(() => script.value?.levels?.[currentLevel.value]?.scenes?.[currentScene.value] ?? {});
 const dialogueIndex = ref(0);
 const dialogue = computed(() => sceneData.value.dialogues?.[dialogueIndex.value] ?? {});
+const dialogueEnd = ref(false);
 
 // 修正角色顯示邏輯
 const activeCharacters = computed(() => {
@@ -68,7 +69,49 @@ const nextDialogue = () => {
     dialogueIndex.value++;
   } else {
     dialogueEnd.value = true;
+
+    if (!sceneData.value.interactions || sceneData.value.interactions.length === 0) {
+      unlockNextLevel();
+      setTimeout(() => {
+        router.push("/levels");
+      }, 300);
+    }
   }
+};
+
+// 解鎖下一關
+const unlockNextLevel = () => {
+  if (!script.value || !script.value.levels) {
+    console.error("Script data is not loaded yet.");
+    return;
+  }
+
+  const storedLevels = localStorage.getItem("unlockedLevels");
+  let unlocked = storedLevels ? JSON.parse(storedLevels) : [];
+
+  console.log("當前關卡:", currentLevel.value);
+  console.log("已解鎖關卡:", unlocked);
+
+  // 確保當前關卡在 `unlockedLevels`
+  if (!unlocked.includes(currentLevel.value)) {
+    unlocked.push(currentLevel.value);
+    console.log(`已新增當前關卡: ${currentLevel.value}`);
+  }
+
+  // 取得 `script.json` 內的 `unlocks` 陣列
+  const currentUnlocks = script.value.levels[currentLevel.value]?.unlocks || [];
+
+  // 解鎖指定的關卡
+  currentUnlocks.forEach(nextLevel => {
+    if (!unlocked.includes(nextLevel)) {
+      unlocked.push(nextLevel);
+      console.log(`解鎖下一關: ${nextLevel}`);
+    }
+  });
+
+  // 儲存到 LocalStorage
+  localStorage.setItem("unlockedLevels", JSON.stringify(unlocked));
+  console.log("更新後的已解鎖關卡:", unlocked);
 };
 
 const selectChoice = (nextScene) => {
