@@ -28,7 +28,9 @@
 
 <script setup>
 import { useRoute, useRouter } from "vue-router";
-import { ref, computed } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
+import InteractionInput from '~/components/Interaction/Input.vue';
+import InteractionChoice from '~/components/Interaction/Choices.vue';
 
 const route = useRoute();
 const router = useRouter();
@@ -41,6 +43,21 @@ const sceneData = computed(() => script.value?.levels?.[currentLevel.value]?.sce
 const dialogueIndex = ref(0);
 const dialogue = computed(() => sceneData.value.dialogues?.[dialogueIndex.value] ?? {});
 const dialogueEnd = ref(false);
+
+const unlockedLevels = ref(JSON.parse(localStorage.getItem("unlockedLevels") || "[]"));
+
+onMounted(() => {
+    window.addEventListener("storage", updateUnlockedLevels);
+});
+
+onUnmounted(() => {
+    window.removeEventListener("storage", updateUnlockedLevels);
+});
+
+const updateUnlockedLevels = () => {
+    console.log("偵測到 LocalStorage 變更，重新讀取關卡狀態");
+    unlockedLevels.value = JSON.parse(localStorage.getItem("unlockedLevels") || "[]");
+};
 
 // 修正角色顯示邏輯
 const activeCharacters = computed(() => {
@@ -63,20 +80,23 @@ const activeCharacters = computed(() => {
 });
 
 const nextDialogue = () => {
-  if (!sceneData.value.dialogues) return;
+    if (!sceneData.value.dialogues) return;
 
-  if (dialogueIndex.value < sceneData.value.dialogues.length - 1) {
-    dialogueIndex.value++;
-  } else {
-    dialogueEnd.value = true;
+    if (dialogueIndex.value < sceneData.value.dialogues.length - 1) {
+        dialogueIndex.value++;
+    } else {
+        dialogueEnd.value = true;
+        console.log("對話結束");
 
-    if (!sceneData.value.interactions || sceneData.value.interactions.length === 0) {
-      unlockNextLevel();
-      setTimeout(() => {
-        router.push("/levels");
-      }, 300);
+        // 如果沒有互動內容，則自動返回關卡選單並解鎖下一關
+        if (!sceneData.value.interactions || sceneData.value.interactions.length === 0) {
+            console.log("沒有互動內容，返回關卡選單");
+            unlockNextLevel();
+            setTimeout(() => {
+                router.push("/levels");
+            }, 300);
+        }
     }
-  }
 };
 
 // 解鎖下一關
@@ -111,6 +131,7 @@ const unlockNextLevel = () => {
 
   // 儲存到 LocalStorage
   localStorage.setItem("unlockedLevels", JSON.stringify(unlocked));
+  unlockedLevels.value = [...unlocked]; // 讓 Vue 重新渲染
   console.log("更新後的已解鎖關卡:", unlocked);
 };
 
@@ -125,12 +146,15 @@ const selectChoice = (nextScene) => {
 };
 
 const getInteractionComponent = (interaction) => {
+  if (!interaction || !interaction.type) return null;
+
   switch (interaction.type) {
     case "input":
       return InteractionInput;
     case "choice":
       return InteractionChoice;
     default:
+      console.error(`未知的互動類型: ${interaction.type}`);
       return null;
   }
 };
