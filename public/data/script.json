@@ -1,0 +1,111 @@
+{
+  "levels": {
+    "level0": {
+      "name": "序章",
+      "scenes": {
+        "scene1": {
+          "background": "/images/bg/black.jpg",
+          "dialogues": [
+            { "character": "Narrator", "text": "這是一場冒險的開始……" },
+            { "character": "Alice", "avatar": "/images/chara/01.png", "position": { "x": 20, "y": 65 }, "text": "我們要去哪裡？" },
+            { "character": "Bob", "avatar": "/images/chara/02.png", "position": { "x": 80, "y": 65 }, "text": "你會知道的，讓我們開始吧！" }
+          ]
+        }
+      },
+      "unlocks": ["level1"]
+    },
+
+    "level1": {
+      "name": "密碼之門",
+      "scenes": {
+        "scene1": {
+          "background": "/images/bg/school.jpg",
+          "dialogues": [
+            { "character": "Guard", "avatar": "/images/chara/01.png", "position": { "x": 50, "y": 65 }, "text": "要通過這扇門，你需要輸入正確的密碼。" }
+          ],
+          "interactions": [
+            {
+              "type": "input",
+              "id": "gate-password",
+              "placeholder": "輸入密碼...",
+              "correctAnswer": "5678",
+              "onSuccess": "scene2",
+              "onFailure": "scene1"
+            }
+          ]
+        },
+        "scene2": {
+          "background": "/images/bg/forest.jpg",
+          "dialogues": [
+            { "character": "Alice", "text": "我們成功通過大門了！" }
+          ]
+        }
+      },
+      "unlocks": ["level2"]
+    },
+
+    "level2": {
+      "name": "選擇正確的道路",
+      "scenes": {
+        "scene1": {
+          "background": "/images/bg/crossroad.jpg",
+          "dialogues": [
+            { "character": "Bob", "avatar": "/images/chara/02.png", "position": { "x": 80, "y": 65 }, "text": "這裡有兩條路，我們該走哪邊？" }
+          ],
+          "interactions": [
+            {
+              "type": "choice",
+              "id": "path-choice",
+              "choices": [
+                { "text": "走左邊", "next": "scene2" },
+                { "text": "走右邊", "next": "scene3" }
+              ]
+            }
+          ]
+        },
+        "scene2": {
+          "background": "/images/bg/forest-path.jpg",
+          "dialogues": [
+            { "character": "Alice", "text": "這條路看起來不錯！" }
+          ]
+        },
+        "scene3": {
+          "background": "/images/bg/dark-path.jpg",
+          "dialogues": [
+            { "character": "Bob", "text": "這條路有點可怕……" }
+          ]
+        }
+      },
+      "unlocks": ["level3"]
+    },
+
+    "level3": {
+      "name": "選擇影響你的未來",
+      "scenes": {
+        "scene1": {
+          "background": "/images/bg/temple.jpg",
+          "dialogues": [
+            { "character": "Mystic", "avatar": "/images/chara/mystic.png", "position": { "x": 50, "y": 65 }, "text": "你只有一次機會，選擇你的未來。" }
+          ],
+          "interactions": [
+            {
+              "type": "choice",
+              "id": "future-choice",
+              "choices": [
+                { "text": "選擇光明的道路", "next": "scene2" },
+                { "text": "選擇黑暗的道路", "next": "level4" }
+              ]
+            }
+          ]
+        },
+        "scene2": {
+          "background": "/images/bg/light-path.jpg",
+          "dialogues": [
+            { "character": "Mystic", "text": "你選擇了光明的道路，前方充滿機會。" }
+          ]
+        }
+      },
+      "unlocks": ["level4"]
+    }
+  }
+}

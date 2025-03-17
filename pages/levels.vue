@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted, watchEffect } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -53,8 +53,19 @@ const fetchLevels = async () => {
 };
 
 onMounted(() => {
-  fetchLevels();
-  loadUnlockedLevels();
+    fetchLevels();
+    loadUnlockedLevels();
+
+    window.addEventListener("storage", loadUnlockedLevels);
+});
+
+onUnmounted(() => {
+    window.removeEventListener("storage", loadUnlockedLevels);
+});
+
+watchEffect(() => {
+    const storedLevels = localStorage.getItem("unlockedLevels");
+    unlockedLevels.value = storedLevels ? JSON.parse(storedLevels) : ["level0"];
 });
 
 const startDrag = (event) => {
