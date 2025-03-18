@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen h-screen flex flex-col justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+  <div class="w-screen h-screen flex flex-col justify-center items-center bg-gradient-to-r text-blue">
     <h1 class="text-5xl font-bold mb-8 text-center">
       恐怖！怪盜XD對決早稻前學園偵探社！
     </h1>
