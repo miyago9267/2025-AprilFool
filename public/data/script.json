@@ -16,12 +16,12 @@
     },
 
     "level1": {
-      "name": "密碼之門",
+      "name": "保險箱",
       "scenes": {
         "scene1": {
           "background": "/images/bg/school.jpg",
           "dialogues": [
-            { "character": "Guard", "avatar": "/images/chara/01.png", "position": { "x": 50, "y": 65 }, "text": "要通過這扇門，你需要輸入正確的密碼。" }
+            { "character": "Guard", "avatar": "/images/chara/01.png", "position": { "x": 50, "y": 65 }, "text": "要打開這個保險箱，你需要輸入正確的密碼。" }
           ],
           "interactions": [
             {
@@ -45,7 +45,7 @@
     },
 
     "level2": {
-      "name": "選擇正確的道路",
+      "name": "正確之路",
       "scenes": {
         "scene1": {
           "background": "/images/bg/crossroad.jpg",
@@ -80,7 +80,7 @@
     },
 
     "level3": {
-      "name": "選擇影響你的未來",
+      "name": "選擇未來",
       "scenes": {
         "scene1": {
           "background": "/images/bg/temple.jpg",
