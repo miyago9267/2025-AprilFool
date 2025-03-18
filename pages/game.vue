@@ -1,6 +1,7 @@
 <template>
   <div class="visual-novel relative w-screen h-screen flex flex-col justify-end items-center">
-    <button class="absolute top-4 left-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
+    <div class="absolute inset-0 z-5 cursor-pointer" @click="handleBackgroundClick"></div>
+    <button class="absolute z-10 top-4 left-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
             @click="goBack">
       ⬅ 回到關卡選單
     </button>
@@ -70,6 +71,19 @@ const updateUnlockedLevels = () => {
     unlockedLevels.value = JSON.parse(localStorage.getItem("unlockedLevels") || "[]");
 };
 
+const handleBackgroundClick = (event) => {
+  console.log("背景被點擊"); // Debug 訊息
+  const interactionElements = document.querySelectorAll(".interaction-box");
+  for (let element of interactionElements) {
+    if (element.contains(event.target)) {
+      console.log("點擊在互動框內，忽略");
+      return;
+    }
+  }
+  console.log("觸發下一句對話");
+  nextDialogue();
+};
+
 // 修正角色顯示邏輯
 const activeCharacters = computed(() => {
   let characters = sceneData.value.characters ? [...sceneData.value.characters] : [];
@@ -92,28 +106,18 @@ const activeCharacters = computed(() => {
 
 const nextDialogue = () => {
   if (!sceneData.value.dialogues) return;
-
   if (dialogueIndex.value < sceneData.value.dialogues.length - 1) {
     dialogueIndex.value++;
   } else {
     dialogueEnd.value = true;
-    console.log("對話結束");
-
-    // 先檢查是否有互動內容，確保對話播放完後才顯示互動
     const hasInteractions = sceneData.value.interactions && sceneData.value.interactions.length > 0;
-
     if (hasInteractions) {
-      console.log("對話結束，等待玩家進行互動");
       setTimeout(() => {
-        showInteractions.value = true; // 等待對話完全結束後才顯示互動內容
+        showInteractions.value = true;
       }, 300);
       return;
     }
-
-    // 沒有互動內容，直接返回關卡選單並解鎖下一關
-    console.log("沒有互動內容，返回關卡選單並解鎖下一關");
     unlockNextLevel();
-    
     setTimeout(() => {
       router.push("/levels");
     }, 500);

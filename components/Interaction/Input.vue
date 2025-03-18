@@ -1,13 +1,12 @@
 <template>
-    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 p-6 bg-white text-black rounded shadow-lg">
-      <p class="text-lg font-bold mb-2">{{ interaction.placeholder }}</p>
-      <input v-model="userInput" class="border p-3 rounded w-[95%] text-lg" type="text" />
-      <button @click="checkAnswer"
-              class="mt-4 bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 w-full">
-        確認
-      </button>
-      <p v-if="errorMessage" class="text-red-500 mt-2">{{ errorMessage }}</p>
-    </div>
+  <div class="interaction-box absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 p-6 bg-white text-black rounded shadow-lg">
+    <p class="text-lg font-bold mb-2">{{ interaction.placeholder }}</p>
+    <input v-model="userInput" class="border py-3 rounded w-full text-lg text-center" type="text" />
+    <button @click="checkAnswer" class="mt-4 bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 w-full">
+      確認
+    </button>
+    <p v-if="errorMessage" class="text-red-500 mt-2">{{ errorMessage }}</p>
+  </div>
 </template>
 
 <script setup>
