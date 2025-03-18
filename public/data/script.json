@@ -6,7 +6,7 @@
         "scene1": {
           "background": "/images/bg/black.jpg",
           "dialogues": [
-            { "character": "Narrator", "text": "這是一場冒險的開始……" },
+            { "character": "", "text": "這是一場冒險的開始……" },
             { "character": "Alice", "avatar": "/images/chara/01.png", "position": { "x": 20, "y": 65 }, "text": "我們要去哪裡？" },
             { "character": "Bob", "avatar": "/images/chara/02.png", "position": { "x": 80, "y": 65 }, "text": "你會知道的，讓我們開始吧！" }
           ]
