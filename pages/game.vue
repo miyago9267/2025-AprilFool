@@ -18,6 +18,12 @@
 
     <DialogBox v-if="sceneData?.dialogues" :dialogue="dialogue" @next="nextDialogue" />
 
+    <button class="absolute z-10 top-4 right-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
+            @click="showLog = true">
+      查看對話記錄
+    </button>
+    <Log :show="showLog" :logMessages="logMessages" @close="showLog = false" />
+
     <component v-show="showInteractions"
                v-for="interaction in sceneData?.interactions"
                :key="interaction.id"
@@ -38,15 +44,22 @@ const route = useRoute();
 const router = useRouter();
 const { data: script } = await useFetch("/data/script.json");
 
+// 控制當前關卡及場景
 const currentLevel = ref(route.query.level || "level0");
 const currentScene = ref(route.query.scene || "scene1");
 
+// 控制當前對話狀態
 const sceneData = computed(() => script.value?.levels?.[currentLevel.value]?.scenes?.[currentScene.value] ?? {});
 const dialogueIndex = ref(0);
 const dialogue = computed(() => sceneData.value.dialogues?.[dialogueIndex.value] ?? {});
 const dialogueEnd = ref(false);
 const showInteractions = ref(false); // 控制互動內容的顯示
 
+// 控制對話Log
+const showLog = ref(false);
+const logMessages = ref([]);
+
+// 寫入 LocalStorage 的已解鎖關卡
 const unlockedLevels = ref(JSON.parse(localStorage.getItem("unlockedLevels") || "[]"));
 
 onMounted(() => {
@@ -103,10 +116,11 @@ const activeCharacters = computed(() => {
 
   return characters;
 });
-
 const nextDialogue = () => {
   if (!sceneData.value.dialogues) return;
+
   if (dialogueIndex.value < sceneData.value.dialogues.length - 1) {
+    logMessages.value.push({ character: dialogue.value.character, text: dialogue.value.text });
     dialogueIndex.value++;
   } else {
     dialogueEnd.value = true;
