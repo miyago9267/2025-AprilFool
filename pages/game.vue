@@ -17,7 +17,8 @@
 
     <DialogBox v-if="sceneData?.dialogues" :dialogue="dialogue" @next="nextDialogue" />
 
-    <component v-for="interaction in sceneData?.interactions"
+    <component v-show="showInteractions"
+               v-for="interaction in sceneData?.interactions"
                :key="interaction.id"
                :is="getInteractionComponent(interaction)"
                :interaction="interaction"
@@ -28,7 +29,7 @@
 
 <script setup>
 import { useRoute, useRouter } from "vue-router";
-import { ref, computed, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted, watchEffect } from "vue";
 import InteractionInput from '~/components/Interaction/Input.vue';
 import InteractionChoice from '~/components/Interaction/Choices.vue';
 
@@ -43,6 +44,7 @@ const sceneData = computed(() => script.value?.levels?.[currentLevel.value]?.sce
 const dialogueIndex = ref(0);
 const dialogue = computed(() => sceneData.value.dialogues?.[dialogueIndex.value] ?? {});
 const dialogueEnd = ref(false);
+const showInteractions = ref(false); // 控制互動內容的顯示
 
 const unlockedLevels = ref(JSON.parse(localStorage.getItem("unlockedLevels") || "[]"));
 
@@ -52,6 +54,15 @@ onMounted(() => {
 
 onUnmounted(() => {
     window.removeEventListener("storage", updateUnlockedLevels);
+});
+
+// 監聽 `route.query`，確保 `currentLevel` 和 `currentScene` 即時更新
+watchEffect(() => {
+    currentLevel.value = route.query.level || "level0";
+    currentScene.value = route.query.scene || "scene1";
+    dialogueIndex.value = 0;
+    dialogueEnd.value = false;
+    showInteractions.value = false; // 確保切換場景時隱藏互動內容
 });
 
 const updateUnlockedLevels = () => {
@@ -80,23 +91,33 @@ const activeCharacters = computed(() => {
 });
 
 const nextDialogue = () => {
-    if (!sceneData.value.dialogues) return;
+  if (!sceneData.value.dialogues) return;
 
-    if (dialogueIndex.value < sceneData.value.dialogues.length - 1) {
-        dialogueIndex.value++;
-    } else {
-        dialogueEnd.value = true;
-        console.log("對話結束");
+  if (dialogueIndex.value < sceneData.value.dialogues.length - 1) {
+    dialogueIndex.value++;
+  } else {
+    dialogueEnd.value = true;
+    console.log("對話結束");
 
-        // 如果沒有互動內容，則自動返回關卡選單並解鎖下一關
-        if (!sceneData.value.interactions || sceneData.value.interactions.length === 0) {
-            console.log("沒有互動內容，返回關卡選單");
-            unlockNextLevel();
-            setTimeout(() => {
-                router.push("/levels");
-            }, 300);
-        }
+    // 先檢查是否有互動內容，確保對話播放完後才顯示互動
+    const hasInteractions = sceneData.value.interactions && sceneData.value.interactions.length > 0;
+
+    if (hasInteractions) {
+      console.log("對話結束，等待玩家進行互動");
+      setTimeout(() => {
+        showInteractions.value = true; // 等待對話完全結束後才顯示互動內容
+      }, 300);
+      return;
     }
+
+    // 沒有互動內容，直接返回關卡選單並解鎖下一關
+    console.log("沒有互動內容，返回關卡選單並解鎖下一關");
+    unlockNextLevel();
+    
+    setTimeout(() => {
+      router.push("/levels");
+    }, 500);
+  }
 };
 
 // 解鎖下一關
@@ -139,9 +160,7 @@ const selectChoice = (nextScene) => {
   if (nextScene === "menu") {
     router.push("/levels");
   } else {
-    currentScene.value = nextScene;
-    dialogueIndex.value = 0;
-    dialogueEnd.value = false;
+    router.push({ path: "/game", query: { level: currentLevel.value, scene: nextScene } });
   }
 };
 
