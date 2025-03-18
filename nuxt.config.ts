@@ -53,9 +53,6 @@ export default defineNuxtConfig({
 
 	nitro: {
 		compressPublicAssets: true,
-		output: {
-			dir: 'Dokidoki-Website'
-		}
 	},
 
 	purgecss: {
