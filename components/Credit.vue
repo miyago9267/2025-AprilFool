@@ -9,11 +9,14 @@
         <h2 class="text-2xl font-bold mb-4 text-center">製作名單</h2>
         <p class="mb-4 text-sm text-gray-700">這款遊戲是我們的努力結晶，希望你喜歡！</p>
         <ul class="list-disc pl-5">
-          <li>遊戲設計：XXX</li>
-          <li>程式開發：YYY</li>
-          <li>美術設計：ZZZ</li>
-          <li>劇情編寫：AAA</li>
+          <li>遊戲設計：Miyago9267/Caryolite</li>
+          <li>程式開發：Miyago9267</li>
+          <li>美術設計：Caryolite</li>
+          <li>劇情編寫：Miyago9267/Caryolite</li>
         </ul>
+        <span class="opacity-0 text-xs hover:opacity-100 transition-opacity duration-[10000ms]">
+            這是隱藏訊息，你找到它了！
+        </span>
       </div>
     </div>
   </template>
