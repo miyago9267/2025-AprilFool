@@ -18,7 +18,7 @@
               }"
               @click="selectLevel(levelId)">
               <span>{{ level.name }}</span>
-              <span class="text-sm opacity-70">{{ levelId }}</span>
+              <!-- <span class="text-sm opacity-70">{{ levelId }}</span> -->
           </div>
       </div>
   </div>
