@@ -32,6 +32,11 @@
                :interaction="interaction"
                @interaction-success="handleInteractionSuccess"
                @interaction-failure="handleInteractionFailure" />
+    <ChapterEndDialog v-if="dialogueEnd"
+          :nextLevel="nextLevel"
+          @replay="replayChapter"
+          @goLevels="goBack"
+          @nextLevel="goNextLevel" />
   </div>
 </template>
 
@@ -49,8 +54,9 @@ const { currentScene, currentDialogue } = useGameProgress();
 const currentLevel = ref(route.query.level || "level0");
 const sceneData = computed(() => script.value?.levels?.[currentLevel.value]?.scenes?.[currentScene.value] ?? {});
 const dialogue = computed(() => sceneData.value.dialogues?.[currentDialogue.value] ?? {});
-const dialogueEnd = ref(false);
+const dialogueEnd = ref(false); // 修正：預設為 false
 const showInteractions = ref(false); // 控制互動內容的顯示
+const nextLevel = (computed(() => script.value.levels?.[currentLevel.value]?.unlocks));
 
 // 控制對話Log
 const showLog = ref(false);
@@ -93,61 +99,38 @@ const nextDialogue = () => {
     logMessages.value.push({ character: dialogue.value.character, text: dialogue.value.text });
     currentDialogue.value++;
   } else {
-    dialogueEnd.value = true;
-
-    // 檢查是否有下一個場景
-    const sceneKeys = Object.keys(script.value?.levels?.[currentLevel.value]?.scenes || {});
+    // 嘗試獲取當前關卡的所有場景
+    const sceneKeys = Object.keys(script.value.levels?.[currentLevel.value]?.scenes || {});
     const currentSceneIndex = sceneKeys.indexOf(currentScene.value);
 
     if (currentSceneIndex !== -1 && currentSceneIndex < sceneKeys.length - 1) {
-      // 切換到下一個場景
+      // 如果還有下一個場景，切換到 `scene2` 並從第一句對話開始
       currentScene.value = sceneKeys[currentSceneIndex + 1];
       currentDialogue.value = 0;
     } else {
-      // 沒有更多場景，則解鎖關卡並回到 levels
-      useUnlockLevels().unlockLevel(currentLevel.value);
-      setTimeout(() => { router.push("/levels"); }, 500);
+      // 沒有更多場景，才標記為章節結束
+      dialogueEnd.value = true;
     }
   }
 };
 
-// (已抽出 unlockNextLevel 至 useUnlockLevels composable)
-
-const selectChoice = (nextScene) => {
-  if (nextScene === "menu") {
-    router.push("/levels");
-  } else {
-    router.push({ path: "/game", query: { level: currentLevel.value, scene: nextScene } });
+// 進入下一關（如果有）
+const goNextLevel = () => {
+  if (nextLevel.value) {
+    dialogueEnd.value = false; // 隱藏對話結束畫面
+    router.push({ path: "/game", query: { level: nextLevel.value, scene: "scene1" } });
   }
 };
 
-const getInteractionComponent = (interaction) => {
-  if (!interaction || !interaction.type) return null;
-
-  switch (interaction.type) {
-    case "input":
-      return InteractionInput;
-    case "choice":
-      return InteractionChoice;
-    default:
-      console.error(`未知的互動類型: ${interaction.type}`);
-      return null;
-  }
+// 重新觀看本章
+const replayChapter = () => {
+  currentDialogue.value = 0;
+  dialogueEnd.value = false;
 };
 
-const handleInteractionSuccess = (nextScene) => {
-  if (nextScene) {
-    router.push({ path: "/game", query: { level: currentLevel.value, scene: nextScene } });
-  }
-};
-
-const handleInteractionFailure = () => {
-  if (nextScene) {
-    router.push({ path: "/game", query: { level: currentLevel.value, scene: nextScene } });
-  }
-};
-
+// 回到關卡選單
 const goBack = () => {
+  dialogueEnd.value = false; // 確保不影響其他關卡的進入
   router.push("/levels");
 };
 
@@ -155,7 +138,6 @@ const goBack = () => {
 const { loading, progress, preloadImages } = usePreload();
 
 // (已簡化預載入邏輯至 usePreload composable)
-
 
 onMounted(async () => {
     await preloadImages([sceneData.value.background, ...((sceneData.value.characters || []).map(c => c.avatar))]);
