@@ -6,12 +6,19 @@
           ⬅ 回到開始畫面
       </button>
 
-      <!-- 關卡拖曳滾動容器 -->
+      <!-- 關卡滾動容器 -->
       <div ref="levelsContainer"
-           class="overflow-x-hidden w-3/4 relative cursor-grab select-none flex items-center scrollbar-hidden"
-           @mousedown="startDrag" @mousemove="onDrag" @mouseup="endDrag" @mouseleave="endDrag">
+           :class="isMobile ? 'overflow-y-auto h-full w-3/4' : 'overflow-x-auto w-3/4'"
+           class="relative cursor-grab select-none flex items-center scrollbar-hidden"
+           @mousedown="!isMobile && startDrag" 
+           @mousemove="!isMobile && onDrag" 
+           @mouseup="!isMobile && endDrag" 
+           @mouseleave="!isMobile && endDrag"
+           @touchstart="isMobile && startTouch"
+           @touchmove="isMobile && onTouchMove"
+           @touchend="isMobile && endTouch">
         <div ref="levelsWrapper"
-             class="flex gap-6 py-4">
+             :class="isMobile ? 'flex flex-col gap-6 py-4' : 'flex gap-6 py-4'">
           <div v-for="(level, levelId) in filteredLevels" :key="levelId"
               class="w-64 h-40 flex flex-col justify-center items-center rounded-lg text-white text-lg font-bold transition-transform mx-4 bg-blue-500 cursor-pointer hover:scale-105"
               @click="selectLevel(level.id)">
@@ -31,9 +38,18 @@ const route = useRoute();
 const levelsContainer = ref(null);
 const isDragging = ref(false);
 const startX = ref(0);
+const startY = ref(0);
 const scrollLeft = ref(0);
+const scrollTop = ref(0);
 const levels = ref({});
 const unlockedLevels = ref([]);
+const isMobile = ref(window.innerWidth <= 768); // 判斷是否為手機
+
+// 監聽視窗大小變化，確保正確檢測裝置
+const checkDevice = () => {
+  isMobile.value = window.innerWidth <= 768;
+};
+window.addEventListener("resize", checkDevice);
 
 // 讀取解鎖關卡
 const loadUnlockedLevels = () => {
@@ -54,7 +70,7 @@ const fetchLevels = async () => {
       const response = await fetch("/data/script.json");
       const scriptData = await response.json();
       levels.value = scriptData.levels || {};
-      loadUnlockedLevels(); // 確保載入關卡後同步解鎖狀態
+      loadUnlockedLevels();
   } catch (error) {
       console.error("載入關卡時發生錯誤：", error);
   }
@@ -68,6 +84,7 @@ onMounted(() => {
 
 onUnmounted(() => {
     window.removeEventListener("storage", handleStorageChange);
+    window.removeEventListener("resize", checkDevice);
 });
 
 // 監聽 `route`，當返回 `levels` 頁面時，確保 `unlockedLevels` 重新載入
@@ -87,8 +104,9 @@ const filteredLevels = computed(() => {
     }));
 });
 
-// 拖曳滾動
+// 拖曳滾動 (桌面端)
 const startDrag = (event) => {
+  if (isMobile.value) return;
   isDragging.value = true;
   startX.value = event.pageX - levelsContainer.value.offsetLeft;
   scrollLeft.value = levelsContainer.value.scrollLeft;
@@ -96,14 +114,33 @@ const startDrag = (event) => {
 };
 
 const onDrag = (event) => {
-  if (!isDragging.value) return;
+  if (!isDragging.value || isMobile.value) return;
   event.preventDefault();
   const x = event.pageX - levelsContainer.value.offsetLeft;
-  const walk = (x - startX.value) * -1; // 反向移動
-  levelsContainer.value.scrollLeft = scrollLeft.value + walk;
+  const moveX = (x - startX.value) * -1;
+  levelsContainer.value.scrollLeft = scrollLeft.value + moveX;
 };
 
 const endDrag = () => {
+  isDragging.value = false;
+};
+
+// 觸控滾動 (手機端)
+const startTouch = (event) => {
+  if (!isMobile.value) return;
+  isDragging.value = true;
+  startY.value = event.touches[0].pageY - levelsContainer.value.offsetTop;
+  scrollTop.value = levelsContainer.value.scrollTop;
+};
+
+const onTouchMove = (event) => {
+  if (!isDragging.value || !isMobile.value) return;
+  const y = event.touches[0].pageY - levelsContainer.value.offsetTop;
+  const moveY = (y - startY.value) * -1;
+  levelsContainer.value.scrollTop = scrollTop.value + moveY;
+};
+
+const endTouch = () => {
   isDragging.value = false;
 };
 
