@@ -33,10 +33,12 @@ const effectClass = computed(() => {
 <style>
 @keyframes jump {
     0%, 100% { transform: translate(-50%, -50%) scale(var(--scale, 1)); }
-    50% { transform: translate(-50%, calc(-50% - 20px)) scale(var(--scale, 1)); }
+    25% { transform: translate(-50%, calc(-50% - 20px)) scale(var(--scale, 1)); }
+    50% { transform: translate(-50%, -50%) scale(var(--scale, 1)); }
+    75% { transform: translate(-50%, calc(-50% - 20px)) scale(var(--scale, 1)); }
 }
 .animate-jump {
-    animation: jump 0.3s ease-out;
+    animation: jump 0.6s ease-out;
 }
 
 @keyframes shake {
