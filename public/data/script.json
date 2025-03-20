@@ -16,7 +16,7 @@
     },
 
     "level1": {
-      "name": "保險箱",
+      "name": "學生會的委託",
       "scenes": {
         "scene1": {
           "background": "/images/bg/school.jpg",
@@ -45,7 +45,7 @@
     },
 
     "level2": {
-      "name": "正確之路",
+      "name": "怪盜的挑釁",
       "scenes": {
         "scene1": {
           "background": "/images/bg/crossroad.jpg",
@@ -80,7 +80,7 @@
     },
 
     "level3": {
-      "name": "選擇未來",
+      "name": "越發頻繁的事件",
       "scenes": {
         "scene1": {
           "background": "/images/bg/temple.jpg",
@@ -105,6 +105,51 @@
           ]
         }
       },
+      "unlocks": ["level4"]
+    },
+    "level4": {
+      "name": "迷霧重重",
+      "scenes": {},
+      "unlocks": ["level5"]
+    },
+    "level5": {
+      "name": "偵探社的反擊",
+      "scenes": {},
+      "unlocks": ["level6"]
+    },
+    "level6": {
+      "name": "怪盜XD的挑釁",
+      "scenes": {},
+      "unlocks": ["level7"]
+    },
+    "level7": {
+      "name": "真相",
+      "scenes": {},
+      "unlocks": ["end1"]
+    },
+    "end1": {
+      "name": "結局",
+      "scenes": {},
+      "unlocks": ["level8"]
+    },
+    "level8": {
+      "name": "怪盜的挑戰書1",
+      "scenes": {},
+      "unlocks": ["level9"]
+    },
+    "level9": {
+      "name": "怪盜的挑戰書2",
+      "scenes": {},
+      "unlocks": ["level10"]
+    },
+    "level10": {
+      "name": "怪盜的挑戰書3",
+      "scenes": {},
+      "unlocks": ["end2"]
+    },
+    "end2": {
+      "name": "真、結局",
+      "scenes": {},
       "unlocks": ["level4"]
     }
   }

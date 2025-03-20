@@ -1,5 +1,6 @@
 <template>
-  <div class="visual-novel relative w-screen h-screen flex flex-col justify-end items-center">
+  <Loading v-if="loading" :show="loading" :progress="progress" />
+  <div v-else class="visual-novel relative w-screen h-screen flex flex-col justify-end items-center">
     <div class="absolute inset-0 z-5 cursor-pointer" @click="handleBackgroundClick"></div>
     <button class="absolute z-10 top-4 left-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
             @click="goBack">
@@ -35,11 +36,6 @@
 </template>
 
 <script setup>
-import { useRoute, useRouter } from "vue-router";
-import { ref, computed, onMounted, onUnmounted, watchEffect } from "vue";
-import InteractionInput from '~/components/Interaction/Input.vue';
-import InteractionChoice from '~/components/Interaction/Choices.vue';
-
 const route = useRoute();
 const router = useRouter();
 const { data: script } = await useFetch("/data/script.json");
@@ -62,38 +58,19 @@ const logMessages = ref([]);
 // 寫入 LocalStorage 的已解鎖關卡
 const unlockedLevels = ref(JSON.parse(localStorage.getItem("unlockedLevels") || "[]"));
 
-onMounted(() => {
-    window.addEventListener("storage", updateUnlockedLevels);
-});
-
-onUnmounted(() => {
-    window.removeEventListener("storage", updateUnlockedLevels);
-});
-
-// 監聽 `route.query`，確保 `currentLevel` 和 `currentScene` 即時更新
-watchEffect(() => {
-    currentLevel.value = route.query.level || "level0";
-    currentScene.value = route.query.scene || "scene1";
-    dialogueIndex.value = 0;
-    dialogueEnd.value = false;
-    showInteractions.value = false; // 確保切換場景時隱藏互動內容
-});
-
+// 更新已解鎖關卡
 const updateUnlockedLevels = () => {
-    console.log("偵測到 LocalStorage 變更，重新讀取關卡狀態");
     unlockedLevels.value = JSON.parse(localStorage.getItem("unlockedLevels") || "[]");
 };
 
+// 使得全螢幕皆可點擊
 const handleBackgroundClick = (event) => {
-  console.log("背景被點擊"); // Debug 訊息
   const interactionElements = document.querySelectorAll(".interaction-box");
   for (let element of interactionElements) {
     if (element.contains(event.target)) {
-      console.log("點擊在互動框內，忽略");
       return;
     }
   }
-  console.log("觸發下一句對話");
   nextDialogue();
 };
 
@@ -116,6 +93,8 @@ const activeCharacters = computed(() => {
 
   return characters;
 });
+
+// 下一句對話
 const nextDialogue = () => {
   if (!sceneData.value.dialogues) return;
 
@@ -148,13 +127,9 @@ const unlockNextLevel = () => {
   const storedLevels = localStorage.getItem("unlockedLevels");
   let unlocked = storedLevels ? JSON.parse(storedLevels) : [];
 
-  console.log("當前關卡:", currentLevel.value);
-  console.log("已解鎖關卡:", unlocked);
-
   // 確保當前關卡在 `unlockedLevels`
   if (!unlocked.includes(currentLevel.value)) {
     unlocked.push(currentLevel.value);
-    console.log(`已新增當前關卡: ${currentLevel.value}`);
   }
 
   // 取得 `script.json` 內的 `unlocks` 陣列
@@ -164,14 +139,12 @@ const unlockNextLevel = () => {
   currentUnlocks.forEach(nextLevel => {
     if (!unlocked.includes(nextLevel)) {
       unlocked.push(nextLevel);
-      console.log(`解鎖下一關: ${nextLevel}`);
     }
   });
 
   // 儲存到 LocalStorage
   localStorage.setItem("unlockedLevels", JSON.stringify(unlocked));
   unlockedLevels.value = [...unlocked]; // 讓 Vue 重新渲染
-  console.log("更新後的已解鎖關卡:", unlocked);
 };
 
 const selectChoice = (nextScene) => {
@@ -203,10 +176,53 @@ const handleInteractionSuccess = (nextScene) => {
 };
 
 const handleInteractionFailure = () => {
-  console.log("錯誤的輸入，請重試！");
+  if (nextScene) {
+    router.push({ path: "/game", query: { level: currentLevel.value, scene: nextScene } });
+  }
 };
 
 const goBack = () => {
   router.push("/levels");
 };
+
+// 使用 usePreload.ts
+const { loading, progress, preloadImages } = usePreload();
+
+// 取得場景圖片
+const getGameAssets = () => {
+  let assets = [];
+
+  if (sceneData.value.background) {
+    assets.push(sceneData.value.background);
+  }
+
+  if (sceneData.value.characters) {
+    sceneData.value.characters.forEach((character) => {
+      if (character.avatar) {
+        assets.push(character.avatar);
+      }
+    });
+  }
+  return assets;
+};
+
+
+onMounted(async () => {
+    window.addEventListener("storage", updateUnlockedLevels);
+    await preloadImages(getGameAssets());
+});
+
+onUnmounted(() => {
+    window.removeEventListener("storage", updateUnlockedLevels);
+});
+
+// 監聽 `route.query`，確保 `currentLevel` 和 `currentScene` 即時更新
+watchEffect(() => {
+    currentLevel.value = route.query.level || "level0";
+    currentScene.value = route.query.scene || "scene1";
+    dialogueIndex.value = 0;
+    dialogueEnd.value = false;
+    showInteractions.value = false; // 確保切換場景時隱藏互動內容
+});
+
 </script>
