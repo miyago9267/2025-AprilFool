@@ -7,8 +7,18 @@
           "background": "/images/bg/black.jpg",
           "dialogues": [
             { "character": "", "text": "這是一場冒險這是一場腥風血雨的開始……" },
-            { "character": "Alice", "avatar": "/images/chara/01.png", "position": { "x": 20, "y": 65 }, "text": "我們要去哪裡？" },
-            { "character": "Bob", "avatar": "/images/chara/02.png", "position": { "x": 80, "y": 65 }, "text": "你會知道的，讓我們開始吧！" }
+            { "character": "", "text": "哇哈哈哈哈哈哈哈哈哈哈"}
+          ]
+        },
+        "scene2": {
+          "background": "/images/bg/clubroom.jpg",
+          "dialogues": [
+            { "character": "", "text": "(早稻前校園內)" },
+            { "character": "？？？", "avatar": "/images/chara/01.png", "position": { "x": 20, "y": 65, "effect": "jump" }, "text": "嗚呼呼！！！今天也很和平呢" },
+            { "character": "？？？", "avatar": "/images/chara/02.png", "position": { "x": 80, "y": 65 }, "text": "不和平的話才可怕呢" },
+            { "character": "？？？", "avatar": "/images/chara/01.png", "position": { "x": 20, "y": 65 }, "text": "耶比你好奇怪" },
+            { "character": "？？？", "avatar": "/images/chara/01.png", "position": { "x": 20, "y": 65 }, "text": "你身為偵探社的幹部 怎麼可以這麼沒有幹勁呢？" },
+            { "character": "耶比", "avatar": "/images/chara/02.png", "position": { "x": 80, "y": 65 }, "text": "工藤你才是 就算是偵探社 哪有人會整天期待有事發生啦" }
           ]
         }
       },

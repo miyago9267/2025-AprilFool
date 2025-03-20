@@ -98,12 +98,20 @@ const nextDialogue = () => {
     currentDialogue.value++;
   } else {
     dialogueEnd.value = true;
-    if (sceneData.value.interactions?.length) {
-      setTimeout(() => { showInteractions.value = true; }, 300);
-      return;
+
+    // 檢查是否有下一個場景
+    const sceneKeys = Object.keys(script.value?.levels?.[currentLevel.value]?.scenes || {});
+    const currentSceneIndex = sceneKeys.indexOf(currentScene.value);
+
+    if (currentSceneIndex !== -1 && currentSceneIndex < sceneKeys.length - 1) {
+      // 切換到下一個場景
+      currentScene.value = sceneKeys[currentSceneIndex + 1];
+      currentDialogue.value = 0;
+    } else {
+      // 沒有更多場景，則解鎖關卡並回到 levels
+      useUnlockLevels().unlockLevel(currentLevel.value);
+      setTimeout(() => { router.push("/levels"); }, 500);
     }
-    useUnlockLevels(currentLevel.value).unlockLevel(currentLevel.value);
-    setTimeout(() => { router.push("/levels"); }, 500);
   }
 };
 
