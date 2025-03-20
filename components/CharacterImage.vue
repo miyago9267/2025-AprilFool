@@ -1,10 +1,11 @@
 <template>
-    <img :src="src" class="character absolute max-h-[80vh]"
+    <img :src="src" class="character absolute max-h-[80vh] max-w-full object-contain"
          :class="effectClass"
          :style="{
             left: position?.x ? `${position.x}%` : '50%',
             top: position?.y ? `${position.y}%` : '70%',
-            transform: 'translate(-50%, -50%) scale(' + (position?.size || 1) + ')'
+            transform: 'translate(-50%, -50%) scale(' + (position?.size || 1) + ')',
+            clipPath: 'inset(0 5% 0 5%)' // 限制左右邊界，防止透明部分超出
          }">
 </template>
 
@@ -31,6 +32,11 @@ const effectClass = computed(() => {
 </script>
 
 <style>
+.character {
+    max-width: 100vw; /* 確保圖片不超出視窗寬度 */
+    object-fit: contain; /* 適應圖片內容，保留透明部分 */
+}
+
 @keyframes jump {
     0%, 100% { transform: translate(-50%, -50%) scale(var(--scale, 1)); }
     25% { transform: translate(-50%, calc(-50% - 20px)) scale(var(--scale, 1)); }
