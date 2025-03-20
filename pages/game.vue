@@ -69,21 +69,17 @@ const handleBackgroundClick = (event) => {
   nextDialogue();
 };
 
-// 修正角色顯示邏輯
+// 修正角色顯示邏輯，支援多角色顯示
 const activeCharacters = computed(() => {
   let characters = sceneData.value.characters ? [...sceneData.value.characters] : [];
 
-  if (dialogue.value.character) {
-    const newCharacter = {
-      name: dialogue.value.character,
-      avatar: dialogue.value.avatar || "",
-      position: dialogue.value.position || { x: 50, y: 70 }
-    };
-
-    // 確保新角色不會重複加入
-    if (!characters.some(c => c.name === newCharacter.name)) {
-      characters.push(newCharacter);
-    }
+  if (Array.isArray(dialogue.value.avatars) && dialogue.value.avatars.length > 0) {
+    // 如果對話中有多個角色，則使用 avatars 陣列來顯示
+    characters = dialogue.value.avatars.map(avatar => ({
+      name: dialogue.value.character || "未知角色",
+      avatar: avatar.src,
+      position: avatar.position || { x: 50, y: 70 }
+    }));
   }
 
   return characters;

@@ -14,11 +14,37 @@
           "background": "/images/bg/clubroom.jpg",
           "dialogues": [
             { "character": "", "text": "(早稻前校園內)" },
-            { "character": "？？？", "avatar": "/images/chara/01.png", "position": { "x": 20, "y": 65, "effect": "jump" }, "text": "嗚呼呼！！！今天也很和平呢" },
-            { "character": "？？？", "avatar": "/images/chara/02.png", "position": { "x": 80, "y": 65 }, "text": "不和平的話才可怕呢" },
-            { "character": "？？？", "avatar": "/images/chara/01.png", "position": { "x": 20, "y": 65 }, "text": "耶比你好奇怪" },
-            { "character": "？？？", "avatar": "/images/chara/01.png", "position": { "x": 20, "y": 65 }, "text": "你身為偵探社的幹部 怎麼可以這麼沒有幹勁呢？" },
-            { "character": "耶比", "avatar": "/images/chara/02.png", "position": { "x": 80, "y": 65 }, "text": "工藤你才是 就算是偵探社 哪有人會整天期待有事發生啦" }
+            { "character": "工藤", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 20, "y": 60, "effect": "jump" } }], "text": "嗚呼呼！！！今天也很和平呢" },
+            { "character": "耶比", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 80, "y": 60 } }], "text": "不和平的話才可怕呢" },
+            { "character": "工藤", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 20, "y": 60 } }], "text": "耶比你好奇怪" },
+            { "character": "工藤", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 20, "y": 60 } }], "text": "你身為偵探社的幹部 怎麼可以這麼沒有幹勁呢？" },
+            { "character": "耶比", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 80, "y": 60 } }], "text": "工藤你才是 就算是偵探社 哪有人會整天期待有事發生啦" },
+            { "character": "工藤", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 20, "y": 60 } }], "text": "可是這樣就很無聊呀 來點事情給我玩玩嘛" },
+            { "character": "耶比", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 80, "y": 60 } }], "text": "真是受不了你" },
+            { "character": "耶比", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 80, "y": 60 } }], "text": "吶 我來社辦前有去學生會拿了一些委託信" },
+            { "character": "工藤", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 20, "y": 60 } }], "text": "有事情做了嗎！！！" },
+            { "character": "工藤", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 20, "y": 60 } }], "text": "快點端上來罷（大喜" },
+            { "character": "工藤", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 20, "y": 60 } }], "text": "什麼？這不都是一些雜事嗎？" },
+            { "character": "耶比", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 80, "y": 60 } }], "text": "我幫你看過了" },
+            { "character": "耶比", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 80, "y": 60 } }], "text": "這張是找貓咪，這張是幫忙學生法庭文書處理" },
+            { "character": "耶比", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 80, "y": 60 } }], "text": "至於這張是英語科的瑪麗老師要調查男朋友是否出軌的委託" },
+            { "character": "工藤", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 20, "y": 60 } }], "text": "不是，抓猴為什麼要找我們啦，去找真正的徵信社啦w" },
+            { "character": "工藤", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 20, "y": 60 } }], "text": "咦？這張是什麼？怎麼內文特別多" },
+            { "character": "耶比", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 80, "y": 60 } }], "text": "啊...那個我還沒看過欸" },
+            { "character": "耶比", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 80, "y": 60 } }], "text": "這是剛我離開辦公室前會長遞給我的 說是今天接到的急件" },
+            { "character": "工藤", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 20, "y": 60 } }], "text": "急件嗎？我來看看" },
+            { "character": "工藤", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 20, "y": 60 } }], "text": "「最近一星期內，校內發生多起學生個人物品失竊事件」" },
+            { "character": "耶比", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 80, "y": 60 } }], "text": "東西弄丟不是應該找學務處或報警嗎？" },
+            { "character": "工藤", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 20, "y": 60 } }], "text": "「然而多名丟失物品的學生皆來尋求學生會協助」" },
+            { "character": "工藤", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 20, "y": 60 } }], "text": "「且皆告知本會不願事情被聲張」" },
+            { "character": "工藤", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 20, "y": 60 } }], "text": "「故學生會將此陳情轉介至偵探部負責」" },
+            { "character": "工藤 && 耶比", "avatars": [
+              { "src": "/images/chara/01.png", "position": { "x": 20, "y": 60 } },
+              { "src": "/images/chara/02.png", "position": { "x": 80, "y": 60 } }
+            ], "text": "！！！？？？" },
+            { "character": "耶比", "avatars": [ { "src": "/images/chara/02.png", "position": { "x": 80, "y": 60 } }], "text": "這...這不就是" },
+            { "character": "工藤", "avatars": [ { "src": "/images/chara/01.png", "position": { "x": 80, "y": 60 } }], "text": "我們心心念念的 真正的偵探事件！！！" },
+            { "character": "耶比", "avatars": [ { "src": "/images/chara/02.png", "position": { "x": 80, "y": 60 } }], "text": "快點快點 我們東西收一收趕緊的前往學生會問個清楚吧" }
           ]
         }
       },
@@ -31,7 +57,7 @@
         "scene1": {
           "background": "/images/bg/school.jpg",
           "dialogues": [
-            { "character": "Guard", "avatar": "/images/chara/01.png", "position": { "x": 50, "y": 65 }, "text": "要打開這個保險箱，你需要輸入正確的密碼。" }
+            { "character": "Guard", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 50, "y": 65 } }], "text": "要打開這個保險箱，你需要輸入正確的密碼。" }
           ],
           "interactions": [
             {
@@ -60,7 +86,7 @@
         "scene1": {
           "background": "/images/bg/crossroad.jpg",
           "dialogues": [
-            { "character": "Bob", "avatar": "/images/chara/02.png", "position": { "x": 80, "y": 65 }, "text": "這裡有兩條路，我們該走哪邊？" }
+            { "character": "Bob", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 80, "y": 65 } }], "text": "這裡有兩條路，我們該走哪邊？" }
           ],
           "interactions": [
             {
@@ -95,7 +121,7 @@
         "scene1": {
           "background": "/images/bg/temple.jpg",
           "dialogues": [
-            { "character": "Mystic", "avatar": "/images/chara/mystic.png", "position": { "x": 50, "y": 65 }, "text": "你只有一次機會，選擇你的未來。" }
+            { "character": "Mystic", "avatars": [{ "src": "/images/chara/mystic.png", "position": { "x": 50, "y": 65 } }], "text": "你只有一次機會，選擇你的未來。" }
           ],
           "interactions": [
             {
