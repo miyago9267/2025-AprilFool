@@ -40,14 +40,15 @@ const route = useRoute();
 const router = useRouter();
 const { data: script } = await useFetch("/data/script.json");
 
-// 控制當前關卡及場景
-const currentLevel = ref(route.query.level || "level0");
-const currentScene = ref(route.query.scene || "scene1");
+import { useGameProgress } from "~/composables/useGameProgress";
+import { useUnlockLevels } from "~/composables/useUnlockLevels";
+import { InteractionInput, InteractionChoices } from "#components";
 
-// 控制當前對話狀態
+// 使用 useGameProgress 管理場景與對話
+const { currentScene, currentDialogue } = useGameProgress();
+const currentLevel = ref(route.query.level || "level0");
 const sceneData = computed(() => script.value?.levels?.[currentLevel.value]?.scenes?.[currentScene.value] ?? {});
-const dialogueIndex = ref(0);
-const dialogue = computed(() => sceneData.value.dialogues?.[dialogueIndex.value] ?? {});
+const dialogue = computed(() => sceneData.value.dialogues?.[currentDialogue.value] ?? {});
 const dialogueEnd = ref(false);
 const showInteractions = ref(false); // 控制互動內容的顯示
 
@@ -55,13 +56,7 @@ const showInteractions = ref(false); // 控制互動內容的顯示
 const showLog = ref(false);
 const logMessages = ref([]);
 
-// 寫入 LocalStorage 的已解鎖關卡
-const unlockedLevels = ref(JSON.parse(localStorage.getItem("unlockedLevels") || "[]"));
-
-// 更新已解鎖關卡
-const updateUnlockedLevels = () => {
-    unlockedLevels.value = JSON.parse(localStorage.getItem("unlockedLevels") || "[]");
-};
+// (已抽出解鎖關卡邏輯至 useUnlockLevels)
 
 // 使得全螢幕皆可點擊
 const handleBackgroundClick = (event) => {
@@ -98,54 +93,21 @@ const activeCharacters = computed(() => {
 const nextDialogue = () => {
   if (!sceneData.value.dialogues) return;
 
-  if (dialogueIndex.value < sceneData.value.dialogues.length - 1) {
+  if (currentDialogue.value < sceneData.value.dialogues.length - 1) {
     logMessages.value.push({ character: dialogue.value.character, text: dialogue.value.text });
-    dialogueIndex.value++;
+    currentDialogue.value++;
   } else {
     dialogueEnd.value = true;
-    const hasInteractions = sceneData.value.interactions && sceneData.value.interactions.length > 0;
-    if (hasInteractions) {
-      setTimeout(() => {
-        showInteractions.value = true;
-      }, 300);
+    if (sceneData.value.interactions?.length) {
+      setTimeout(() => { showInteractions.value = true; }, 300);
       return;
     }
-    unlockNextLevel();
-    setTimeout(() => {
-      router.push("/levels");
-    }, 500);
+    useUnlockLevels(currentLevel.value).unlockLevel(currentLevel.value);
+    setTimeout(() => { router.push("/levels"); }, 500);
   }
 };
 
-// 解鎖下一關
-const unlockNextLevel = () => {
-  if (!script.value || !script.value.levels) {
-    console.error("Script data is not loaded yet.");
-    return;
-  }
-
-  const storedLevels = localStorage.getItem("unlockedLevels");
-  let unlocked = storedLevels ? JSON.parse(storedLevels) : [];
-
-  // 確保當前關卡在 `unlockedLevels`
-  if (!unlocked.includes(currentLevel.value)) {
-    unlocked.push(currentLevel.value);
-  }
-
-  // 取得 `script.json` 內的 `unlocks` 陣列
-  const currentUnlocks = script.value.levels[currentLevel.value]?.unlocks || [];
-
-  // 解鎖指定的關卡
-  currentUnlocks.forEach(nextLevel => {
-    if (!unlocked.includes(nextLevel)) {
-      unlocked.push(nextLevel);
-    }
-  });
-
-  // 儲存到 LocalStorage
-  localStorage.setItem("unlockedLevels", JSON.stringify(unlocked));
-  unlockedLevels.value = [...unlocked]; // 讓 Vue 重新渲染
-};
+// (已抽出 unlockNextLevel 至 useUnlockLevels composable)
 
 const selectChoice = (nextScene) => {
   if (nextScene === "menu") {
@@ -188,41 +150,20 @@ const goBack = () => {
 // 使用 usePreload.ts
 const { loading, progress, preloadImages } = usePreload();
 
-// 取得場景圖片
-const getGameAssets = () => {
-  let assets = [];
-
-  if (sceneData.value.background) {
-    assets.push(sceneData.value.background);
-  }
-
-  if (sceneData.value.characters) {
-    sceneData.value.characters.forEach((character) => {
-      if (character.avatar) {
-        assets.push(character.avatar);
-      }
-    });
-  }
-  return assets;
-};
+// (已簡化預載入邏輯至 usePreload composable)
 
 
 onMounted(async () => {
-    window.addEventListener("storage", updateUnlockedLevels);
-    await preloadImages(getGameAssets());
+    await preloadImages([sceneData.value.background, ...((sceneData.value.characters || []).map(c => c.avatar))]);
 });
 
-onUnmounted(() => {
-    window.removeEventListener("storage", updateUnlockedLevels);
-});
-
-// 監聽 `route.query`，確保 `currentLevel` 和 `currentScene` 即時更新
+// 監聽 `route.query`，確保 `currentLevel`、`currentScene` 和對話狀態即時更新
 watchEffect(() => {
     currentLevel.value = route.query.level || "level0";
     currentScene.value = route.query.scene || "scene1";
-    dialogueIndex.value = 0;
+    currentDialogue.value = 0;
     dialogueEnd.value = false;
-    showInteractions.value = false; // 確保切換場景時隱藏互動內容
+    showInteractions.value = false;
 });
 
 </script>

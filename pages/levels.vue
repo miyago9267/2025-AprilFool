@@ -23,10 +23,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, computed } from "vue";
-import { useRouter } from "vue-router";
+import { ref, onMounted, onUnmounted, computed, watchEffect } from "vue";
+import { useRouter, useRoute } from "vue-router";
 
 const router = useRouter();
+const route = useRoute();
 const levelsContainer = ref(null);
 const isDragging = ref(false);
 const startX = ref(0);
@@ -34,17 +35,26 @@ const scrollLeft = ref(0);
 const levels = ref({});
 const unlockedLevels = ref([]);
 
+// 讀取解鎖關卡
 const loadUnlockedLevels = () => {
   const storedLevels = localStorage.getItem("unlockedLevels");
-  unlockedLevels.value = storedLevels ? JSON.parse(storedLevels) : ["level0"]; // 確保 level0 可進入
+  unlockedLevels.value = storedLevels ? JSON.parse(storedLevels) : ["level0"];
 };
 
-// 從 script.json 讀取關卡
+// 監聽 localStorage 變化，確保解鎖狀態即時更新
+const handleStorageChange = (event) => {
+  if (event.key === "unlockedLevels") {
+    loadUnlockedLevels();
+  }
+};
+
+// 讀取關卡數據
 const fetchLevels = async () => {
   try {
       const response = await fetch("/data/script.json");
       const scriptData = await response.json();
       levels.value = scriptData.levels || {};
+      loadUnlockedLevels(); // 確保載入關卡後同步解鎖狀態
   } catch (error) {
       console.error("載入關卡時發生錯誤：", error);
   }
@@ -53,11 +63,18 @@ const fetchLevels = async () => {
 onMounted(() => {
     fetchLevels();
     loadUnlockedLevels();
-    window.addEventListener("storage", loadUnlockedLevels);
+    window.addEventListener("storage", handleStorageChange);
 });
 
 onUnmounted(() => {
-    window.removeEventListener("storage", loadUnlockedLevels);
+    window.removeEventListener("storage", handleStorageChange);
+});
+
+// 監聽 `route`，當返回 `levels` 頁面時，確保 `unlockedLevels` 重新載入
+watchEffect(() => {
+  if (route.name === "levels") {
+    loadUnlockedLevels();
+  }
 });
 
 // 過濾出已解鎖的關卡

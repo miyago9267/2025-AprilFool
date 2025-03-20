@@ -3,7 +3,7 @@ import { ref } from "vue";
 export function usePreload() {
   const loading = ref(true);
   const progress = ref(0);
-  const fakeLoadingDelay = 3000; // 額外延遲 3 秒
+  const fakeLoadingDelay = 1300; // 額外延遲 1.3 秒
 
   // 自動載入 `/public/images/` 資料夾內所有圖片
   const imagesToPreload = ref<string[]>([]);

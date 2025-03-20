@@ -25,9 +25,11 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { useGameProgress } from "~/composables/useGameProgress";
 
 const router = useRouter();
 const showCredit = ref(false);
+const { currentScene, currentDialogue } = useGameProgress(); // 整合遊戲進度
 
 // 預加載素材
 const { loading, progress, preloadImages } = usePreload();
@@ -36,17 +38,32 @@ const isFirstLoad = ref(true);
 const imagesToPreload = ref([]);
 const imagePaths = import.meta.glob("/public/images/**/*.{jpg,jpeg,png,gif,webp}");
 
+// 初始化解鎖關卡與場景進度
+const initializeGameProgress = () => {
+  if (!localStorage.getItem("unlockedLevels")) {
+    localStorage.setItem("unlockedLevels", JSON.stringify(["level0"]));
+  }
+  if (!localStorage.getItem("currentScene")) {
+    localStorage.setItem("currentScene", "scene1");
+  }
+  if (!localStorage.getItem("currentDialogue")) {
+    localStorage.setItem("currentDialogue", "0");
+  }
+};
 
 const startGame = () => {
-  router.push("/levels");
+  router.push({ path: "/levels", query: { scene: currentScene.value, dialogue: currentDialogue.value } });
 };
 
 const resetProgress = () => {
-  localStorage.removeItem("unlockedLevels");
+  localStorage.setItem("unlockedLevels", JSON.stringify(["level0"]));
+  localStorage.setItem("currentScene", "scene1");
+  localStorage.setItem("currentDialogue", "0");
   router.go(0);
 };
 
 onMounted(async () => {
+  initializeGameProgress();
   await preloadImages();
 });
 </script>
