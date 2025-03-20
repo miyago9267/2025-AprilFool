@@ -17,7 +17,7 @@
     <button
       class="bg-white text-black px-8 py-4 rounded-lg shadow-lg hover:bg-gray-300 transition duration-300 ease-in-out transform hover:scale-105"
       @click="resetProgress">
-      重製進度
+      重置進度
     </button>
     <Credit :show="showCredit" @close="showCredit = false" />
   </div>
