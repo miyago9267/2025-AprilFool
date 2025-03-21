@@ -82,7 +82,7 @@ const getInteractionComponent = (interaction) => {
   switch (interaction.type) {
     case "input":
       return InteractionInput;
-    case "choices":
+    case "choice":
       return InteractionChoices;
     default:
       return "div";
@@ -121,7 +121,17 @@ const nextDialogue = () => {
     return;
   }
 
-  // 如果沒有互動或互動全部完成，進入下一個 scene 或章節結束
+  // 有定義 next scene 的話，跳去該 scene
+  const nextScene = sceneData.value.next;
+  if (nextScene) {
+    currentScene.value = nextScene;
+    currentDialogue.value = 0;
+    currentInteractionIndex.value = 0;
+    showInteractions.value = false;
+    return;
+  }
+
+  // 否則根據順序跳下一個 scene 或結束
   const sceneKeys = Object.keys(script.value.levels?.[currentLevel.value]?.scenes || {});
   const currentSceneIndex = sceneKeys.indexOf(currentScene.value);
 
@@ -136,11 +146,20 @@ const nextDialogue = () => {
 };
 
 // 處理互動成功
-const handleInteractionSuccess = () => {
+const handleInteractionSuccess = (result) => {
+  // 如果是選項互動且帶有 next scene，直接跳轉
+  if (typeof result === "string") {
+    currentScene.value = result;
+    currentDialogue.value = 0;
+    currentInteractionIndex.value = 0;
+    showInteractions.value = false;
+    return;
+  }
+
   currentInteractionIndex.value++;
   if (currentInteractionIndex.value >= interactions.value.length) {
     showInteractions.value = false;
-    nextDialogue(); // 進入下一 scene 或結束
+    nextDialogue(); // 若無指定 scene 則進入下一段
   }
 };
 
