@@ -108,21 +108,21 @@
           ]
         },
         "scene10": {
-          "background": "/images/bg/school.jpg",
+          "background": "/images/bg/clubroom.jpg",
           "dialogues": [
             { "character": "工藤彌什", "text": "還沒做好哦" }
           ],
           "next": "scene2"
         },
         "scene11": {
-          "background": "/images/bg/school.jpg",
+          "background": "/images/bg/clubroom.jpg",
           "dialogues": [
             { "character": "工藤彌什", "text": "還沒做好哦" }
           ],
           "next": "scene2"
         },
         "scene12": {
-          "background": "/images/bg/school.jpg",
+          "background": "/images/bg/clubroom.jpg",
           "dialogues": [
             { "character": "工藤彌什", "text": "還沒做好哦" }
           ],
@@ -132,7 +132,7 @@
           "background": "/images/bg/clubroom.jpg",
           "dialogues": [
             { "character": "水源米亞果", "text": "誒...？嗚耶耶..." },
-            { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }],"text": "你腦子有問題嗎？" }
+            { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }],"text": "你腦子有問題嗎？" },
             { "character": "你", "text": "呃...對不起" }
           ],
           "next": "scene2"
@@ -141,10 +141,10 @@
           "background": "/images/bg/school.jpg",
           "dialogues": [
             { "character": "工藤彌什", "text": "還沒做好哦，但這裡是往下一集" }
-          ]
+          ],
+          "unlocks": ["level2"]
         }
-      },
-      "unlocks": ["level2"]
+      }
     },
 
     "level2": {

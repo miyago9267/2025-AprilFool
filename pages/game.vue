@@ -59,7 +59,8 @@ const showInteractions = ref(false); // 控制互動內容的顯示
 const currentInteractionIndex = ref(0);
 const interactions = computed(() => sceneData.value.interactions || []);
 const currentInteraction = computed(() => interactions.value[currentInteractionIndex.value]);
-const nextLevel = (computed(() => script.value.levels?.[currentLevel.value]?.unlocks));
+const nextLevel = (computed(() => script.value.levels?.[currentLevel.value]?.scenes?.[currentScene.value]?.unlocks 
+  || script.value.levels?.[currentLevel.value]?.unlocks));
 
 // 控制對話Log
 const showLog = ref(false);
@@ -141,6 +142,14 @@ const nextDialogue = () => {
     currentInteractionIndex.value = 0;
     showInteractions.value = false;
   } else {
+    // ✅ 新增：如果該 scene 有 unlocks，存入 localStorage
+    const unlocks = sceneData.value.unlocks || [];
+    if (unlocks.length > 0) {
+      const stored = JSON.parse(localStorage.getItem("unlockedLevels") || "[]");
+      const merged = Array.from(new Set([...stored, ...unlocks]));
+      localStorage.setItem("unlockedLevels", JSON.stringify(merged));
+    }
+
     dialogueEnd.value = true;
   }
 };
