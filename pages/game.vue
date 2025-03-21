@@ -56,6 +56,9 @@ const sceneData = computed(() => script.value?.levels?.[currentLevel.value]?.sce
 const dialogue = computed(() => sceneData.value.dialogues?.[currentDialogue.value] ?? {});
 const dialogueEnd = ref(false); // 修正：預設為 false
 const showInteractions = ref(false); // 控制互動內容的顯示
+const currentInteractionIndex = ref(0);
+const interactions = computed(() => sceneData.value.interactions || []);
+const currentInteraction = computed(() => interactions.value[currentInteractionIndex.value]);
 const nextLevel = (computed(() => script.value.levels?.[currentLevel.value]?.unlocks));
 
 // 控制對話Log
@@ -73,6 +76,17 @@ const handleBackgroundClick = (event) => {
     }
   }
   nextDialogue();
+};
+
+const getInteractionComponent = (interaction) => {
+  switch (interaction.type) {
+    case "input":
+      return InteractionInput;
+    case "choices":
+      return InteractionChoices;
+    default:
+      return "div";
+  }
 };
 
 // 修正角色顯示邏輯，支援多角色顯示
@@ -98,20 +112,42 @@ const nextDialogue = () => {
   if (currentDialogue.value < sceneData.value.dialogues.length - 1) {
     logMessages.value.push({ character: dialogue.value.character, text: dialogue.value.text });
     currentDialogue.value++;
-  } else {
-    // 嘗試獲取當前關卡的所有場景
-    const sceneKeys = Object.keys(script.value.levels?.[currentLevel.value]?.scenes || {});
-    const currentSceneIndex = sceneKeys.indexOf(currentScene.value);
-
-    if (currentSceneIndex !== -1 && currentSceneIndex < sceneKeys.length - 1) {
-      // 如果還有下一個場景，切換到 `scene2` 並從第一句對話開始
-      currentScene.value = sceneKeys[currentSceneIndex + 1];
-      currentDialogue.value = 0;
-    } else {
-      // 沒有更多場景，才標記為章節結束
-      dialogueEnd.value = true;
-    }
+    return;
   }
+
+  // 所有對話跑完，準備顯示互動
+  if (interactions.value.length > 0 && currentInteractionIndex.value < interactions.value.length) {
+    showInteractions.value = true;
+    return;
+  }
+
+  // 如果沒有互動或互動全部完成，進入下一個 scene 或章節結束
+  const sceneKeys = Object.keys(script.value.levels?.[currentLevel.value]?.scenes || {});
+  const currentSceneIndex = sceneKeys.indexOf(currentScene.value);
+
+  if (currentSceneIndex !== -1 && currentSceneIndex < sceneKeys.length - 1) {
+    currentScene.value = sceneKeys[currentSceneIndex + 1];
+    currentDialogue.value = 0;
+    currentInteractionIndex.value = 0;
+    showInteractions.value = false;
+  } else {
+    dialogueEnd.value = true;
+  }
+};
+
+// 處理互動成功
+const handleInteractionSuccess = () => {
+  currentInteractionIndex.value++;
+  if (currentInteractionIndex.value >= interactions.value.length) {
+    showInteractions.value = false;
+    nextDialogue(); // 進入下一 scene 或結束
+  }
+};
+
+// 處理互動失敗（可選擇重試）
+const handleInteractionFailure = () => {
+  // 可擴充為提示錯誤或重試
+  console.log("互動失敗，請再試一次");
 };
 
 // 進入下一關（如果有）
@@ -125,6 +161,7 @@ const goNextLevel = () => {
 // 重新觀看本章
 const replayChapter = () => {
   currentDialogue.value = 0;
+  currentInteractionIndex.value = 0;
   dialogueEnd.value = false;
 };
 
@@ -148,8 +185,8 @@ watchEffect(() => {
     currentLevel.value = route.query.level || "level0";
     currentScene.value = route.query.scene || "scene1";
     currentDialogue.value = 0;
+    currentInteractionIndex.value = 0;
     dialogueEnd.value = false;
     showInteractions.value = false;
 });
-
 </script>
