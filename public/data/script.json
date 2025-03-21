@@ -62,25 +62,85 @@
       "name": "學生會的委託",
       "scenes": {
         "scene1": {
-          "background": "/images/bg/school.jpg",
+          "background": "/images/bg/clubroom.jpg",
           "dialogues": [
-            { "character": "Guard", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 50, "y": 65 } }], "text": "要打開這個保險箱，你需要輸入正確的密碼。" }
+            { "character": "你&工藤彌什&耶比大熊", "avatars": [
+              { "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } },
+              { "src": "/images/chara/02.png", "position": { "x": 70, "y": 60 } }
+            ], "text": "報告，打擾了" },
+            { "character": "學生會長", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "呀！這不是偵探社的各位嗎？你們來的正好" },
+            { "character": "學生會長", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "剛剛給耶比同學的委託，其中一個委託方正好在這裡" },
+            { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/05.png", "position": { "x": 60, "y": 60 } }], "text": "你們好，我是水源" },
+            { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/05.png", "position": { "x": 60, "y": 60 } }], "text": "剛剛聽會長說事情會由你們協助處理，請多多指教" },
+            { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "正好被害人就在現場，請問你現在方便我們先簡單做個調查嗎？" },
+            { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/05.png", "position": { "x": 60, "y": 60 } }], "text": "啊...沒有問題，現在正好有空" },
+            { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 70, "y": 60 } }], "text": "好的，那首先我們想先確認，我們在委託書裡只得知有東西被偷了" },
+            { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 70, "y": 60 } }], "text": "可以請教一下失竊的物品、失竊的位置以及大致的時間嗎？" },
+            { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/05.png", "position": { "x": 60, "y": 60 } }], "text": "呃呃呃...這個這個...嗚誒誒" },
+            { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "怎麼了？不方便公開透露嗎？那要不要用寫的" },
+            { "character": "你", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 50, "y": 60 } }], "text": "如果什麼都不講的話我們沒辦法幫上忙的哦" },
+            { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/05.png", "position": { "x": 60, "y": 60 } }], "text": "那個...我不見的是..." },
+            { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/05.png", "position": { "x": 60, "y": 60 } }], "text": "小黃本...（小聲）" },
+            { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 70, "y": 60 } }], "text": "那有什麼小ㄏ...唔唔唔唔" },
+            { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "那那那，大概在什麼時候、在哪裡遺失的呢？" },
+            { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/05.png", "position": { "x": 60, "y": 60 } }], "text": "大概在三天前，本來放在書包裡的，去上一堂美術課後就不見了" },
+            { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/05.png", "position": { "x": 60, "y": 60 } }], "text": "明明早上才從便利店領到包裹的..." },
+            { "character": "你", "text": "那麼，有留下什麼線索嗎？" }
+          ]
+        },
+        "scene2":{
+          "background": "/images/bg/clubroom.jpg",
+          "dialogues":[
+            { "character": "你", "text": "那麼，有留下什麼線索嗎？" }
           ],
           "interactions": [
             {
-              "type": "input",
-              "id": "gate-password",
-              "placeholder": "輸入密碼...",
-              "correctAnswer": "5678",
-              "onSuccess": "scene2",
-              "onFailure": "scene1"
+              "type": "choice",
+              "id": "question-choices",
+              "choices": [
+                { "text": "和怪盜XD有什麼關係？", "next": "scene10" },
+                { "text": "有沒有問問看誰最晚離開教室", "next": "scene11" },
+                { "text": "只不見了一本書而已嗎", "next": "scene12" },
+                { "text": "美女可以加你微信嗎", "next": "scene13" },
+                { "text": "沒有問題了", "next": "scene3" }
+              ]
             }
           ]
         },
-        "scene2": {
-          "background": "/images/bg/forest.jpg",
+        "scene10": {
+          "background": "/images/bg/school.jpg",
           "dialogues": [
-            { "character": "Alice", "text": "我們成功通過大門了！" }
+            { "character": "工藤彌什", "text": "還沒做好哦" }
+          ],
+          "next": "scene2"
+        },
+        "scene11": {
+          "background": "/images/bg/school.jpg",
+          "dialogues": [
+            { "character": "工藤彌什", "text": "還沒做好哦" }
+          ],
+          "next": "scene2"
+        },
+        "scene12": {
+          "background": "/images/bg/school.jpg",
+          "dialogues": [
+            { "character": "工藤彌什", "text": "還沒做好哦" }
+          ],
+          "next": "scene2"
+        },
+        "scene13": {
+          "background": "/images/bg/clubroom.jpg",
+          "dialogues": [
+            { "character": "水源米亞果", "text": "誒...？嗚耶耶..." },
+            { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }],"text": "你腦子有問題嗎？" }
+            { "character": "你", "text": "呃...對不起" }
+          ],
+          "next": "scene2"
+        },
+        "scene3": {
+          "background": "/images/bg/school.jpg",
+          "dialogues": [
+            { "character": "工藤彌什", "text": "還沒做好哦，但這裡是往下一集" }
           ]
         }
       },
