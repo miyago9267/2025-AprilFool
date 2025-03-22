@@ -7,6 +7,10 @@ export function useGameProgress() {
     return parseInt(localStorage.getItem("currentDialogue") || "0", 10);
   });
 
+  const readScenes = useState<string[]>("readScenes", () => {
+    return JSON.parse(localStorage.getItem("readScenes") || "[]");
+  });
+
   // 監聽變數變更時存入 LocalStorage
   watch(currentScene, (newScene) => {
     localStorage.setItem("currentScene", newScene);
@@ -16,5 +20,5 @@ export function useGameProgress() {
     localStorage.setItem("currentDialogue", newDialogue.toString());
   });
 
-  return { currentScene, currentDialogue };
+  return { currentScene, currentDialogue, readScenes };
 }

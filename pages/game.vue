@@ -50,7 +50,7 @@ import { useUnlockLevels } from "~/composables/useUnlockLevels";
 import { InteractionInput, InteractionChoices } from "#components";
 
 // 使用 useGameProgress 管理場景與對話
-const { currentScene, currentDialogue } = useGameProgress();
+const { currentScene, currentDialogue, readScenes } = useGameProgress();
 const currentLevel = ref(route.query.level || "level0");
 const sceneData = computed(() => script.value?.levels?.[currentLevel.value]?.scenes?.[currentScene.value] ?? {});
 const dialogue = computed(() => sceneData.value.dialogues?.[currentDialogue.value] ?? {});
@@ -125,6 +125,11 @@ const nextDialogue = () => {
   // 有定義 next scene 的話，跳去該 scene
   const nextScene = sceneData.value.next;
   if (nextScene) {
+    if (!readScenes.value.includes(currentScene.value)) {
+      readScenes.value.push(currentScene.value);
+      localStorage.setItem("readScenes", JSON.stringify(readScenes.value));
+    }
+
     currentScene.value = nextScene;
     currentDialogue.value = 0;
     currentInteractionIndex.value = 0;
@@ -137,6 +142,12 @@ const nextDialogue = () => {
   const currentSceneIndex = sceneKeys.indexOf(currentScene.value);
 
   if (currentSceneIndex !== -1 && currentSceneIndex < sceneKeys.length - 1) {
+    // ✅ 標記目前 scene 為已讀
+    if (!readScenes.value.includes(currentScene.value)) {
+      readScenes.value.push(currentScene.value);
+      localStorage.setItem("readScenes", JSON.stringify(readScenes.value));
+    }
+
     currentScene.value = sceneKeys[currentSceneIndex + 1];
     currentDialogue.value = 0;
     currentInteractionIndex.value = 0;

@@ -102,7 +102,11 @@
                 { "text": "有沒有問問看誰最晚離開教室", "next": "scene11" },
                 { "text": "只不見了一本書而已嗎", "next": "scene12" },
                 { "text": "美女可以加你微信嗎", "next": "scene13" },
-                { "text": "沒有問題了", "next": "scene3" }
+                {
+                  "text": "沒有問題了",
+                  "next": "scene3",
+                  "requires": ["scene10", "scene11", "scene12"]
+                }
               ]
             }
           ]
@@ -168,7 +172,7 @@
     },
 
     "level2": {
-      "name": "怪盜的挑釁",
+      "name": "校園大奔走",
       "scenes": {
         "scene1": {
           "background": "/images/bg/crossroad.jpg",
