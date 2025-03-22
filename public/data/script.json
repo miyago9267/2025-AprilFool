@@ -88,9 +88,9 @@
             { "character": "你", "text": "那麼，有留下什麼線索嗎？" }
           ]
         },
-        "scene2":{
+        "scene2": {
           "background": "/images/bg/clubroom.jpg",
-          "dialogues":[
+          "dialogues": [
             { "character": "你", "text": "那麼，有留下什麼線索嗎？" }
           ],
           "interactions": [
@@ -110,21 +110,41 @@
         "scene10": {
           "background": "/images/bg/clubroom.jpg",
           "dialogues": [
-            { "character": "工藤彌什", "text": "還沒做好哦" }
+            { "character": "你", "text": "確定兇手是怪盜XD了嗎？" },
+            { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "對耶！我記得報告書上面寫說，種種線索都指向怪盜XD，這是什麼意思" },
+            { "character": "水源米亞果", "text": "啊...是這樣的，我在我的書包裡撿到了這個" },
+            { "character": "", "text": "(展示怪盜明信片）" },
+            { "character": "學生會長", "text": "包含水源同學在內，所有物品失竊的學生都收到了這個" },
+            { "character": "學生會長", "text": "也因此才會得知東西不是弄丟，而是確實被偷走了" },
+            { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 70, "y": 60 } }], "text": "那個卡片能夠借給我們看看嗎？" },
+            { "character": "水源米亞果", "text": "啊...沒問題" }
           ],
           "next": "scene2"
         },
         "scene11": {
           "background": "/images/bg/clubroom.jpg",
           "dialogues": [
-            { "character": "工藤彌什", "text": "還沒做好哦" }
+            { "character": "你", "text": "你有問問看最後離開教室的人有沒有發現什麼線索嗎？" },
+            { "character": "水源米亞果", "text": "我有去問過了，但是好像我就最後離開教室的人..." },
+            { "character": "水源米亞果", "text": "而且我是上課鈴響才出發前往美術教室的" },
+            { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "意思是可能作案時間是整個美術課嗎" },
+            { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 70, "y": 60 } }], "text": "理論上只要調查有沒有學生在上課時間離開教室就可以縮小範圍了" },
+            { "character": "你", "text": "你忽略了作案者不是學生的可能性" },
+            { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 70, "y": 60 } }], "text": "對耶...那好像範圍還是很大..." }
           ],
           "next": "scene2"
         },
         "scene12": {
           "background": "/images/bg/clubroom.jpg",
           "dialogues": [
-            { "character": "工藤彌什", "text": "還沒做好哦" }
+            { "character": "你", "text": "不見的東西只有一本書嗎？" },
+            { "character": "水源米亞果", "text": "不只有一本，那個是三本為一套的系列" },
+            { "character": "水源米亞果", "text": "那個作者的作品超級棒的，是超甜的純愛喔" },
+            { "character": "水源米亞果", "text": "本來這是Comiket上的新刊，可是我沒有搶到首發" },
+            { "character": "水源米亞果", "text": "好不容易等到開放通販，我就趕緊下單了，結果剛拿到就不見了（大哭" },
+            { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "停停停，我們先找到東西再推坑啦" },
+            { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 70, "y": 60 } }], "text": "我們會幫你找到東西的" },
+            { "character": "水源米亞果", "text": "謝謝你們！！！（泣" }
           ],
           "next": "scene2"
         },
@@ -132,7 +152,7 @@
           "background": "/images/bg/clubroom.jpg",
           "dialogues": [
             { "character": "水源米亞果", "text": "誒...？嗚耶耶..." },
-            { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }],"text": "你腦子有問題嗎？" },
+            { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "你是白癡嗎？" },
             { "character": "你", "text": "呃...對不起" }
           ],
           "next": "scene2"
@@ -140,7 +160,7 @@
         "scene3": {
           "background": "/images/bg/school.jpg",
           "dialogues": [
-            { "character": "工藤彌什", "text": "還沒做好哦，但這裡是往下一集" }
+            { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "還沒做好哦，但這裡是往下一集" }
           ],
           "unlocks": ["level2"]
         }
