@@ -1,6 +1,10 @@
 export function useGameProgress() {
+  const currentLevel = useState<string>("currentLevel", () => {
+    return localStorage.getItem("currentLevel") || "level0";
+  });
+
   const currentScene = useState<string>("currentScene", () => {
-    return localStorage.getItem("currentScene") || "scene1";  // 從 LocalStorage 讀取場景
+    return localStorage.getItem("currentScene") || "scene1";
   });
 
   const currentDialogue = useState<number>("currentDialogue", () => {
@@ -11,7 +15,10 @@ export function useGameProgress() {
     return JSON.parse(localStorage.getItem("readScenes") || "[]");
   });
 
-  // 監聽變數變更時存入 LocalStorage
+  watch(currentLevel, (newLevel) => {
+    localStorage.setItem("currentLevel", newLevel);
+  });
+
   watch(currentScene, (newScene) => {
     localStorage.setItem("currentScene", newScene);
   });
@@ -20,5 +27,13 @@ export function useGameProgress() {
     localStorage.setItem("currentDialogue", newDialogue.toString());
   });
 
-  return { currentScene, currentDialogue, readScenes };
+  function markSceneAsRead(level: string, scene: string) {
+    const key = `${level}:${scene}`;
+    if (!readScenes.value.includes(key)) {
+      readScenes.value.push(key);
+      localStorage.setItem("readScenes", JSON.stringify(readScenes.value));
+    }
+  }
+
+  return { currentLevel, currentScene, currentDialogue, readScenes, markSceneAsRead };
 }

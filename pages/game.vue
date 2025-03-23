@@ -17,7 +17,17 @@
                     :src="character.avatar"
                     :position="character.position" />
 
-    <DialogBox v-if="sceneData?.dialogues" :dialogue="dialogue" @next="nextDialogue" />
+    <InteractionItemShow
+      v-if="dialogue?.type === 'image'"
+      :src="dialogue.src"
+      :caption="dialogue.caption"
+    />
+
+    <DialogBox
+      v-else-if="sceneData?.dialogues"
+      :dialogue="dialogue"
+      @next="nextDialogue"
+    />
 
     <button class="absolute z-10 top-4 right-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
             @click="showLog = true">
@@ -41,9 +51,14 @@
 </template>
 
 <script setup>
+import { fetchLevelScript } from "~/composables/useLevelScript";
+import InteractionItemShow from "~/components/Interaction/ItemShow.vue";
+
 const route = useRoute();
-const router = useRouter();
-const { data: script } = await useFetch("/data/script.json");
+const currentLevel = ref(route.query.level || "level0");
+const router = useRouter(); // 新增這行
+
+const script = ref(null);
 
 import { useGameProgress } from "~/composables/useGameProgress";
 import { useUnlockLevels } from "~/composables/useUnlockLevels";
@@ -51,16 +66,14 @@ import { InteractionInput, InteractionChoices } from "#components";
 
 // 使用 useGameProgress 管理場景與對話
 const { currentScene, currentDialogue, readScenes } = useGameProgress();
-const currentLevel = ref(route.query.level || "level0");
-const sceneData = computed(() => script.value?.levels?.[currentLevel.value]?.scenes?.[currentScene.value] ?? {});
+const sceneData = computed(() => script.value?.scenes?.[currentScene.value] ?? {});
 const dialogue = computed(() => sceneData.value.dialogues?.[currentDialogue.value] ?? {});
 const dialogueEnd = ref(false); // 修正：預設為 false
 const showInteractions = ref(false); // 控制互動內容的顯示
 const currentInteractionIndex = ref(0);
 const interactions = computed(() => sceneData.value.interactions || []);
 const currentInteraction = computed(() => interactions.value[currentInteractionIndex.value]);
-const nextLevel = (computed(() => script.value.levels?.[currentLevel.value]?.scenes?.[currentScene.value]?.unlocks 
-  || script.value.levels?.[currentLevel.value]?.unlocks));
+const nextLevel = computed(() => sceneData.value.unlocks || script.value?.unlocks);
 
 // 控制對話Log
 const showLog = ref(false);
@@ -138,7 +151,7 @@ const nextDialogue = () => {
   }
 
   // 否則根據順序跳下一個 scene 或結束
-  const sceneKeys = Object.keys(script.value.levels?.[currentLevel.value]?.scenes || {});
+  const sceneKeys = Object.keys(script.value?.scenes || {});
   const currentSceneIndex = sceneKeys.indexOf(currentScene.value);
 
   if (currentSceneIndex !== -1 && currentSceneIndex < sceneKeys.length - 1) {
@@ -220,8 +233,10 @@ onMounted(async () => {
 });
 
 // 監聽 `route.query`，確保 `currentLevel`、`currentScene` 和對話狀態即時更新
-watchEffect(() => {
+watchEffect(async () => {
     currentLevel.value = route.query.level || "level0";
+    script.value = await fetchLevelScript(currentLevel.value);
+
     currentScene.value = route.query.scene || "scene1";
     currentDialogue.value = 0;
     currentInteractionIndex.value = 0;

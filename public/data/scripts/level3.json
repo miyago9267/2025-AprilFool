@@ -1,0 +1,28 @@
+{
+    "name": "越發頻繁的事件",
+    "scenes": {
+      "scene1": {
+        "background": "/images/bg/temple.jpg",
+        "dialogues": [
+          { "character": "Mystic", "avatars": [{ "src": "/images/chara/mystic.png", "position": { "x": 50, "y": 65 } }], "text": "你只有一次機會，選擇你的未來。" }
+        ],
+        "interactions": [
+          {
+            "type": "choice",
+            "id": "future-choice",
+            "choices": [
+              { "text": "選擇光明的道路", "next": "scene2" },
+              { "text": "選擇黑暗的道路", "next": "level4" }
+            ]
+          }
+        ]
+      },
+      "scene2": {
+        "background": "/images/bg/light-path.jpg",
+        "dialogues": [
+          { "character": "Mystic", "text": "你選擇了光明的道路，前方充滿機會。" }
+        ]
+      }
+    },
+    "unlocks": ["level4"]
+}

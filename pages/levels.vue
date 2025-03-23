@@ -32,6 +32,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted, computed, watchEffect } from "vue";
 import { useRouter, useRoute } from "vue-router";
+import { fetchLevelIndex } from "~/composables/useLevelScript";
 
 const router = useRouter();
 const route = useRoute();
@@ -67,12 +68,26 @@ const handleStorageChange = (event) => {
 // 讀取關卡數據
 const fetchLevels = async () => {
   try {
-      const response = await fetch("/data/script.json");
-      const scriptData = await response.json();
-      levels.value = scriptData.levels || {};
-      loadUnlockedLevels();
+    const levelIndex = await fetchLevelIndex();
+    const levelEntries = Object.entries(levelIndex);
+
+    const results = await Promise.all(
+      levelEntries.map(async ([key, { src }]) => {
+        try {
+          const res = await fetch(src);
+          const levelData = await res.json();
+          return [key, { ...levelData, id: key }];
+        } catch (e) {
+          console.warn(`無法載入 ${key} 的腳本：`, e);
+          return [key, null];
+        }
+      })
+    );
+
+    levels.value = Object.fromEntries(results.filter(([, v]) => v));
+    loadUnlockedLevels();
   } catch (error) {
-      console.error("載入關卡時發生錯誤：", error);
+    console.error("載入關卡時發生錯誤：", error);
   }
 };
 

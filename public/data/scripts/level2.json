@@ -1,0 +1,34 @@
+{
+    "name": "校園大奔走",
+    "scenes": {
+      "scene1": {
+        "background": "/images/bg/crossroad.jpg",
+        "dialogues": [
+          { "character": "Bob", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 70, "y": 65 } }], "text": "這裡有兩條路，我們該走哪邊？" }
+        ],
+        "interactions": [
+          {
+            "type": "choice",
+            "id": "path-choice",
+            "choices": [
+              { "text": "走左邊", "next": "scene2" },
+              { "text": "走右邊", "next": "scene3" }
+            ]
+          }
+        ]
+      },
+      "scene2": {
+        "background": "/images/bg/forest-path.jpg",
+        "dialogues": [
+          { "character": "Alice", "text": "這條路看起來不錯！" }
+        ]
+      },
+      "scene3": {
+        "background": "/images/bg/dark-path.jpg",
+        "dialogues": [
+          { "character": "Bob", "text": "這條路有點可怕……" }
+        ]
+      }
+    },
+    "unlocks": ["level3"]
+  }
