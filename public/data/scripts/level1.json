@@ -358,5 +358,6 @@
         ],
         "unlocks": ["level2"]
       }
-    }
+    },
+    "unlocks": ["level2"]
 }
