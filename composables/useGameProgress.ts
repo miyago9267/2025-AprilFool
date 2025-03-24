@@ -27,7 +27,7 @@ export function useGameProgress() {
     localStorage.setItem("currentDialogue", newDialogue.toString());
   });
 
-  function markSceneAsRead(level: string, scene: string) {
+  const markSceneAsRead = (level: string, scene: string) => {
     const key = `${level}:${scene}`;
     if (!readScenes.value.includes(key)) {
       readScenes.value.push(key);
@@ -35,5 +35,10 @@ export function useGameProgress() {
     }
   }
 
-  return { currentLevel, currentScene, currentDialogue, readScenes, markSceneAsRead };
+  const resetReadScenes = () => {
+    readScenes.value = [];
+    localStorage.setItem("readScenes", JSON.stringify(readScenes.value));
+  }
+
+  return { currentLevel, currentScene, currentDialogue, readScenes, markSceneAsRead, resetReadScenes };
 }

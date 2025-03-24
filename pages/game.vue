@@ -42,11 +42,13 @@
                :interaction="interaction"
                @interaction-success="handleInteractionSuccess"
                @interaction-failure="handleInteractionFailure" />
-    <ChapterEndDialog v-if="dialogueEnd"
+    <ChapterEndDialog
+          v-if="dialogueEnd"
           :nextLevel="nextLevel"
-          @replay="replayChapter"
-          @goLevels="goBack"
-          @nextLevel="goNextLevel" />
+          :dialogue-end="dialogueEnd"
+          @reset="resetScenes"
+          @backLevel="goBack"
+        />
   </div>
 </template>
 
@@ -64,7 +66,7 @@ import { useGameProgress } from "~/composables/useGameProgress";
 import { useUnlockLevels } from "~/composables/useUnlockLevels";
 
 // 使用 useGameProgress 管理場景與對話
-const { currentScene, currentDialogue, readScenes } = useGameProgress();
+const { currentScene, currentDialogue, readScenes, resetReadScenes } = useGameProgress();
 const { unlockLevel } = useUnlockLevels(); // 新增這行
 
 const sceneData = computed(() => script.value?.scenes?.[currentScene.value] ?? {});
@@ -197,43 +199,27 @@ const handleInteractionSuccess = (result) => {
   }
 };
 
-// 處理互動失敗（可選擇重試）
 const handleInteractionFailure = () => {
-  // 可擴充為提示錯誤或重試
   console.log("互動失敗，請再試一次");
 };
 
-// 進入下一關（如果有）
-const goNextLevel = () => {
-  unlockLevel(nextLevel.value);
-
-  if (nextLevel.value) {
-    dialogueEnd.value = false; // 隱藏對話結束畫面
-    router.push({ path: "/game", query: { level: nextLevel.value, scene: "scene1" } });
-  }
-};
-
-// 重新觀看本章
-const replayChapter = () => {
+const resetScenes = () => {
   currentDialogue.value = 0;
   currentInteractionIndex.value = 0;
   dialogueEnd.value = false;
-  unlockLevel(nextLevel.value);
-};
-
-// 回到關卡選單
-const goBack = () => {
+  resetReadScenes();
   if (dialogueEnd.value) {
     unlockLevel(nextLevel.value);
   }
-  dialogueEnd.value = false;
+};
+
+const goBack = () => {
+  resetScenes();
   router.push("/levels");
 };
 
 // 使用 usePreload.ts
 const { loading, progress, preloadImages } = usePreload();
-
-// (已簡化預載入邏輯至 usePreload composable)
 
 onMounted(async () => {
     await preloadImages([sceneData.value.background, ...((sceneData.value.characters || []).map(c => c.avatar))]);

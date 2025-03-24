@@ -4,14 +4,14 @@
             <h2 class="text-xl font-bold mb-4">章節完成！</h2>
             <p class="mb-6">請選擇下一步行動：</p>
             <div class="flex flex-col gap-4">
-                <button class="bg-blue-500 text-white py-2 rounded hover:bg-blue-600" @click="$emit('replay')">
+                <button class="bg-blue-500 text-white py-2 rounded hover:bg-blue-600" @click="$emit('reset')">
                     重新觀看
                 </button>
-                <button class="bg-gray-500 text-white py-2 rounded hover:bg-gray-600" @click="$emit('goLevels')">
+                <button class="bg-gray-500 text-white py-2 rounded hover:bg-gray-600" @click="$emit('backLevel')">
                     返回關卡選單
                 </button>
                 <button v-if="nextLevel" class="bg-green-500 text-white py-2 rounded hover:bg-green-600"
-                    @click="$emit('nextLevel')">
+                    @click="goNextLevel()">
                     進入下一關
                 </button>
             </div>
@@ -20,7 +20,14 @@
 </template>
 
 <script setup>
-defineProps({
-    nextLevel: String
-});
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+const emit = defineEmits(["reset"]);
+const props = defineProps({nextLevel: String});
+
+const goNextLevel = () => {
+    emit("reset");
+    router.push({ path: "/game", query: { level: props.nextLevel, scene: "scene1" } });
+};
 </script>
