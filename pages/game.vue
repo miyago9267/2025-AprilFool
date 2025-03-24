@@ -75,7 +75,7 @@ const showInteractions = ref(false); // 控制互動內容的顯示
 const currentInteractionIndex = ref(0);
 const interactions = computed(() => sceneData.value.interactions || []);
 const currentInteraction = computed(() => interactions.value[currentInteractionIndex.value]);
-const nextLevel = computed(() => sceneData.value.unlocks || script.value?.unlocks);
+const nextLevel = computed(() => sceneData.value?.unlocks || script.value?.unlocks);
 
 // 控制對話Log
 const showLog = ref(false);
@@ -170,7 +170,7 @@ const nextDialogue = () => {
     const unlocks = sceneData.value.unlocks || [];
     if (unlocks.length > 0) {
       for (const key of unlocks) {
-        unlockLevel([key]);
+        unlockLevel(key);
       }
     }
 
@@ -204,13 +204,7 @@ const handleInteractionFailure = () => {
 
 // 進入下一關（如果有）
 const goNextLevel = () => {
-  if (Array.isArray(nextLevel.value)) {
-    for (const key of nextLevel.value) {
-      unlockLevel([key]);
-    }
-  } else {
-    unlockLevel([nextLevel.value]);
-  }
+  unlockLevel(nextLevel.value);
 
   if (nextLevel.value) {
     dialogueEnd.value = false; // 隱藏對話結束畫面
@@ -223,13 +217,13 @@ const replayChapter = () => {
   currentDialogue.value = 0;
   currentInteractionIndex.value = 0;
   dialogueEnd.value = false;
-  unlockLevel([nextLevel.value]);
+  unlockLevel(nextLevel.value);
 };
 
 // 回到關卡選單
 const goBack = () => {
   dialogueEnd.value = false;
-  unlockLevel([nextLevel.value]);
+  unlockLevel(nextLevel.value);
   router.push("/levels");
 };
 

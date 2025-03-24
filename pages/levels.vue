@@ -55,6 +55,9 @@ window.addEventListener("resize", checkDevice);
 // 讀取解鎖關卡
 const loadUnlockedLevels = () => {
   const storedLevels = localStorage.getItem("unlockedLevels");
+  if (!storedLevels) {
+    localStorage.setItem("unlockedLevels", JSON.stringify(unlockedLevels.value));
+  }
   unlockedLevels.value = storedLevels ? JSON.parse(storedLevels) : ["level0"];
 };
 
