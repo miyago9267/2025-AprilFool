@@ -66,6 +66,8 @@ import { InteractionInput, InteractionChoices } from "#components";
 
 // 使用 useGameProgress 管理場景與對話
 const { currentScene, currentDialogue, readScenes } = useGameProgress();
+const { unlockLevel } = useUnlockLevels(); // 新增這行
+
 const sceneData = computed(() => script.value?.scenes?.[currentScene.value] ?? {});
 const dialogue = computed(() => sceneData.value.dialogues?.[currentDialogue.value] ?? {});
 const dialogueEnd = ref(false); // 修正：預設為 false
@@ -78,8 +80,6 @@ const nextLevel = computed(() => sceneData.value.unlocks || script.value?.unlock
 // 控制對話Log
 const showLog = ref(false);
 const logMessages = ref([]);
-
-// (已抽出解鎖關卡邏輯至 useUnlockLevels)
 
 // 使得全螢幕皆可點擊
 const handleBackgroundClick = (event) => {
@@ -166,12 +166,12 @@ const nextDialogue = () => {
     currentInteractionIndex.value = 0;
     showInteractions.value = false;
   } else {
-    // ✅ 新增：如果該 scene 有 unlocks，存入 localStorage
+    // ✅ 使用 composable 進行解鎖
     const unlocks = sceneData.value.unlocks || [];
     if (unlocks.length > 0) {
-      const stored = JSON.parse(localStorage.getItem("unlockedLevels") || "[]");
-      const merged = Array.from(new Set([...stored, ...unlocks]));
-      localStorage.setItem("unlockedLevels", JSON.stringify(merged));
+      for (const key of unlocks) {
+        unlockLevel([key]);
+      }
     }
 
     dialogueEnd.value = true;
@@ -204,6 +204,14 @@ const handleInteractionFailure = () => {
 
 // 進入下一關（如果有）
 const goNextLevel = () => {
+  if (Array.isArray(nextLevel.value)) {
+    for (const key of nextLevel.value) {
+      unlockLevel([key]);
+    }
+  } else {
+    unlockLevel([nextLevel.value]);
+  }
+
   if (nextLevel.value) {
     dialogueEnd.value = false; // 隱藏對話結束畫面
     router.push({ path: "/game", query: { level: nextLevel.value, scene: "scene1" } });
@@ -215,11 +223,13 @@ const replayChapter = () => {
   currentDialogue.value = 0;
   currentInteractionIndex.value = 0;
   dialogueEnd.value = false;
+  unlockLevel([nextLevel.value]);
 };
 
 // 回到關卡選單
 const goBack = () => {
-  dialogueEnd.value = false; // 確保不影響其他關卡的進入
+  dialogueEnd.value = false;
+  unlockLevel([nextLevel.value]);
   router.push("/levels");
 };
 

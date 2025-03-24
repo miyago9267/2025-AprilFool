@@ -1,7 +1,7 @@
 export function useUnlockLevels() {
   const unlockLevel = async (currentLevel: string) => {
     const storedLevels = localStorage.getItem("unlockedLevels");
-    let unlocked = storedLevels ? JSON.parse(storedLevels) : [];
+    let unlocked: string[] = Array.isArray(storedLevels) ? JSON.parse(storedLevels) : [];
 
     // 確保當前關卡被標記為解鎖
     if (!unlocked.includes(currentLevel)) {
@@ -16,7 +16,7 @@ export function useUnlockLevels() {
 
       // 確保 `currentUnlocks` 是陣列，然後進行解鎖
       if (Array.isArray(currentUnlocks)) {
-        currentUnlocks.forEach((level) => {
+        currentUnlocks.forEach((level: string) => {
           if (!unlocked.includes(level)) {
             unlocked.push(level);
           }
