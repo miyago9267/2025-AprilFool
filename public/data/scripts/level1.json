@@ -6,7 +6,7 @@
         "dialogues": [
           { "character": "你&工藤彌什&耶比大熊", "avatars": [
             { "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } },
-            { "src": "/images/chara/02.png", "position": { "x": 70, "y": 60 } }
+            { "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }
           ], "text": "報告，打擾了" },
           { "character": "學生會長", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 20, "y": 60 } }], "text": "呀！這不是偵探社的各位嗎？你們來的正好" },
           { "character": "學生會長", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 20, "y": 60 } }], "text": "剛剛給耶比同學的委託，其中一個委託方正好在這裡" },
@@ -317,6 +317,9 @@
       },
       "scene1A": {
         "background": "/images/bg/pool.jpg",
+        "dialogues": [
+          { "character":"", "text": "解開機關"}
+        ],
         "interactions": [
           {
             "type": "puzzle",
@@ -352,7 +355,8 @@
           { "character": "學生會長", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "有的，下一個受害者是2-B的瑞穗仙汝同學" },
           { "character": "學生會長", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "我有提前介紹過你們了，你們去找他並跟他說是我請你們過去他就知道了" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "明白了，那我們即刻就出發！" }
-        ]
+        ],
+        "unlocks": ["level2"]
       }
     }
 }

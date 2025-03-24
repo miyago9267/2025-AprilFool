@@ -6,9 +6,15 @@ export function useUnlockLevels() {
 
     // 確保當前關卡被標記為解鎖
 
-    for (const level of nextLevel) {
-      if (!unlocked.includes(level)) {
-        unlocked.push(level);
+    if (Array.isArray(nextLevel)) {
+      for (const level of nextLevel) {
+        if (!unlocked.includes(level)) {
+          unlocked.push(level);
+        }
+      }
+    } else {
+      if (!unlocked.includes(nextLevel)) {
+        unlocked.push(nextLevel);
       }
     }
 

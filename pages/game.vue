@@ -62,7 +62,6 @@ const script = ref(null);
 
 import { useGameProgress } from "~/composables/useGameProgress";
 import { useUnlockLevels } from "~/composables/useUnlockLevels";
-import { InteractionInput, InteractionChoices } from "#components";
 
 // 使用 useGameProgress 管理場景與對話
 const { currentScene, currentDialogue, readScenes } = useGameProgress();
@@ -95,9 +94,11 @@ const handleBackgroundClick = (event) => {
 const getInteractionComponent = (interaction) => {
   switch (interaction.type) {
     case "input":
-      return InteractionInput;
+      return defineAsyncComponent(() => import("~/components/Interaction/Input.vue"));
     case "choice":
-      return InteractionChoices;
+      return defineAsyncComponent(() => import("~/components/Interaction/Choices.vue"));
+    case "puzzle":
+      return defineAsyncComponent(() => import("~/components/Interaction/Puzzle.vue"));
     default:
       return "div";
   }
@@ -222,8 +223,10 @@ const replayChapter = () => {
 
 // 回到關卡選單
 const goBack = () => {
+  if (dialogueEnd.value) {
+    unlockLevel(nextLevel.value);
+  }
   dialogueEnd.value = false;
-  unlockLevel(nextLevel.value);
   router.push("/levels");
 };
 
