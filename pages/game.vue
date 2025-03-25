@@ -10,7 +10,6 @@
     <div class="absolute inset-0 bg-cover bg-center z-[-2]"
          :style="{ backgroundImage: `url(${sceneData?.background})` }"></div>
 
-    <!-- 修正角色顯示 -->
     <CharacterImage v-for="character in activeCharacters"
                     class="z-[-1]"
                     :key="character.name"
@@ -56,9 +55,9 @@
 import { fetchLevelScript } from "~/composables/useLevelScript";
 import InteractionItemShow from "~/components/Interaction/ItemShow.vue";
 
+const router = useRouter();
 const route = useRoute();
 const currentLevel = ref(route.query.level || "level0");
-const router = useRouter(); // 新增這行
 
 const script = ref(null);
 
@@ -67,12 +66,12 @@ import { useUnlockLevels } from "~/composables/useUnlockLevels";
 
 // 使用 useGameProgress 管理場景與對話
 const { currentScene, currentDialogue, readScenes, resetReadScenes } = useGameProgress();
-const { unlockLevel } = useUnlockLevels(); // 新增這行
+const { unlockLevel } = useUnlockLevels();
 
 const sceneData = computed(() => script.value?.scenes?.[currentScene.value] ?? {});
 const dialogue = computed(() => sceneData.value.dialogues?.[currentDialogue.value] ?? {});
-const dialogueEnd = ref(false); // 修正：預設為 false
-const showInteractions = ref(false); // 控制互動內容的顯示
+const dialogueEnd = ref(false);
+const showInteractions = ref(false);
 const currentInteractionIndex = ref(0);
 const interactions = computed(() => sceneData.value.interactions || []);
 const currentInteraction = computed(() => interactions.value[currentInteractionIndex.value]);
@@ -106,7 +105,7 @@ const getInteractionComponent = (interaction) => {
   }
 };
 
-// 修正角色顯示邏輯，支援多角色顯示
+// 多角色顯示
 const activeCharacters = computed(() => {
   let characters = sceneData.value.characters ? [...sceneData.value.characters] : [];
 
@@ -158,7 +157,6 @@ const nextDialogue = () => {
   const currentSceneIndex = sceneKeys.indexOf(currentScene.value);
 
   if (currentSceneIndex !== -1 && currentSceneIndex < sceneKeys.length - 1) {
-    // ✅ 標記目前 scene 為已讀
     if (!readScenes.value.includes(currentScene.value)) {
       readScenes.value.push(currentScene.value);
       localStorage.setItem("readScenes", JSON.stringify(readScenes.value));
@@ -169,7 +167,6 @@ const nextDialogue = () => {
     currentInteractionIndex.value = 0;
     showInteractions.value = false;
   } else {
-    // ✅ 使用 composable 進行解鎖
     const unlocks = sceneData.value.unlocks || [];
     if (unlocks.length > 0) {
       for (const key of unlocks) {
