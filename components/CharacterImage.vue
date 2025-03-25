@@ -1,11 +1,13 @@
 <template>
-    <img :src="src" class="character absolute"
+  <div class="absolute w-full h-full overflow-hidden">
+    <img :src="src" class="character absolute max-h-[80vh]"
          :class="effectClass"
          :style="{
             left: position?.x ? `${Math.min(90, Math.max(10, position.x))}%` : '50%',
             top: position?.y ? `${position.y}%` : '70%',
-            transform: 'translate(-50%, -50%) scale(' + ((position?.size || 1) * 0.25) + ')'
+            transform: 'translate(-50%, -50%) scale(' + (position?.size || 1) + ')'
          }">
+  </div>
 </template>
 
 <script setup>
@@ -31,10 +33,6 @@ const effectClass = computed(() => {
 </script>
 
 <style>
-.character {
-    position: absolute;
-}
-
 @keyframes jump {
     0%, 100% { transform: translate(-50%, -50%) scale(var(--scale, 1)); }
     25% { transform: translate(-50%, calc(-50% - 20px)) scale(var(--scale, 1)); }
