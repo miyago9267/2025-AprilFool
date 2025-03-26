@@ -402,7 +402,13 @@
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "拜託了，能不能給我們幾分鐘的時間找，找到了馬上離開" },
           { "character": "匠由拉面", "text": "（思考）" },
           { "character": "匠由拉面", "text": "那只給你們十分鐘，不然我要鎖門了" },
-          { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "感恩不盡，我們趕快行動吧" },
+          { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "感恩不盡，我們趕快行動吧" }
+        ],
+        "next": "scene7"
+      },
+      "scene7": {
+        "background": "/images/bg/sportroom.jpg",
+        "dialogues": [
           { "character": "", "text": "（你們進到了體育器材室裡面）" },
           { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "跳箱就是那個吧，我打開來看看喔！" },
           { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "嘿咻～" },

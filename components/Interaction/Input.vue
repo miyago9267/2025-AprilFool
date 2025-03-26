@@ -19,7 +19,15 @@ const userInput = ref("");
 const errorMessage = ref("");
 
 const checkAnswer = () => {
-  if (userInput.value === props.interaction.correctAnswer) {
+  if (Array.isArray(props.interaction.answers)) {
+    const matched = props.interaction.answers.find(ans => ans.value === userInput.value);
+    if (matched) {
+      emit("interaction-success", matched.next);
+    } else {
+      errorMessage.value = "密碼錯誤，請重試";
+      emit("interaction-failure");
+    }
+  } else if (userInput.value === props.interaction.correctAnswer) {
     emit("interaction-success", props.interaction.onSuccess);
   } else {
     errorMessage.value = "密碼錯誤，請重試";

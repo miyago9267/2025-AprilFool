@@ -54,7 +54,7 @@
           { "character": "耶比大熊", "text": "你沒事吧" },
           { "character": "工藤彌什", "text": "硬闖好像沒有用" }
         ],
-        "next": "scene1"
+        "next": "scene1-1"
       },
       "scene12": {
         "background": "/images/bg/sportroom.jpg",
@@ -69,7 +69,7 @@
           { "character": "瑞穗仙汝", "text": "搆是搆著了，但太小了爬不出去" },
           { "character": "你", "text": "看來還是太勉強了嗎" }
         ],
-        "next": "scene1"
+        "next": "scene1-1"
       },
       "scene13": {
         "background": "/images/bg/sportroom.jpg",
@@ -78,7 +78,7 @@
           { "character": "耶比大熊", "text": "可是我快餓死了，要死了啦要死了啦要死了啦" },
           { "character": "你", "text": "好啦好啦好啦很吵欸我想辦法啦" }
         ],
-        "next": "scene1"
+        "next": "scene1-1"
       },
       "scene2": {
         "background": "/images/bg/sportroom.jpg",
@@ -212,9 +212,9 @@
           { "character": "耶比大熊", "text": "如果密碼的格式一樣，是不是用一樣的方式破解就可以了呢？" },
           { "character": "你", "text": "應該沒錯，答案是？" }
         ],
-        "next": "scene6"
+        "next": "scene5-1"
       },
-      "scene6": {
+      "scene5-1": {
         "background": "/images/bg/library.jpg",
         "dialogues": [
           { "character": "你", "text": "應該沒錯，答案是？" }
@@ -224,11 +224,92 @@
             "type": "input",
             "id": "scene6-password",
             "placeholder": "怪盜XD設下的答案是？",
-            "correctAnswer": "answer{eating_like_an_asian}",
-            "onSuccess": "scene4",
-            "onFailure": "scene31"
+            "answers": [
+              { "value": "answer{eating_like_an_asian}", "next": "scene6" },
+              { "value": "kqfl{jfynsl_qnpj_fs_fxnfs}", "next": "scene51" },
+              { "value": "ZnN4Ymp3e2pmeW5zbF9xbnBqX2ZzX2Z4bmZzfQo=", "next": "scene52" }
+            ],
+            "onFailure": "scene53"
           }
         ]
+      },
+      "scene51": {
+        "background": "/images/bg/library.jpg",
+        "dialogues": [
+          { "character": "系統視窗", "text": "逼逼！答案錯誤！" },
+          { "character": "你", "text": "咦？不是這樣嗎？" },
+          { "character": "耶比大熊", "text": "看起來答案還是一樣是亂碼，是不是解錯了" },
+          { "character": "工藤彌什", "text": "應該沒錯，做了兩次base64解碼之後已經不是base64的樣子了" },
+          { "character": "工藤彌什", "text": "但是這確實不像是自然語言，會不會還經過了什麼加密呢？" },
+          { "character": "提示", "text": "shift 5" }
+        ],
+        "next": "scene5-1"
+      },
+      "scene52": {
+        "background": "/images/bg/library.jpg",
+        "dialogues": [
+          { "character": "系統視窗", "text": "逼逼！答案錯誤！" },
+          { "character": "你", "text": "咦？不是這樣嗎？" },
+          { "character": "耶比大熊", "text": "答案還是一樣是亂碼耶" },
+          { "character": "工藤彌什", "text": "做了一次base64解碼之後還是長得很編碼耶？難不成...？" },
+          { "character": "提示", "text": "沒有什麼東西是重開機解決不了的，如果不行，那就重開兩次" }
+        ],
+        "next": "scene5-1"
+      },
+      "scene53": {
+        "background": "/images/bg/library.jpg",
+        "dialogues": [
+          { "character": "系統視窗", "text": "逼逼！答案錯誤！" },
+          { "character": "你", "text": "咦？不是這樣嗎？" },
+          { "character": "工藤彌什", "text": "我們前一次是用base64解碼解開的吧？照理說流程應該會一樣的" },
+          { "character": "你", "text": "抱歉...我再試試看" }
+        ],
+        "next": "scene5-1"
+      },
+      "scene6": {
+        "background": "/images/bg/library.jpg",
+        "dialogues": [
+          { "character": "系統視窗", "text": "噔噔！恭喜答對啦" },
+          { "character": "系統視窗", "text": "嘿嘿嘿！不管你是什麼高手，真不愧能夠解開我設下的謎題呢" },
+          { "character": "系統視窗", "text": "我就告訴你吧！匠由拉面的東西藏在圖書館的櫃台底下啦" },
+          { "character": "系統視窗", "text": "就這樣啦！期待我們之後的對決" },
+          { "character": "工藤彌什", "text": "什麼？就這樣？" },
+          { "character": "耶比大熊", "text": "這樣就解開了嗎？但是他說之後的對決是什麼意思，該不會是之後還有其他謎團等著我們吧" },
+          { "character": "匠由拉面", "text": "既然他說東西在櫃台，正好我們就在圖書室，我們去櫃台問問看吧" }
+        ],
+        "next": "scene7"
+      },
+      "scene7": {
+        "background": "/images/bg/library.jpg",
+        "dialogues": [
+          { "character": "你", "text": "黒雨同學，方便請教一下嗎？" },
+          { "character": "黒雨筷子", "text": "咦？你們怎麼回來了，還沒有回去嗎？" },
+          { "character": "工藤彌什", "text": "我們是來詢問一下櫃台有沒有撿到匠由同學遺失的物品的" },
+          { "character": "黒雨筷子", "text": "我幫你查查看喔" },
+          { "character": "黒雨筷子", "text": "我們這邊最近都沒有撿到遺失物耶，你確定是掉在這裡了嗎？" },
+          { "character": "耶比大熊", "text": "可是線索告訴我們東西在圖書室的櫃台底下耶" },
+          { "character": "黒雨筷子", "text": "櫃台底下？" },
+          { "character": "黒雨筷子", "text": "咦？真的耶，這底下什麼時候有一個箱子了！之前都沒注意到" },
+          { "character": "匠由拉面", "text": "一定就是這個！上面也黏著怪盜XD的卡片，還寫著我的名字！" },
+          { "character": "黒雨筷子", "text": "咦咦咦？？？怪盜XD！？" },
+          { "character": "匠由拉面", "text": "（快速搶過箱子）謝謝你們，我真的找這個找得很辛苦，感激不盡" },
+          { "character": "你", "text": "話說，你到底弄丟了什麼啊？我們只知道你也丟了東西" },
+          { "character": "你", "text": "但打從一開始就沒問你被偷了什麼" },
+          { "character": "匠由拉面", "text": "呃...別問了，總之...呃，謝謝你們啦" },
+          { "character": "耶比大熊", "text": "有點可疑喔～借我看看" },
+          { "character": "匠由拉面", "text": "誒誒誒不要啊啊啊啊啊" },
+          { "character": "", "text": "（箱子在爭搶中掉在地上打開了）" },
+          { "character": "工藤彌什", "text": "呃...這個是...情趣娃娃嗎" },
+          { "character": "匠由拉面", "text": "對啦QQ我就是被偷走這個啦，不然你以為我為什麼委託秘密調查" },
+          { "character": "匠由拉面", "text": "你們滿意了吧，我的臉丟光光了啦，嗚啊啊啊" },
+          { "character": "", "text": "（匠由拉面哭著跑掉了）" },
+          { "character": "耶比大熊", "text": "呃...雖然不是故意的，但一瞬間感覺對他蠻抱歉的" },
+          { "character": "工藤彌什", "text": "你在幹什麼啦，既然找到了就不需要過問當事人的細節了啦" },
+          { "character": "黒雨筷子", "text": "那個...你們在聊怪盜XD的事情對吧" },
+          { "character": "黒雨筷子", "text": "我...我也被怪盜XD偷了東西..." },
+          { "character": "工藤彌什&&耶比大熊", "text": "咦？？？？" }
+        ],
+        "unlocks": ["level4"]
       }
     },
     "unlocks": ["level4"]
