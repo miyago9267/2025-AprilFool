@@ -2,7 +2,7 @@
     "name": "越發頻繁的事件",
     "scenes": {
       "scene1": {
-        "background": "/images/bg/crossroad.jpg",
+        "background": "/images/bg/sportroom.jpg",
         "dialogues": [
           { "character": "瑞穗仙汝", "text": "咦？我們現在是被困在裡面了嗎？" },
           { "character": "工藤彌什", "text": "看起來是的，往外喊也喊不到人" },
@@ -25,7 +25,7 @@
         "next": "scene1-1"
       },
       "scene1-1":{
-        "background": "/images/bg/crossroad.jpg",
+        "background": "/images/bg/sportroom.jpg",
         "dialogues": [
           { "character": "你", "text": "現在我們該怎麼做呢？" }
         ],
@@ -43,7 +43,7 @@
         ]
       },
       "scene11": {
-        "background": "/images/bg/crossroad.jpg",
+        "background": "/images/bg/sportroom.jpg",
         "dialogues": [
           { "character": "瑞穗仙汝", "text": "我嘗試能不能把門給揚了" },
           { "character": "工藤彌什", "text": "你行嗎？別衝動啊" },
@@ -57,7 +57,7 @@
         "next": "scene1"
       },
       "scene12": {
-        "background": "/images/bg/crossroad.jpg",
+        "background": "/images/bg/sportroom.jpg",
         "dialogues": [
           { "character": "你", "text": "上面有個通氣窗，不知道能不能爬上去" },
           { "character": "瑞穗仙汝", "text": "我爬看看，有人可以背我上去嗎" },
@@ -72,7 +72,7 @@
         "next": "scene1"
       },
       "scene13": {
-        "background": "/images/bg/crossroad.jpg",
+        "background": "/images/bg/sportroom.jpg",
         "dialogues": [
           { "character": "你", "text": "我們等救援吧，耶比不是說有在聯絡了嗎" },
           { "character": "耶比大熊", "text": "可是我快餓死了，要死了啦要死了啦要死了啦" },
@@ -81,7 +81,7 @@
         "next": "scene1"
       },
       "scene2": {
-        "background": "/images/bg/crossroad.jpg",
+        "background": "/images/bg/sportroom.jpg",
         "dialogues": [
           { "character": "你", "text": "瑞穗同學，你剛爬上去看得到外面嗎？" },
           { "character": "瑞穗仙汝", "text": "可以啊" },
@@ -91,7 +91,13 @@
           { "character": "瑞穗仙汝", "text": "隨便啦，嘿呦" },
           { "character": "瑞穗仙汝", "text": "咦？是剛才那個在門口說要鎖門的那個同學耶" },
           { "character": "瑞穗仙汝", "text": "嘿！同學！幫幫忙，我們被鎖在體育室裡面了！" },
-          { "character": "匠由拉面", "text": "啊！？你們怎麼還在，我去幫你們開門" },
+          { "character": "匠由拉面", "text": "啊！？你們怎麼還在，我去幫你們開門" }
+        ],
+        "next": "scene2-1"
+      },
+      "scene2-1": {
+        "background": "/images/bg/school_middle.jpg",
+        "dialogues":[
           { "character": "耶比大熊", "text": "還好有人來救我們，不然我真的以為我吃不了晚餐了" },
           { "character": "你", "text": "結果你只在乎晚餐嗎..." },
           { "character": "工藤彌什", "text": "謝謝你回來幫我們開門" },
@@ -125,7 +131,7 @@
         "next": "scene3"
       },
       "scene3": {
-        "background": "/images/bg/crossroad.jpg",
+        "background": "/images/bg/passway.jpg",
         "dialogues": [
           { "character": "匠由拉面", "text": "久等了，這就是我拿到的怪盜XD卡片" },
           { "character": "工藤彌什", "text": "咦？這次的卡片上面有字耶，是本來就有的嗎？" },
@@ -139,7 +145,7 @@
         "next": "scene3-1"
       },
       "scene3-1": {
-        "background": "/images/bg/crossroad.jpg",
+        "background": "/images/bg/passway.jpg",
         "dialogues": [
           { "character": "你", "text": "這段文字代表的是？" }
         ],
@@ -147,6 +153,7 @@
           {
             "type": "input",
             "id": "decode-url",
+            "placeholder": "這段文字的解答是？",
             "correctAnswer": "https://phantomthief.xd/file/secret.exe",
             "onSuccess": "scene4",
             "onFailure": "scene31"
@@ -154,12 +161,74 @@
         ]
       },
       "scene31":{
-        "background": "/images/bg/crossroad.jpg",
+        "background": "/images/bg/passway.jpg",
         "dialogues": [
           { "character": "工藤彌什", "text": "你不是說你知道的嗎==" },
           { "character": "你", "text": "對不起嘛...我再想想" }
         ],
         "next": "scene3-1"
+      },
+      "scene4": {
+        "background": "/images/bg/passway.jpg",
+        "dialogues": [
+          { "character": "工藤彌什", "text": "這只是base64編碼，既不是亂碼也不是密碼" },
+          { "character": "迷之音", "text": "（這個網址並不真的存在，我掰的，別想著要去查了）" },
+          { "character": "你", "text": "他給了一個網址，看副檔名是.exe，看來得用電腦操作了" },
+          { "character": "耶比大熊", "text": "那我們要去電腦教室借用一下電腦嗎？" },
+          { "character": "匠由拉面", "text": "電腦教室應該關門了吧，我記得資訊組的人比我們體育組的要早離開" },
+          { "character": "耶比大熊", "text": "那我們去圖書室用公用電腦吧" },
+          { "character": "耶比大熊", "text": "只是在那之前，我快餓扁了，讓我去買吃的" },
+          { "character": "工藤彌什", "text": "沒問題，那我們晚點在圖書室集合" }
+        ],
+        "next": "scene5"
+      },
+      "scene5": {
+        "background": "/images/bg/library.jpg",
+        "dialogues": [
+          { "character": "工藤彌什", "text": "應該連上這個網址載下檔案就行了吧？" },
+          { "character": "耶比大熊", "text": "不會中毒吧？" },
+          { "character": "工藤彌什", "text": "拜託不要，雖然電腦系統會自動還原，但如果搞到硬體層就不好了" },
+          { "character": "工藤彌什", "text": "載好了，檔案挺小的，要執行嗎？" },
+          { "character": "耶比大熊", "text": "要不要先掃個毒，我怕中毒，把電腦弄壞了我們賠不起的" },
+          { "character": "工藤彌什", "text": "這東西也才幾kB，不至於吧" },
+          { "character": "你", "text": "怪盜XD都會偷東西了，我認為不能夠這麼輕易相信" },
+          { "character": "工藤彌什", "text": "好吧，既然檔案很小，程式體量應該不大，那我用IDA逆向看看吧" },
+          { "character": "耶比大熊", "text": "出現我看不懂的領域了..." },
+          { "character": "匠由拉面", "text": "我可是從一開始就看不懂喔" },
+          { "character": "你", "text": "（這不是什麼值得驕傲的事情吧）" },
+          { "character": "工藤彌什", "text": "欸都...看起來這個程式的作用只是模擬netcat向伺服器發送請求，沒有什麼危險操作的樣子" },
+          { "character": "工藤彌什", "text": "既然沒有危險，那我來嘗試執行看看" },
+          { "character": "系統視窗", "text": "逼逼，我是怪盜XD，你們竟然找得到這裡，你們在找的是匠由拉面的東西吧" },
+          { "character": "耶比大熊", "text": "哇！果然是怪盜XD的訊息，看來真的是預謀犯案沒錯" },
+          { "character": "匠由拉面", "text": "他說的是我耶，我的東西真的被他偷走了" },
+          { "character": "工藤彌什", "text": "別急，我們看看他後面還有什麼內容" },
+          { "character": "系統視窗", "text": "如果你們可以再解答出接下來的謎題，我就會告訴你們我把東西藏在哪裡了" },
+          { "character": "系統視窗", "text": "Wm5ONFltcDNlMnBtZVc1emJGOXhibkJxWDJaelgyWjRibVp6ZlFvPQo=" },
+          { "character": "系統視窗", "text": "請輸出密碼：" },
+          { "character": "系統視窗", "text": "輸入錯誤！請按任意鍵繼續..." },
+          { "character": "工藤彌什", "text": "哎呀，手快多按了一次enter" },
+          { "character": "工藤彌什", "text": "看來剛剛他輸出的那串字串就是我們要破解的密碼了" },
+          { "character": "匠由拉面", "text": "什麼啊！這不是和那張卡片一樣在謎語人嗎？" },
+          { "character": "耶比大熊", "text": "如果密碼的格式一樣，是不是用一樣的方式破解就可以了呢？" },
+          { "character": "你", "text": "應該沒錯，答案是？" }
+        ],
+        "next": "scene6"
+      },
+      "scene6": {
+        "background": "/images/bg/library.jpg",
+        "dialogues": [
+          { "character": "你", "text": "應該沒錯，答案是？" }
+        ],
+        "interactions": [
+          {
+            "type": "input",
+            "id": "scene6-password",
+            "placeholder": "怪盜XD設下的答案是？",
+            "correctAnswer": "answer{eating_like_an_asian}",
+            "onSuccess": "scene4",
+            "onFailure": "scene31"
+          }
+        ]
       }
     },
     "unlocks": ["level4"]

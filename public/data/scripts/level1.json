@@ -2,42 +2,42 @@
     "name": "學生會的委託",
     "scenes": {
       "scene1": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
           { "character": "你&工藤彌什&耶比大熊", "avatars": [
             { "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } },
             { "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }
           ], "text": "報告，打擾了" },
-          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 20, "y": 60 } }], "text": "呀！這不是偵探社的各位嗎？你們來的正好" },
-          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 20, "y": 60 } }], "text": "剛剛給耶比同學的委託，其中一個委託方正好在這裡" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 60, "y": 60 } }], "text": "你們好，我是水源" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 60, "y": 60 } }], "text": "剛剛聽會長說事情會由你們協助處理，請多多指教" },
+          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "呀！這不是偵探社的各位嗎？你們來的正好" },
+          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "剛剛給耶比同學的委託，其中一個委託方正好在這裡" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "你們好，我是水源" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "剛剛聽會長說事情會由你們協助處理，請多多指教" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "正好被害人就在現場，請問你現在方便我們先簡單做個調查嗎？" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 60, "y": 60 } }], "text": "啊...沒有問題，現在正好有空" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "啊...沒有問題，現在正好有空" },
           { "character": "耶比大熊",
       "avatars": [
         { "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "好的，那首先我們想先確認，我們在委託書裡只得知有東西被偷了" },
           { "character": "耶比大熊",
       "avatars": [
         { "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "可以請教一下失竊的物品、失竊的位置以及大致的時間嗎？" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 60, "y": 60 } }], "text": "呃呃呃...這個這個...嗚誒誒" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "呃呃呃...這個這個...嗚誒誒" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "怎麼了？不方便公開透露嗎？那要不要用寫的" },
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "如果什麼都不講的話我們沒辦法幫上忙的哦" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 60, "y": 60 } }], "text": "那個...我不見的是..." },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 60, "y": 60 } }], "text": "小黃本...（小聲）" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "那個...我不見的是..." },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "小黃本...（小聲）" },
           { "character": "耶比大熊",
       "avatars": [
         { "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "那有什麼小ㄏ...唔唔唔唔" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "那那那，大概在什麼時候、在哪裡遺失的呢？" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 60, "y": 60 } }], "text": "大概在三天前，本來放在書包裡的，去上一堂美術課後就不見了" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 60, "y": 60 } }], "text": "明明早上才從便利店領到包裹的..." },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "那麼，有留下什麼線索嗎？" }
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "大概在三天前，本來放在書包裡的，去上一堂美術課後就不見了" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "明明早上才從便利店領到包裹的..." },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "那麼，有留下什麼線索嗎？" }
         ]
       },
       "scene2": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "那麼，要問什麼？" }
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "那麼，要問什麼？" }
         ],
         "interactions": [
           {
@@ -58,33 +58,33 @@
         ]
       },
       "scene11": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "確定兇手是怪盜XD了嗎？" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "確定兇手是怪盜XD了嗎？" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "對耶！我記得報告書上面寫說，種種線索都指向怪盜XD，這是什麼意思" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "啊...是這樣的，我在我的書包裡撿到了這個" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "啊...是這樣的，我在我的書包裡撿到了這個" },
           { "type": "image", "src": "/images/items/05.png", "caption": "這是怪盜XD的卡片" },
-          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 30, "y": 60 } }], "text": "包含水源同學在內，所有物品失竊的學生都收到了這個" },
-          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 30, "y": 60 } }], "text": "也因此才會得知東西不是弄丟，而是確實被偷走了" },
+          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "包含水源同學在內，所有物品失竊的學生都收到了這個" },
+          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "也因此才會得知東西不是弄丟，而是確實被偷走了" },
           { "character": "耶比大熊",
       "avatars": [
         { "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "那個卡片能夠借給我們看看嗎？" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "啊...沒問題" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "這張卡片上似乎有些奇怪的符號，值得再深入調查。" }
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "啊...沒問題" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "這張卡片上似乎有些奇怪的符號，值得再深入調查。" }
         ],
         "next": "scene2"
       },
       "scene12": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "你有問問看最後離開教室的人有沒有發現什麼線索嗎？" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "我有去問過了，但是好像我就最後離開教室的人..." },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "而且我是上課鈴響才出發前往美術教室的" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "你有問問看最後離開教室的人有沒有發現什麼線索嗎？" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "我有去問過了，但是好像我就最後離開教室的人..." },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "而且我是上課鈴響才出發前往美術教室的" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "意思是可能作案時間是整個美術課嗎" },
           { "character": "耶比大熊",
       "avatars": [
         { "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "理論上只要調查有沒有學生在上課時間離開教室就可以縮小範圍了" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "你忽略了作案者不是學生的可能性" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "你忽略了作案者不是學生的可能性" },
           { "character": "耶比大熊",
       "avatars": [
         { "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "對耶...那好像範圍還是很大..." }
@@ -92,65 +92,65 @@
         "next": "scene2"
       },
       "scene13": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "不見的東西只有一本書嗎？" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "不只有一本，那個是三本為一套的系列" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "那個作者的作品超級棒的，是超甜的純愛喔" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "本來這是Comiket上的新刊，可是我沒有搶到首發" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "好不容易等到開放通販，我就趕緊下單了，結果剛拿到就不見了（大哭" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "不見的東西只有一本書嗎？" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "不只有一本，那個是三本為一套的系列" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "那個作者的作品超級棒的，是超甜的純愛喔" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "本來這是Comiket上的新刊，可是我沒有搶到首發" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "好不容易等到開放通販，我就趕緊下單了，結果剛拿到就不見了（大哭" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "停停停，我們先找到東西再推坑啦" },
           { "character": "耶比大熊",
       "avatars": [
         { "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "我們會幫你找到東西的" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "謝謝你們！！！（泣" }
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "謝謝你們！！！（泣" }
         ],
         "next": "scene2"
       },
       "scene14": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "誒...？嗚耶耶..." },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "誒...？嗚耶耶..." },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "你是白癡嗎？" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "呃...對不起" }
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "呃...對不起" }
         ],
         "next": "scene2"
       },
       "scene3": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "現在線索有了，就是要調查怪盜XD是吧" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "關於怪盜XD，有流傳過什麼相關的事蹟嗎？" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "我也是第一次聽到這號人物" },
-          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 30, "y": 60 } }], "text": "沒有耶，不管是校內外，都沒有聽說過有相關的傳聞" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "我身邊的朋友也都覺得我被惡作劇了..." },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "我也是第一次聽到這號人物" },
+          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "沒有耶，不管是校內外，都沒有聽說過有相關的傳聞" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "我身邊的朋友也都覺得我被惡作劇了..." },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "但同樣的案件不只有一例，那同一個犯人的可能性相當大" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "嗯？等等，這個卡片，後面好像有東西喔" },
           { "character": "眾人", "text": "！！！" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "咦？可是我在拿到的時候就檢查過了" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "除了怪盜XD的字樣沒有看到其他東西呀" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "咦？可是我在拿到的時候就檢查過了" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "除了怪盜XD的字樣沒有看到其他東西呀" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "讓我看看" },
           { "character": "", "text": "(耶比將卡片上下端詳)" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "你對著窗外的陽光看看" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "誒？有了耶，難道這是透過光線才能看到的隱藏訊息嗎？" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "誒？有了耶，難道這是透過光線才能看到的隱藏訊息嗎？" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "看起來是的，會長你這裡有紙筆嗎，我想將內容抄下來" },
-          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 30, "y": 60 } }], "text": "有的，我這就拿來" },
+          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "有的，我這就拿來" },
           { "character": "", "text": "(你們將訊息抄在了紙上)" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "「從海豚的家出發，前往人類蛻皮之處，望其項背即為所求」" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "「從海豚的家出發，前往人類蛻皮之處，望其項背即為所求」" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "啥？打什麼啞謎，愚人節遊戲要變通靈遊戲了嗎" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "請不要隨便打破第四面牆謝謝" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "海豚的家是什麼？有水的地方嗎？" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "水源同學！你身上嗎？" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "誒...！？" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "想也知道不可能！！！" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "誒...！？" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "想也知道不可能！！！" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "如果「海豚的家」指的是水，那會是哪裡呢？" }
         ],
         "next": "scene4"
       },
       "scene4": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "「海豚的家」是哪裡？" }
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "「海豚的家」是哪裡？" }
         ],
         "interactions": [
           {
@@ -166,50 +166,50 @@
         ]
       },
       "scene21": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "我知道了！是不是水族館？" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "我知道了！是不是水族館？" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "可是那「人類蛻皮之處」要怎麼解釋？" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "好像接不起來的說" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "哎呀...那我再想想" }
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "哎呀...那我再想想" }
         ],
         "next": "scene4"
       },
       "scene22": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "我知道了！是不是海底撈？" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "我知道了！是不是海底撈？" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "現在才幾點你肚子餓了嗎？別鬧了啦" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "好像接不起來的說" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "哎呀...那我再想想" }
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "哎呀...那我再想想" }
         ],
         "next": "scene4"
       },
       "scene23": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "我知道了！是不是比奇堡？" },
-          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 30, "y": 60 } }], "text": "是誰住在深海的大鳳梨裡？" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "我知道了！是不是比奇堡？" },
+          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "是誰住在深海的大鳳梨裡？" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "海綿寶寶！" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "串台了串台了，認真推理啦" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "好啦...我再想想" }
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "好啦...我再想想" }
         ],
         "next": "scene4"
       },
       "scene5": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "我知道了！是不是指學校游泳池" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "我知道了！是不是指學校游泳池" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "哦？聽起來有點意思，那「人類蛻皮之處」要怎麼解釋" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "人類不需要蛻皮吧，又不是守宮" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "不對喔，人類也有需要蛻皮的時候" }
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "不對喔，人類也有需要蛻皮的時候" }
         ],
         "next": "scene6"
       },
       "scene6": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "什麼時候要蛻皮" }
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "什麼時候要蛻皮" }
         ],
         "interactions": [
           {
@@ -224,32 +224,32 @@
         ]
       },
       "scene31": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "換季的時候就會蛻皮了" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "換季的時候就會蛻皮了" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "換季不一定蛻皮吧，可能越穿越多呀" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "好像也對...我再想想好了" }
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "好像也對...我再想想好了" }
         ],
         "next": "scene6"
       },
       "scene32": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "你上床那個的時候不就會蛻皮了" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "你上床那個的時候不就會蛻皮了" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "我是穿衣派的" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "可以不要討論這個嗎？你們好噁心" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "嗚耶耶...顯然不是啦，誰會在游泳池交合" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "好像也對...我再想想好了" }
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "嗚耶耶...顯然不是啦，誰會在游泳池交合" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "好像也對...我再想想好了" }
         ],
         "next": "scene6"
       },
       "scene7": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "進游泳池不是要在更衣室換衣服嗎？那是不是就算一種蛻皮了" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "進游泳池不是要在更衣室換衣服嗎？那是不是就算一種蛻皮了" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "你說的有道理喔，那是不是代表那裡會有下一層線索呢" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "要不我們就去看看吧" },
-          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 30, "y": 60 } }], "text": "啊...我還有公務要處理，再麻煩你們陪水源同學去了" },
+          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "啊...我還有公務要處理，再麻煩你們陪水源同學去了" },
           { "character": "", "text": "(學生會長離開了隊伍)" }
         ],
         "next": "scene8"
@@ -266,7 +266,7 @@
       "scene9": {
         "background": "/images/bg/pool.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "「望其項背即為所求」是什麼意思" }
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "「望其項背即為所求」是什麼意思" }
         ],
         "interactions": [
           {
@@ -283,32 +283,32 @@
       "scene41": {
         "background": "/images/bg/pool.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "追到女同學後面拍肩膀！" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "追到女同學後面拍肩膀！" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "我可以報警把你抓走嗎" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "你這是性騷擾喔" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "誒..." }
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "誒..." }
         ],
         "next": "scene9"
       },
       "scene42": {
         "background": "/images/bg/pool.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "是在我們背後嗎？" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "是在我們背後嗎？" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "背後？" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "望其項背啊，不是指背後嗎？" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "望其項背啊，不是指背後嗎？" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "可是我們的後面沒有東西耶" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "看起來好像不是這樣..." }
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "看起來好像不是這樣..." }
         ],
         "next": "scene9"
       },
       "scene10": {
         "background": "/images/bg/pool.jpg",
         "dialogues": [
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "根據題意來看，我猜是在更衣室的後面" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "根據題意來看，我猜是在更衣室的後面" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "哦，打啞謎高手，不愧是國文頂標的學生" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "我們去看看吧" },
           { "character": "", "text": "(你們來到了更衣室的後面)" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "你們快看，這裡有一個箱子！" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "你們快看，這裡有一個箱子！" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "這裡一定藏著什麼東西，有可能就是丟失的物品" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "也難保是下一條線索，總之先打開看看吧" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "等等，這箱子上有機關，我們先嘗試解開看看" }
@@ -333,27 +333,27 @@
         "background": "/images/bg/pool.jpg",
         "dialogues": [
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "打開了！" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "哇！是我弄丟的本子，是哇茲奇老師熟悉的畫風" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "哇！是我弄丟的本子，是哇茲奇老師熟悉的畫風" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "難怪你會這麼寶貝，畫風真的挺好看" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "找到了就好，下次記得要好好收好喔" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 30, "y": 60 } }], "text": "貴重物品下次就別帶來學校了吧" },
-          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/22.png", "position": { "x": 30, "y": 60 } }], "text": "真是太好了，感激不盡！" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "貴重物品下次就別帶來學校了吧" },
+          { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 30, "y": 60 } }], "text": "真是太好了，感激不盡！" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "那我們回去和會長報備吧" }
         ],
         "next": "scene1C"
       },
       "scene1C": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/office.jpg",
         "dialogues": [
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "報告，打擾了！" },
-          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 30, "y": 60 } }], "text": "你們這麼快就回來了嗎？有沒有找到什麼線索" },
+          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "你們這麼快就回來了嗎？有沒有找到什麼線索" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "東西已經找到了，就藏到卡片裡提示的位置" },
-          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 30, "y": 60 } }], "text": "哦？那真是太好了，既然如此，案件就解決一件了" },
-          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 30, "y": 60 } }], "text": "果然交給你們是對的，真的有點能耐" },
+          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "哦？那真是太好了，既然如此，案件就解決一件了" },
+          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "果然交給你們是對的，真的有點能耐" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "如果那個怪盜XD真的只是偷了東西又藏起來的話，那搞不好有機會把大家被偷走的東西都找回來" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "是啊，會長，你有下一個失主的資訊嗎" },
-          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 30, "y": 60 } }], "text": "有的，下一個受害者是2-B的瑞穗仙汝同學" },
-          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 30, "y": 60 } }], "text": "我有提前介紹過你們了，你們去找他並跟他說是我請你們過去他就知道了" },
+          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "有的，下一個受害者是2-B的瑞穗仙汝同學" },
+          { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "我有提前介紹過你們了，你們去找他並跟他說是我請你們過去他就知道了" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "明白了，那我們即刻就出發！" }
         ],
         "unlocks": ["level2"]

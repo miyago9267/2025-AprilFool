@@ -2,7 +2,7 @@
     "name": "校園大奔走",
     "scenes": {
       "scene1": {
-        "background": "/images/bg/crossroad.jpg",
+        "background": "/images/bg/passway.jpg",
         "dialogues": [
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "沒想到怪盜XD就只是將東西藏在學校裡面呢，我還以為據為己有了" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "在這方面意外的很符合「怪盜」呢" },
@@ -51,7 +51,7 @@
         "next": "scene1-1"
       },
       "scene1-1": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/passway.jpg",
         "dialogues": [
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "有沒有什麼隱藏訊息呢？" }
         ],
@@ -70,7 +70,7 @@
         ]
       },
       "scene11": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/passway.jpg",
         "dialogues": [
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "把卡片拿去泡泡看水試試呢？" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "可以試試看，我把卡片拿去水槽看看" },
@@ -83,7 +83,7 @@
         "next": "scene1-1"
       },
       "scene12": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/passway.jpg",
         "dialogues": [
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "拿張紙來拓印看看有用嗎？" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "可是這張紙只是普通的卡紙，沒有任何突起或加工耶" },
@@ -96,7 +96,7 @@
         "next": "scene1-1"
       },
       "scene13": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/passway.jpg",
         "dialogues": [
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "要不拿火來烤烤看？不是有那種用橘子汁之類的方式隱藏訊息的方法嗎？" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "聽起來挺有趣的耶，我們來試試看吧" },
@@ -114,7 +114,7 @@
         "next": "scene1-1"
       },
       "scene14": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/passway.jpg",
         "dialogues": [
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "嗯？你烤過之後好像有個味道，卡片借我看看" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "有味道？什麼味道？我聞聞看" },
@@ -131,7 +131,7 @@
         "next": "scene2"
       },
       "scene15": {
-        "background": "/images/bg/clubroom.jpg",
+        "background": "/images/bg/passway.jpg",
         "dialogues": [
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "沒線索我那我們在調查什麼？" },
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "呃...可能這次是其他謎題之類的...嗎？" },
