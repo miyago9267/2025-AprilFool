@@ -194,6 +194,7 @@
         "scene4-1": {
             "background": "/images/bg/artclassroom.jpg",
             "dialogues": [
+                { "type": "image", "src": "/images/items/integral.png", "caption": "積分題" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "盒子的密碼是什麼？" }
             ],
             "interactions": [
