@@ -35,10 +35,15 @@ export function useGameProgress() {
     }
   }
 
+  const resetScenes = () => {
+    currentDialogue.value = 0;
+    resetReadScenes();
+  }
+
   const resetReadScenes = () => {
     readScenes.value = [];
     localStorage.setItem("readScenes", JSON.stringify(readScenes.value));
   }
 
-  return { currentLevel, currentScene, currentDialogue, readScenes, markSceneAsRead, resetReadScenes };
+  return { currentLevel, currentScene, currentDialogue, readScenes, markSceneAsRead, resetScenes, resetReadScenes };
 }

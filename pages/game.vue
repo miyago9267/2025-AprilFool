@@ -65,7 +65,7 @@ import { useGameProgress } from "~/composables/useGameProgress";
 import { useUnlockLevels } from "~/composables/useUnlockLevels";
 
 // 使用 useGameProgress 管理場景與對話
-const { currentScene, currentDialogue, readScenes, resetReadScenes } = useGameProgress();
+const { currentScene, currentDialogue, readScenes, resetReadScenes, markSceneAsRead } = useGameProgress();
 const { unlockLevel } = useUnlockLevels();
 
 const sceneData = computed(() => script.value?.scenes?.[currentScene.value] ?? {});
@@ -140,11 +140,7 @@ const nextDialogue = () => {
   // 有定義 next scene 的話，跳去該 scene
   const nextScene = sceneData.value.next;
   if (nextScene) {
-    if (!readScenes.value.includes(currentScene.value)) {
-      readScenes.value.push(currentScene.value);
-      localStorage.setItem("readScenes", JSON.stringify(readScenes.value));
-    }
-
+    markSceneAsRead(currentLevel.value, currentScene.value);
     currentScene.value = nextScene;
     currentDialogue.value = 0;
     currentInteractionIndex.value = 0;
@@ -157,11 +153,7 @@ const nextDialogue = () => {
   const currentSceneIndex = sceneKeys.indexOf(currentScene.value);
 
   if (currentSceneIndex !== -1 && currentSceneIndex < sceneKeys.length - 1) {
-    if (!readScenes.value.includes(currentScene.value)) {
-      readScenes.value.push(currentScene.value);
-      localStorage.setItem("readScenes", JSON.stringify(readScenes.value));
-    }
-
+    markSceneAsRead(currentLevel.value, currentScene.value);
     currentScene.value = sceneKeys[currentSceneIndex + 1];
     currentDialogue.value = 0;
     currentInteractionIndex.value = 0;
@@ -196,18 +188,12 @@ const handleInteractionSuccess = (result) => {
   }
 };
 
-const handleInteractionFailure = () => {
-  console.log("互動失敗，請再試一次");
-};
-
 const resetScenes = () => {
   currentDialogue.value = 0;
   currentInteractionIndex.value = 0;
   dialogueEnd.value = false;
   resetReadScenes();
-  if (dialogueEnd.value) {
-    unlockLevel(nextLevel.value);
-  }
+  unlockLevel(nextLevel.value);
 };
 
 const goBack = () => {
@@ -220,17 +206,11 @@ const { loading, progress, preloadImages } = usePreload();
 
 onMounted(async () => {
     await preloadImages([sceneData.value.background, ...((sceneData.value.characters || []).map(c => c.avatar))]);
+    currentLevel.value = route.query.level || "level0";
 });
 
-// 監聽 `route.query`，確保 `currentLevel`、`currentScene` 和對話狀態即時更新
+// 監聽 `route.query`，確保 `currentLevel` 即時更新
 watchEffect(async () => {
-    currentLevel.value = route.query.level || "level0";
     script.value = await fetchLevelScript(currentLevel.value);
-
-    currentScene.value = route.query.scene || "scene1";
-    currentDialogue.value = 0;
-    currentInteractionIndex.value = 0;
-    dialogueEnd.value = false;
-    showInteractions.value = false;
 });
 </script>

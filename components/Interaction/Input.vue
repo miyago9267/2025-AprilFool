@@ -21,14 +21,18 @@ const errorMessage = ref("");
 const checkAnswer = () => {
   if (Array.isArray(props.interaction.answers)) {
     const matched = props.interaction.answers.find(ans => ans.value === userInput.value);
+    const elseMatched = props.interaction.answers.find(ans => ans.value === "*");
     if (matched) {
       emit("interaction-success", matched.next);
-    } else {
-      errorMessage.value = "密碼錯誤，請重試";
-      emit("interaction-failure");
+    } else if (elseMatched) {
+      emit("interaction-success", elseMatched.next);
+    } else if (props.interaction.onFailure) {
+      emit("interaction-success", props.interaction.onFailure);
     }
   } else if (userInput.value === props.interaction.correctAnswer) {
     emit("interaction-success", props.interaction.onSuccess);
+  } else if (props.interaction.onFailure) {
+    emit("interaction-success", props.interaction.onFailure);
   } else {
     errorMessage.value = "密碼錯誤，請重試";
     emit("interaction-failure");
