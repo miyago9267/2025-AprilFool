@@ -294,8 +294,8 @@
       "scene4": {
         "background": "/images/bg/library.jpg",
         "dialogues": [
-          { "character": "", "text": "（一行人來到了圖書館）" },
-          { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "圖書館再怎麼說有點大耶，要從哪裡找起啊" },
+          { "character": "", "text": "（一行人來到了圖書室）" },
+          { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "圖書室再怎麼說有點大耶，要從哪裡找起啊" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "不如問問圖書管理員看看如何？" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "有道理，我們去櫃台問問" },
           { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "你們好呀，有什麼事情嗎" },
@@ -376,7 +376,7 @@
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "上面好像有一張紙，我拿下來看看" },
           { "type": "image", "src": "/images/items/05.png", "caption": "怪盜XD卡片" },
           { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "這個是！？又是怪盜XD的卡片" },
-          { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "果然沒錯，怪盜的提示果然指向圖書館" },
+          { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "果然沒錯，怪盜的提示果然指向圖書室" },
           { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "這次卡片後面有寫字了耶，借我看看喔" },
           { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "「吉良吉影躲在體育室裡」" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "啥？吉良吉影？那是什麼" },
@@ -392,7 +392,7 @@
         "background": "/images/bg/gym.jpg",
         "dialogues": [
           { "character": "", "text": "（一行人來到了體育館）" },
-          { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "好累...學生會、2-B教室、化學教室、圖書館、體育館，五個地方各自在相反方向，跑來跑去的累死了" },
+          { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "好累...學生會、2-B教室、化學教室、圖書室、體育館，五個地方各自在相反方向，跑來跑去的累死了" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "起碼不是漫無目的的亂跑就已經很不錯了" },
           { "character": "匠由拉面", "text": "喂！站住" },
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "咦？" },

@@ -1,7 +1,141 @@
 {
     "name": "真相",
     "scenes": {
-        
+        "scene1": {
+            "background": "/images/bg/library.jpg",
+            "dialogues": [
+                { "character": "旁白", "text": "（一行人來到圖書館）" },
+                { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/10.png", "position": { "x": 70, "y": 60 } }], "text": "呀！你們好呀，要借還書要快喔，明天圖書館就開始整修了" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "我們有事要問你" },
+                { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/10.png", "position": { "x": 70, "y": 60 } }], "text": "嗯？怎麼了？" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "別演了" },
+                { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/10.png", "position": { "x": 70, "y": 60 } }], "text": "啊...？" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "黒雨同學...或者是不是應該叫你...怪盜XD" },
+                { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/10.png", "position": { "x": 70, "y": 60 } }], "text": "......" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "是什麼時候發現的呢（笑" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "剛剛才發現，被你擺了一道呢" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "我比較意外的是他真的跟基德一樣一秒完成變身..." },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "不，我很早就發現了，從我們昨天跟著瑞穗同學來的時候，你就在注意我們了吧" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "什麼？你怎麼不早說" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "喂你不會是在馬後砲吧（小聲" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "哦？你說的話有什麼根據呢？" }
+            ],
+            "next": "scene2"
+        },
+        "scene2": {
+            "background": "/images/bg/library.jpg",
+            "dialogues": [
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "論破時間" }
+            ],
+            "interactions": [
+                {
+                    "type": "choice",
+                    "id": "reveal",
+                    "choices": [
+                        { "text": "圖書「館」", "next": "scene21" },
+                        { "text": "圖書委員", "next": "scene22" },
+                        { "text": "消失的委託清單", "next": "scene23" },
+                        { "text": "最不一樣的失竊物", "next": "scene24" },
+                        { "text": "跟蹤我們", "next": "scene25" },
+                        { "text": "你的目的究竟是什麼", "next": "scene3", "requires": ["scene21", "scene22", "scene23", "scene24", "scene25"] }
+                    ]
+                }
+            ]
+        },
+        "scene21": {
+            "background": "/images/bg/library.jpg",
+            "dialogues": [
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "從最一開始，我們大家的稱呼都是圖書「室」，但只有你是講圖書「館」呢" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "這也太沒有根據了吧，不就是不同稱呼而已，只差一個字而已耶" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "不只如此，在小程式那個謎題裡，程式輸出的文字，也是「圖書館」" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "你的說話習慣已經讓你露餡了" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "...果然有點意思呢，偵探部" }
+            ],
+            "next": "scene2"
+        },
+        "scene22": {
+            "background": "/images/bg/library.jpg",
+            "dialogues": [
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "你是圖書委員沒錯吧" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "是又怎樣" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "有太多的行動對身為圖書委員的你才方便實施" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "例如呢" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "例如藏瑞穗同學那關的卡片，身為圖書委員的你可以輕鬆的藏匿卡片及線索" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "以及匠由同學的玩具，怎麼可能真的放一個箱子在那裡沒人看到" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "那也是只有圖書委員的你能夠演得出來的戲" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "你說得完全沒錯，還有其他論點嗎" }
+            ],
+            "next": "scene2"
+        },
+        "scene23": {
+            "background": "/images/bg/library.jpg",
+            "dialogues": [
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "我們去向學生會問過了，在他們手中收到的清單裡，根本就沒有你" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "那又如何，有可能我只是沒有上報，或者是才剛被偷還沒機會把資料成上去罷了" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "..." }
+            ],
+            "next": "scene2"
+        },
+        "scene24": {
+            "background": "/images/bg/library.jpg",
+            "dialogues": [
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "仔細想想，其他人的被盯上並下壽的目標，有什麼共通點呢" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "是不是都是情色相關的物品，而且都是各自的隱私物" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "沒錯，然而你發現了只有我的戒指不是對吧" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "正確，讓我猜猜，你是根本不敢把你的隱私露出來對吧" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "那不是廢話嗎，怎麼可能敢啦" }
+            ],
+            "next": "scene22"
+        },
+        "scene25": {
+            "background": "/images/bg/library.jpg",
+            "dialogues": [
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "昨天下午，你發現我們已經將瑞穗同學的謎題追蹤到圖書館了，因此你偷偷跟蹤了我們對吧" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "那倒是沒有，我光明正大的走在你們後面，但你們根本沒人注意到我" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "呃...我倒是真的沒注意到你" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "我的存在感這麼低嗎..." },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "話題拉回來，如果我沒猜錯的話，昨天把我們關在體育器材室裡的人就是你" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "所以當你看到我們馬上就回到圖書館了，才會這麼的驚訝" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "哦？這都被看透了嗎" }
+            ],
+            "next": "scene2"
+        },
+        "scene3": {
+            "background": "/images/bg/library.jpg",
+            "dialogues": [
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "你到底有什麼目的，為什麼要不斷的偷東西又藏起來" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "根據日本刑法第235條，無論金額大小，竊盜並侵佔他人物品均構成竊盜罪喔" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "但我可沒有侵佔喔" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "而且除了口供以外，你們也沒有人有證據說明我侵害了其他人的民事權益" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "......" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "那你到底想要幹嘛嘛" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "我本來覺得你設計這麼多謎題很酷很帥" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "沒想到你本人是這個這麼輕浮的人" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "咦？為什麼突然變成那麼厭惡的表情" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "不是啦，我只是...想要和偵探社交流一下嘛" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "不要討厭我啦QQ" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "你這樣很難讓人不討厭誒..." },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "如果你這麼想要和我們交流，那為什麼不直接來挑戰我們" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "而是要牽連這麼多無辜的同學呢" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "那只是為了要吸引你們的注意..." },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "而且我有啊！我丟了好幾次挑戰狀給你們偵探社，但你們都不理我啊！" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "欸...？" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "我也沒收到啊" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "啊...我一直以為是騷擾信我就丟掉了，欸嘿（&lt; ゝ ω・）" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "哭啊，結果是你在搞，耶比大熊！！！！！！" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "對不起嘛QQ我真的以為那是騷擾信嘛" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "那麼...怪盜XD" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "不，黒雨同學" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "如果你對出這種謎題這麼有興趣，要不要加入偵探社呢？" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "咦？可以嗎？明明我搞了這麼事" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "我沒意見" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "我也沒意見" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "你不要嗎？那我們要走囉，然後順便把你的口供送給校方" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "（你掏出了正在錄音的手機）" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 70, "y": 60 } }], "text": "等下等下等下，我加入就是了嘛QQ 不要耍我啦" },
+                { "character": "旁白", "text": "（怪盜XD的事件，就在一片打鬧中，落下了帷幕）" }
+            ]
+        }
     },
-    "unlocks": ["level4"]
+    "unlocks": ["level8"]
 }

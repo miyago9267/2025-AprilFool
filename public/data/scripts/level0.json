@@ -4,8 +4,14 @@
       "scene1": {
         "background": "/images/bg/black.jpg",
         "dialogues": [
-          { "character": "", "text": "這是一場冒險這是一場腥風血雨的開始……" },
-          { "character": "", "text": "哇哈哈哈哈哈哈哈哈哈哈"}
+          { "character": "友情提醒：", "text": "本故事僅為虛構，如有雷同，那關我屁事" },
+          { "character": "友情提醒：", "text": "本故事為劇情向，解謎解不開可以找作者問答案" },
+          { "character": "友情提醒：", "text": "當然，要作弊也隨便你，請好好享受劇情即可" },
+          { "character": "友情提醒：", "text": "那麼，故事就開始吧" },
+          { "character": "旁白", "text": "某一日，私立早稻前學園偵探社如同日常一樣在社辦悠閒的活動" },
+          { "character": "旁白", "text": "殊不知" },
+          { "character": "怪盜XD", "text": "這是一場冒險這是一場腥風血雨的開始……" },
+          { "character": "怪盜XD", "text": "哇哈哈哈哈哈哈哈哈哈哈"}
         ],
         "next": "scene2"
       },

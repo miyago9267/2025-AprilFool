@@ -1,0 +1,12 @@
+{
+    "name": "END",
+    "scenes": {
+        "scene1": {
+        "background": "/images/bg/clubroom.jpg",
+        "dialogues": [
+            { "character": "", "text": "這是一場冒險這是一場腥風血雨的開始……" },
+            { "character": "", "text": "哇哈哈哈哈哈哈哈哈哈哈"}
+        ]
+      }
+    }
+}
