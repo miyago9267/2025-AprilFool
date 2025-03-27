@@ -1,7 +1,192 @@
 {
     "name": "偵探社的反擊",
     "scenes": {
-        
+        "scene1": {
+            "background": "/images/bg/office.jpg",
+            "dialogues": [
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "解鎖的密碼是多少？"}
+            ],
+            "interactions": [
+                {
+                    "type": "input",
+                    "id": "file_password",
+                    "placeholder": "提示可打「提示」",
+                    "answers": [
+                        { "value": "answer{4pRi1Fo01}", "next": "scene2"},
+                        { "value": "提示", "next": "scene11" },
+                        { "value": "提示2", "next": "scene12" },
+                        { "value": "提示3", "next": "scene13" }
+                    ],
+                    "onFailure": "scene14"
+                }
+            ]
+        },
+        "scene11": {
+            "background": "/images/bg/office.jpg",
+            "dialogues": [
+                { "character": "提示1", "text": "剛剛是不是有說有兩個人與我們不同次元" },
+                { "character": "提示1", "text": "如果還需要提示的話，請輸入「提示2」" }
+            ],
+            "next": "scene1"
+        },
+        "scene12": {
+            "background": "/images/bg/office.jpg",
+            "dialogues": [
+                { "character": "提示2", "text": "剛剛是不是有說有一個那兩個人除了在某個頁面以外沒有同時出現過" },
+                { "character": "提示2", "text": "如果還需要提示的話，請輸入「提示3」" }
+            ],
+            "next": "scene1"
+        },
+        "scene13": {
+            "background": "/images/bg/office.jpg",
+            "dialogues": [
+                { "character": "提示3", "text": "對著空白處長按五秒吧" }
+            ],
+            "next": "scene1"
+        },
+        "scene14": {
+            "background": "/images/bg/office.jpg",
+            "dialogues": [
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "你不是說你知道的嗎" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "別急嘛，只是輸入錯了而已" }
+            ],
+            "next": "scene1"
+        },
+        "scene2": {
+            "background": "/images/bg/office.jpg",
+            "dialogues": [
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "解開了！" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "這是什麼？和月暈船日記！？呃...暈水源同學！？" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！！！！！！！" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "我忘了我的手機還在投影啊" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "拜託你們，忘了他，千萬不要說出去" },
+                { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "我有你的把柄了，下次幫我代班" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "會長！！！！！！" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "抱歉啊和月同學，不小心看到你的秘密了" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "現在檔案沒事了，你先連個網把它備份起來吧" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "但是還不能放心，不知道怪盜XD有沒有搶先把檔案備份走了" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "說得對，如果檔案被複製過了那也還沒辦法解決問題，必須得找出怪盜XD的真實身分" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "現在是時候來推理怪盜XD的犯案手法，以及他的真實身分了" }
+            ],
+            "next": "scene3"
+        },
+        "scene3": {
+            "background": "/images/bg/office.jpg",
+            "dialogues": [
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "調查時間" }
+            ],
+            "interactions": [
+                {
+                    "type": "choice",
+                    "id": "investigate",
+                    "choices": [
+                        { "text": "和月同學的行跡", "next": "scene31" },
+                        { "text": "失竊物品的關聯性", "next": "scene32" },
+                        { "text": "整理出現過的謎題", "next": "scene33", "requires": ["scene32"] },
+                        { "text": "檔案最後的修改時間", "next": "scene34", "requires": ["scene31"] },
+                        { "text": "會長的不在場證明", "next": "scene35" },
+                        { "text": "我肚子餓了", "next": "scene36" },
+                        { "text": "委託人有誰", "next": "scene4", "requires": ["scene31", "scene32", "scene33", "scene34", "scene35"]  }
+                    ]
+                }
+            ]
+        },
+        "scene31": {
+            "background": "/images/bg/office.jpg",
+            "dialogues": [
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "和月同學，我想怪盜XD並不是真的準時在3點犯案的" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "而是在你最後一次寫完日記之後到現在這期間下手的" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "方便請教一下，你每天都會寫日記嗎" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "是的，我最後一次寫日記是在昨天" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "那再問一下，你今天的行程有去過哪些地方，與什麼樣的人接觸過呢？" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "呃...這個嘛，今天主要都是跟米亞果在一起，除了中間上了兩次廁所" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "啊...我中午有單獨去食堂買午餐，撞到到了一個抽菸的不良少女" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "下午上了體育課，有去體育館借器材" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "最後，因為聽說圖書館要整修，在來學生之前去圖書館還了書" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "好像就這樣" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "行程多到有點難以整理啊..." }
+            ],
+            "next": "scene3"
+        },
+        "scene32": {
+            "background": "/images/bg/office.jpg",
+            "dialogues": [
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "失竊的物品都有些什麼關聯性呢" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "我想想哦...小黃本、內衣、飛機杯娃娃、戒指、色色暈船日記" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "好像都是一些情色相關的物品耶" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "好害羞..." },
+                { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "戒指應該不算吧" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "嗯...或許這是怪盜XD的性癖嗎？" }
+            ],
+            "next": "scene3"
+        },
+        "scene33": {
+            "background": "/images/bg/office.jpg",
+            "dialogues": [
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "目前出現過哪些謎題呢？" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "我想想...猜燈謎、排序小遊戲、氨水隱藏訊息、動漫梗、base64編碼..." },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "還有符號學、塔羅牌、歷史、微積分，以及最新的credit通靈" },
+                { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "聽起來好像沒什麼關聯" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "（其實沒關聯很正常，因為真的是想到什麼用什麼）" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "嗯？你說了什麼？" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "沒事沒事沒事" }
+            ],
+            "next": "scene3"
+        },
+        "scene34": {
+            "background": "/images/bg/office.jpg",
+            "dialogues": [
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "和月同學，你的日記最後的修改時間有辦法看到嗎？" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "咦？我沒有注意過有沒有這個功能耶？我看看喔" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "啊...！最後的修改時間是下午" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "我最後一次寫應該是昨天晚上才對啊" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "那麼範圍縮小了，你還記得這個時間你在哪裡嗎" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "很遺憾，我那段時間都沒有看時鐘，我也不知道確切幾點..." },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "沒關係，起碼限縮在一個範圍內了" }
+            ],
+            "next": "scene3"
+        },
+        "scene35": {
+            "background": "/images/bg/office.jpg",
+            "dialogues": [
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "會長...你的不在場證明呢（盯" },
+                { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "為什麼要這麼執著我啦！！！" },
+                { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "喏，這是剛剛才蓋的公文戳章，上面還有時間呢，這個可不能竄改的" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "（盯" },
+                { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "真的跟我沒關係啦（泣" }
+            ],
+            "next": "scene3"
+        },
+        "scene36": {
+            "background": "/images/bg/office.jpg",
+            "dialogues": [
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "欸，我肚子餓了" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "我肚子也餓了，晚餐吃什麼" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "走啊去吃拉面" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "事情先解決完再去吃啦你們幾個貪吃鬼" }
+            ],
+            "next": "scene3"
+        },
+        "scene4": {
+            "background": "/images/bg/office.jpg",
+            "dialogues": [
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "話說，工藤，你昨天有跟會長彙報我們完成的案件了嗎" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "對耶，昨天急急忙忙的就忘記說了" },
+                { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "嗯？你們幫忙瑞穗同學找到東西了嗎？" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "不只呢，我們昨天還順路遇到另外兩個怪盜XD的受害者，還幫他們都找到丟失的物品了呢" },
+                { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "哦哦，原來如此，難怪你們昨天這麼晚才回來" },
+                { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "嗯？等等另外兩個？所以你們昨天處理了幾件委託" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "什麼意思？總共四件啊，加上今天五件" },
+                { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "不，可是我們這裡，包含今天和月同學的事件" },
+                { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "總共只統計了四起失竊事件" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "誒？？？那...怎麼會多一個人，是還沒有上報嗎？" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "水源同學、瑞穗同學、匠由同學、黒雨同學、和月同學" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "咦？黒雨同學？那是誰？" },
+                { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "我們學生會這邊並沒有收到這個人的委託啊" },
+                { "character": "眾人", "text": "...難道說？" }
+            ],
+            "unlocks": ["level7"]
+        }
     },
-    "unlocks": ["level4"]
+    "unlocks": ["level7"]
 }

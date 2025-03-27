@@ -27,10 +27,9 @@ export function useGameProgress() {
     localStorage.setItem("currentDialogue", newDialogue.toString());
   });
 
-  const markSceneAsRead = (level: string, scene: string) => {
-    const key = `${level}:${scene}`;
-    if (!readScenes.value.includes(key)) {
-      readScenes.value.push(key);
+  const markSceneAsRead = (scene: string) => {
+    if (!readScenes.value.includes(scene)) {
+      readScenes.value.push(scene);
       localStorage.setItem("readScenes", JSON.stringify(readScenes.value));
     }
   }

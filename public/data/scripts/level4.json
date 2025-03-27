@@ -237,7 +237,7 @@
             "next": "scene6"
         },
         "scene6": {
-            "background": "/images/bg/office.jpg",
+            "background": "/images/bg/office2.jpg",
             "dialogues": [
                 { "character": "", "text": "（你們回到了學生會辦公室）" },
                 { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "會長，你找我有什麼事情嗎？" },

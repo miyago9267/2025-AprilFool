@@ -140,7 +140,7 @@ const nextDialogue = () => {
   // 有定義 next scene 的話，跳去該 scene
   const nextScene = sceneData.value.next;
   if (nextScene) {
-    markSceneAsRead(currentLevel.value, currentScene.value);
+    markSceneAsRead(currentScene.value);
     currentScene.value = nextScene;
     currentDialogue.value = 0;
     currentInteractionIndex.value = 0;
@@ -153,7 +153,7 @@ const nextDialogue = () => {
   const currentSceneIndex = sceneKeys.indexOf(currentScene.value);
 
   if (currentSceneIndex !== -1 && currentSceneIndex < sceneKeys.length - 1) {
-    markSceneAsRead(currentLevel.value, currentScene.value);
+    markSceneAsRead( currentScene.value);
     currentScene.value = sceneKeys[currentSceneIndex + 1];
     currentDialogue.value = 0;
     currentInteractionIndex.value = 0;
@@ -192,8 +192,10 @@ const resetScenes = () => {
   currentDialogue.value = 0;
   currentInteractionIndex.value = 0;
   dialogueEnd.value = false;
+  if (dialogueEnd.value){
+    unlockLevel(nextLevel.value);
+  }
   resetReadScenes();
-  unlockLevel(nextLevel.value);
 };
 
 const goBack = () => {
@@ -206,11 +208,21 @@ const { loading, progress, preloadImages } = usePreload();
 
 onMounted(async () => {
     await preloadImages([sceneData.value.background, ...((sceneData.value.characters || []).map(c => c.avatar))]);
-    currentLevel.value = route.query.level || "level0";
+    if (route.query.level) {
+      currentLevel.value = route.query.level;
+      currentScene.value = route.query.scene || "scene1";
+      currentDialogue.value = 0;
+    }
 });
 
 // 監聽 `route.query`，確保 `currentLevel` 即時更新
 watchEffect(async () => {
+    currentLevel.value = route.query.level || "level0";
     script.value = await fetchLevelScript(currentLevel.value);
+    currentScene.value = "scene1";
+    currentDialogue.value = 0;
+    currentInteractionIndex.value = 0;
+    dialogueEnd.value = false;
+    showInteractions.value = false;
 });
 </script>

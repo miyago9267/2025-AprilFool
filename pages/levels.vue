@@ -164,7 +164,7 @@ const endTouch = () => {
 
 const selectLevel = (levelId) => {
   if (!unlockedLevels.value.includes(levelId)) return;
-  router.push({ path: "/game", query: { level: levelId, scene: "scene1" } });
+  router.push({ path: "/game", query: { level: levelId } });
 };
 
 const goBack = () => {

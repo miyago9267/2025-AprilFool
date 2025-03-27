@@ -12,7 +12,7 @@
           { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "剛剛給耶比同學的委託，其中一個委託方正好在這裡" },
           { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "你們好，我是水源" },
           { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "剛剛聽會長說事情會由你們協助處理，請多多指教" },
-          { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "正好被害人就在現場，請問你現在方便我們先簡單做個調查嗎？" },
+          { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "你好，敝姓工藤，正好被害人就在現場，請問你現在方便我們先簡單做個調查嗎？" },
           { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "啊...沒有問題，現在正好有空" },
           { "character": "耶比大熊",
       "avatars": [
@@ -27,7 +27,7 @@
           { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "小黃本...（小聲）" },
           { "character": "耶比大熊",
       "avatars": [
-        { "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "那有什麼小ㄏ...唔唔唔唔" },
+        { "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "那有什麼好不敢講的，不就只是小ㄏ...唔唔唔唔(被摀住嘴巴)" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "那那那，大概在什麼時候、在哪裡遺失的呢？" },
           { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "大概在三天前，本來放在書包裡的，去上一堂美術課後就不見了" },
           { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "明明早上才從便利店領到包裹的..." },
