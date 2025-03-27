@@ -138,6 +138,8 @@
           { "character": "匠由拉面", "avatars": [{ "src": "/images/chara/10.png", "position": { "x": 30, "y": 60 } }], "text": "對呀，寫了一串亂碼，不知道是什麼意思" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "我看看，哇，真的一團看不懂的字串" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "「aHR0cHM6Ly9waGFudG9tdGhpZWYueGQvZmlsZS9zZWNyZXQuZXhlCg==」" },
+          { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "為什麼後面有兩個等於" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "==" },
           { "character": "匠由拉面", "avatars": [{ "src": "/images/chara/10.png", "position": { "x": 30, "y": 60 } }], "text": "對吧，我看不懂這是什麼，所以就只好請學生會幫忙了" },
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "這個不是亂碼喔，這是有規律的" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "沒錯，這只是經過編碼後的密文而已" }
