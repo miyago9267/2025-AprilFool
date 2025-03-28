@@ -27,12 +27,30 @@ const effectClass = computed(() => {
         case "shake":
             return "animate-shake";
         default:
-            return '';
+            return props.position.effect;
     }
 });
 </script>
 
 <style>
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.fade-in {
+    animation: fade-in 0.5s ease-in;
+}
+
+@keyframes fade-out {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.fade-out {
+    animation: fade-out 0.5s ease-out;
+}
+
 @keyframes jump {
     0%, 100% { transform: translate(-50%, -50%) scale(var(--scale, 1)); }
     25% { transform: translate(-50%, calc(-50% - 20px)) scale(var(--scale, 1)); }

@@ -287,7 +287,8 @@
         "background": "/images/bg/library.jpg",
         "dialogues": [
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "黒雨同學，方便請教一下嗎？" },
-          { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "咦？你們怎麼回來了，還沒有回去嗎？" },
+          { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "咦！？嚇我一跳" },
+          { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "你們怎麼回來了，還沒有回去嗎？" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "我們是來詢問一下櫃台有沒有撿到匠由同學遺失的物品的" },
           { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "我幫你查查看喔" },
           { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "我們這邊最近都沒有撿到遺失物耶，你確定是掉在這裡了嗎？" },
