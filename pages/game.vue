@@ -1,20 +1,24 @@
 <template>
   <Loading v-if="loading" :show="loading" :progress="progress" />
   <div v-else class="visual-novel relative w-screen h-screen flex flex-col justify-end items-center">
-    <div class="absolute inset-0 z-5 cursor-pointer" @click="handleBackgroundClick"></div>
+    <div class="absolute inset-0 z-5 cursor-pointer select-none" @click="handleBackgroundClick"></div>
     <button class="absolute z-10 top-4 left-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
             @click="goBack">
       ⬅ 回到關卡選單
+    </button>
+    <button class="absolute z-10 top-4 right-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
+            @click="showLog = true">
+      查看對話記錄
     </button>
 
     <div class="absolute inset-0 bg-cover bg-center z-[-2]"
          :style="{ backgroundImage: `url(${sceneData?.background})` }"></div>
 
     <CharacterImage v-for="character in activeCharacters"
-                    class="z-[-1]"
-                    :key="character.name"
-                    :src="character.avatar"
-                    :position="character.position" />
+        class="z-[-1]"
+        :key="character.name"
+        :src="character.avatar"
+        :position="character.position" />
 
     <InteractionItemShow
       v-if="dialogue?.type === 'image'"
@@ -28,19 +32,13 @@
       @next="nextDialogue"
     />
 
-    <button class="absolute z-10 top-4 right-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
-            @click="showLog = true">
-      查看對話記錄
-    </button>
     <Log :show="showLog" :logMessages="logMessages" @close="showLog = false" />
 
     <component v-show="showInteractions"
-               v-for="interaction in sceneData?.interactions"
-               :key="interaction.id"
-               :is="getInteractionComponent(interaction)"
-               :interaction="interaction"
-               @interaction-success="handleInteractionSuccess"
-               @interaction-failure="handleInteractionFailure" />
+               :key="currentInteraction?.id"
+               :is="getInteractionComponent(currentInteraction)"
+               :interaction="currentInteraction"
+               @interaction-success="handleInteractionSuccess"/>
     <ChapterEndDialog
           v-if="dialogueEnd"
           :nextLevel="nextLevel"
@@ -52,29 +50,23 @@
 </template>
 
 <script setup>
-import { fetchLevelScript } from "~/composables/useLevelScript";
-import InteractionItemShow from "~/components/Interaction/ItemShow.vue";
 
 const router = useRouter();
 const route = useRoute();
-const currentLevel = ref(route.query.level || "level0");
 
 const script = ref(null);
 
-import { useGameProgress } from "~/composables/useGameProgress";
-import { useUnlockLevels } from "~/composables/useUnlockLevels";
-
 // 使用 useGameProgress 管理場景與對話
-const { currentScene, currentDialogue, readScenes, resetReadScenes, markSceneAsRead } = useGameProgress();
+const { currentLevel ,currentScene, currentDialogue, readScenes, resetReadScenes, markSceneAsRead } = useGameProgress();
 const { unlockLevel } = useUnlockLevels();
 
-const sceneData = computed(() => script.value?.scenes?.[currentScene.value] ?? {});
-const dialogue = computed(() => sceneData.value.dialogues?.[currentDialogue.value] ?? {});
 const dialogueEnd = ref(false);
 const showInteractions = ref(false);
-const currentInteractionIndex = ref(0);
-const interactions = computed(() => sceneData.value.interactions || []);
-const currentInteraction = computed(() => interactions.value[currentInteractionIndex.value]);
+const prevScene = ref("");
+
+const sceneData = computed(() => script.value?.scenes?.[currentScene.value] ?? {});
+const dialogue = computed(() => sceneData.value?.dialogues?.[currentDialogue.value] ?? {});
+const currentInteraction = computed(() => sceneData.value?.interactions?.[0] || {});
 const nextLevel = computed(() => sceneData.value?.unlocks || script.value?.unlocks);
 
 // 控制對話Log
@@ -132,18 +124,17 @@ const nextDialogue = () => {
   }
 
   // 所有對話跑完，準備顯示互動
-  if (interactions.value.length > 0 && currentInteractionIndex.value < interactions.value.length) {
+  if (currentInteraction.value?.type) {
     showInteractions.value = true;
     return;
   }
 
   // 有定義 next scene 的話，跳去該 scene
-  const nextScene = sceneData.value.next;
+  const nextScene = sceneData.value?.next;
   if (nextScene) {
     markSceneAsRead(currentScene.value);
     currentScene.value = nextScene;
     currentDialogue.value = 0;
-    currentInteractionIndex.value = 0;
     showInteractions.value = false;
     return;
   }
@@ -156,7 +147,6 @@ const nextDialogue = () => {
     markSceneAsRead( currentScene.value);
     currentScene.value = sceneKeys[currentSceneIndex + 1];
     currentDialogue.value = 0;
-    currentInteractionIndex.value = 0;
     showInteractions.value = false;
   } else {
     const unlocks = sceneData.value.unlocks || [];
@@ -176,21 +166,13 @@ const handleInteractionSuccess = (result) => {
   if (typeof result === "string") {
     currentScene.value = result;
     currentDialogue.value = 0;
-    currentInteractionIndex.value = 0;
     showInteractions.value = false;
     return;
-  }
-
-  currentInteractionIndex.value++;
-  if (currentInteractionIndex.value >= interactions.value.length) {
-    showInteractions.value = false;
-    nextDialogue(); // 若無指定 scene 則進入下一段
   }
 };
 
 const resetScenes = () => {
   currentDialogue.value = 0;
-  currentInteractionIndex.value = 0;
   dialogueEnd.value = false;
   if (dialogueEnd.value){
     unlockLevel(nextLevel.value);
@@ -210,18 +192,16 @@ onMounted(async () => {
     await preloadImages([sceneData.value.background, ...((sceneData.value.characters || []).map(c => c.avatar))]);
     if (route.query.level) {
       currentLevel.value = route.query.level;
-      currentScene.value = route.query.scene || "scene1";
       currentDialogue.value = 0;
     }
 });
 
 // 監聽 `route.query`，確保 `currentLevel` 即時更新
 watchEffect(async () => {
-    currentLevel.value = route.query.level || "level0";
+    currentLevel.value = route.query.level;
     script.value = await fetchLevelScript(currentLevel.value);
     currentScene.value = "scene1";
     currentDialogue.value = 0;
-    currentInteractionIndex.value = 0;
     dialogueEnd.value = false;
     showInteractions.value = false;
 });

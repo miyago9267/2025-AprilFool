@@ -32,7 +32,8 @@
           { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "大概在三天前，本來放在書包裡的，去上一堂美術課後就不見了" },
           { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 70, "y": 60 } }], "text": "明明早上才從便利店領到包裹的..." },
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "那麼，有留下什麼線索嗎？" }
-        ]
+        ],
+        "next": "scene2"
       },
       "scene2": {
         "background": "/images/bg/office.jpg",

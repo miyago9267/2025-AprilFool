@@ -16,6 +16,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
+const props = defineProps(["interaction"]);
 const emit = defineEmits(["interaction-success"])
 const tiles = ref<number[]>([])
 const size = 3
@@ -71,9 +72,9 @@ function move(index: number) {
       const tempIndex = tiles.value[index] ?? 0
       tiles.value[empty] = tempIndex
       tiles.value[index] = tempEmpty
-      
+
       if (isWin.value) {
-          emit("interaction-success")
+          emit("interaction-success", props.interaction.next)
       }
     }
 }
