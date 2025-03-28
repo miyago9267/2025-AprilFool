@@ -151,6 +151,7 @@ const handleInteractionSuccess = (result) => {
 
 const resetScenes = () => {
   currentDialogue.value = 0;
+  currentScene.value = "scene1";
   dialogueEnd.value = false;
   prevScene.value = {};
   if (dialogueEnd.value) {
@@ -182,7 +183,6 @@ onMounted(async () => {
   });
   if (route.query.level) {
     currentLevel.value = route.query.level;
-    currentDialogue.value = 0;
   } else {
     router.push("/game", { query: { level: currentLevel.value } });
   }
@@ -192,9 +192,5 @@ onMounted(async () => {
 watchEffect(async () => {
   currentLevel.value = route.query.level;
   script.value = await fetchLevelScript(currentLevel.value);
-  currentScene.value = "scene1";
-  currentDialogue.value = 0;
-  dialogueEnd.value = false;
-  showInteractions.value = false;
 });
 </script>

@@ -7,15 +7,15 @@
         ✖
         </button>
         <h2 class="text-2xl font-bold mb-4 text-center">製作名單</h2>
-        <p class="mb-4 text-sm text-gray-700">這款遊戲是我們的努力結晶，希望你喜歡！</p>
+        <p class="mb-4 text-sm text-gray-700"><span class="font-bold text-black text-sm">作者的廢話：</span><br>啦啦啦，雖然是每年例行的活動啦，每年真的都是趕在死線前掰出東西來呢。今年的故事就沒有去年那麼黑暗啦，好好享受愉快的推理劇情吧。</p>
         <ul class="list-disc pl-5">
           <li>遊戲設計：Miyago9267/Caryolite</li>
           <li>程式開發：Miyago9267</li>
           <li>美術設計：Caryolite</li>
           <li>劇情編寫：Miyago9267/Caryolite</li>
         </ul>
-        <span class="opacity-0 text-xs hover:opacity-100 transition-opacity duration-[10000ms]">
-            這是隱藏訊息，你找到它了！
+        <span class="opacity-0 text-xl hover:opacity-100 transition-opacity duration-[10000ms]">
+          answer{4pRi1Fo01}
         </span>
       </div>
     </div>

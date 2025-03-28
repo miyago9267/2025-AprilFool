@@ -1,3 +1,5 @@
+const { initialUnlockLevels } = useUnlockLevels();
+
 export function useGameProgress() {
   const currentLevel = useState<string>("currentLevel", () => {
     return localStorage.getItem("currentLevel") || "level0";
@@ -15,6 +17,10 @@ export function useGameProgress() {
     return JSON.parse(localStorage.getItem("readScenes") || "[]");
   });
 
+  const firstLoad = useState<boolean>("firstLoad", () => {
+    return localStorage.getItem("firstLoad") === null;
+  });
+
   watch(currentLevel, (newLevel) => {
     localStorage.setItem("currentLevel", newLevel);
   });
@@ -27,6 +33,15 @@ export function useGameProgress() {
     localStorage.setItem("currentDialogue", newDialogue.toString());
   });
 
+  watch(firstLoad, () => {
+    if (firstLoad.value) {
+      localStorage.setItem("firstLoad", "false");
+      initialUnlockLevels();
+      initialProgress();
+      firstLoad.value = false;
+    }
+  });
+
   const markSceneAsRead = (scene: string) => {
     if (!readScenes.value.includes(scene)) {
       readScenes.value.push(scene);
@@ -34,15 +49,19 @@ export function useGameProgress() {
     }
   }
 
-  const resetScenes = () => {
-    currentDialogue.value = 0;
-    resetReadScenes();
-  }
-
   const resetReadScenes = () => {
     readScenes.value = [];
     localStorage.setItem("readScenes", JSON.stringify(readScenes.value));
   }
 
-  return { currentLevel, currentScene, currentDialogue, readScenes, markSceneAsRead, resetScenes, resetReadScenes };
+  const initialProgress = () => {
+    if (!firstLoad.value) return;
+    currentLevel.value = "level0";
+    currentScene.value = "scene1";
+    currentDialogue.value = 0;
+    readScenes.value = [];
+    firstLoad.value = false;
+  }
+
+  return { firstLoad ,currentLevel, currentScene, currentDialogue, readScenes, markSceneAsRead, resetReadScenes, initialProgress  };
 }

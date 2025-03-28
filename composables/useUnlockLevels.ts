@@ -1,29 +1,20 @@
 export function useUnlockLevels() {
-  const unlockLevel = async (nextLevel: string[]) => {
+  const unlockLevel = async (nextLevel: string) => {
     const storedLevels = localStorage.getItem("unlockedLevels");
     let unlockedRaw = storedLevels ? JSON.parse(storedLevels) : [];
-    let unlocked = Array.from(new Set(unlockedRaw.flat()));
 
     // 確保當前關卡被標記為解鎖
+    unlockedRaw.push(nextLevel);
 
-    if (Array.isArray(nextLevel)) {
-      for (const level of nextLevel) {
-        if (!unlocked.includes(level)) {
-          unlocked.push(level);
-        }
-      }
-    } else {
-      if (!unlocked.includes(nextLevel)) {
-        unlocked.push(nextLevel);
-      }
-    }
-
-    try {
-      localStorage.setItem("unlockedLevels", JSON.stringify(unlocked));
-    } catch (error) {
-      console.error("讀取關卡數據失敗:", error);
-    }
+    // 去重
+    let unlocked = Array.from(new Set(unlockedRaw.flat()));
+    localStorage.setItem("unlockedLevels", JSON.stringify(unlocked));
   };
 
-  return { unlockLevel };
+  const initialUnlockLevels = async () => {
+    const initialLevels = ["level0"];
+    localStorage.setItem("unlockedLevels", JSON.stringify(initialLevels));
+  }
+
+  return { unlockLevel, initialUnlockLevels };
 }

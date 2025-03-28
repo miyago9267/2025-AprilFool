@@ -16,54 +16,45 @@
     </button>
     <button
       class="bg-white text-black px-8 py-4 rounded-lg shadow-lg hover:bg-gray-300 transition duration-300 ease-in-out transform hover:scale-105"
-      @click="resetProgress">
+      @click="showConfirm=!showConfirm">
       重置進度
     </button>
     <Credit :show="showCredit" @close="showCredit = false" />
+    <InteractionConfirm
+      :show="showConfirm"
+      title="確定要重置進度嗎？"
+      message="這將清除所有已解鎖的關卡與場景進度，無法復原。"
+      @confirm="showConfirm = false; resetProgress()"
+      @cancel="showConfirm = false"
+    />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
-import { useGameProgress } from "~/composables/useGameProgress";
 
 const router = useRouter();
 const showCredit = ref(false);
-const { currentScene, currentDialogue } = useGameProgress(); // 整合遊戲進度
+const showConfirm = ref(false);
+const { currentScene, currentDialogue, initialProgress, firstLoad } = useGameProgress();
+const { initialUnlockLevels } = useUnlockLevels();
 
 // 預加載素材
 const { loading, progress, preloadImages } = usePreload();
-const isFirstLoad = ref(true);
 
 const imagesToPreload = ref([]);
 const imagePaths = import.meta.glob("/public/images/**/*.{jpg,jpeg,png,gif,webp}");
 
-// 初始化解鎖關卡與場景進度
-const initializeGameProgress = () => {
-  if (!localStorage.getItem("unlockedLevels")) {
-    localStorage.setItem("unlockedLevels", JSON.stringify(["level0"]));
-  }
-  if (!localStorage.getItem("currentScene")) {
-    localStorage.setItem("currentScene", "scene1");
-  }
-  if (!localStorage.getItem("currentDialogue")) {
-    localStorage.setItem("currentDialogue", "0");
-  }
-};
-
 const startGame = () => {
-  router.push({ path: "/levels", query: { scene: currentScene.value, dialogue: currentDialogue.value } });
+  router.push({ path: "/levels"});
 };
 
 const resetProgress = () => {
-  localStorage.setItem("unlockedLevels", JSON.stringify(["level0"]));
-  localStorage.setItem("currentScene", "scene1");
-  localStorage.setItem("currentDialogue", "0");
+  firstLoad.value = true;
   router.go(0);
 };
 
 onMounted(async () => {
-  initializeGameProgress();
   await preloadImages();
 });
 </script>
