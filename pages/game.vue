@@ -14,7 +14,7 @@
     <div class="absolute inset-0 bg-cover bg-center z-[-2]"
       :style="{ backgroundImage: `url(${sceneData?.background})` }"></div>
 
-    <CharacterImage v-for="character in activeCharacters" class="z-[-1]" :key="character.name" :src="character.avatar"
+    <CharacterImage v-for="(character, index) in activeCharacters" class="z-[-1]" :key="`${character.name}-${index}`" :src="character.avatar"
       :position="character.position" />
 
     <InteractionItemShow v-if="dialogue?.type === 'image'" :src="dialogue.src" :caption="dialogue.caption" />
@@ -25,8 +25,8 @@
 
     <component v-show="showInteractions" :key="currentInteraction?.id" :is="getInteractionComponent(currentInteraction)"
       :interaction="currentInteraction" @interaction-success="handleInteractionSuccess" />
-    <ChapterEndDialog v-if="dialogueEnd" :nextLevel="nextLevel" :dialogue-end="dialogueEnd" @reset="resetScenes"
-      @backLevel="goBack" />
+
+    <ChapterEndDialog v-if="dialogueEnd" :nextLevel="nextLevel?.[0]"  @reset="resetScenes" @backLevel="goBack" />
   </div>
 </template>
 
@@ -154,6 +154,7 @@ const resetScenes = () => {
   currentScene.value = "scene1";
   dialogueEnd.value = false;
   prevScene.value = {};
+  logMessages.value = [];
   if (dialogueEnd.value) {
     unlockLevel(nextLevel.value);
   }
