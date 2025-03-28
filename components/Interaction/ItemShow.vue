@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed inset-0 flex items-center justify-center p-4">
+  <div class="fixed z-10 inset-0 flex items-center justify-center p-4">
     <div class="flex flex-col items-center border-2 border-gray-700 rounded-lg p-4 bg-black/40">
       <img
         :src="src"

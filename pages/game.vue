@@ -1,51 +1,32 @@
 <template>
   <Loading v-if="loading" :show="loading" :progress="progress" />
   <div v-else class="visual-novel relative w-screen h-screen flex flex-col justify-end items-center">
-    <div class="absolute inset-0 z-5 cursor-pointer select-none" @click="handleBackgroundClick"></div>
+    <div class="absolute inset-0 z-5 cursor-pointer select-none" @click="nextDialogue"></div>
     <button class="absolute z-10 top-4 left-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
-            @click="goBack">
+      @click="goBack">
       ⬅ 回到關卡選單
     </button>
     <button class="absolute z-10 top-4 right-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
-            @click="showLog = true">
+      @click="showLog = true">
       查看對話記錄
     </button>
 
     <div class="absolute inset-0 bg-cover bg-center z-[-2]"
-         :style="{ backgroundImage: `url(${sceneData?.background})` }"></div>
+      :style="{ backgroundImage: `url(${sceneData?.background})` }"></div>
 
-    <CharacterImage v-for="character in activeCharacters"
-        class="z-[-1]"
-        :key="character.name"
-        :src="character.avatar"
-        :position="character.position" />
+    <CharacterImage v-for="character in activeCharacters" class="z-[-1]" :key="character.name" :src="character.avatar"
+      :position="character.position" />
 
-    <InteractionItemShow
-      v-if="dialogue?.type === 'image'"
-      :src="dialogue.src"
-      :caption="dialogue.caption"
-    />
+    <InteractionItemShow v-if="dialogue?.type === 'image'" :src="dialogue.src" :caption="dialogue.caption" />
 
-    <DialogBox
-      v-else-if="sceneData?.dialogues"
-      :dialogue="dialogue"
-      @next="nextDialogue"
-    />
+    <DialogBox v-else-if="sceneData?.dialogues" :dialogue="dialogue" @next="nextDialogue" />
 
     <Log :show="showLog" :logMessages="logMessages" @close="showLog = false" />
 
-    <component v-show="showInteractions"
-               :key="currentInteraction?.id"
-               :is="getInteractionComponent(currentInteraction)"
-               :interaction="currentInteraction"
-               @interaction-success="handleInteractionSuccess"/>
-    <ChapterEndDialog
-          v-if="dialogueEnd"
-          :nextLevel="nextLevel"
-          :dialogue-end="dialogueEnd"
-          @reset="resetScenes"
-          @backLevel="goBack"
-        />
+    <component v-show="showInteractions" :key="currentInteraction?.id" :is="getInteractionComponent(currentInteraction)"
+      :interaction="currentInteraction" @interaction-success="handleInteractionSuccess" />
+    <ChapterEndDialog v-if="dialogueEnd" :nextLevel="nextLevel" :dialogue-end="dialogueEnd" @reset="resetScenes"
+      @backLevel="goBack" />
   </div>
 </template>
 
@@ -57,47 +38,18 @@ const route = useRoute();
 const script = ref(null);
 
 // 使用 useGameProgress 管理場景與對話
-const { currentLevel ,currentScene, currentDialogue, readScenes, resetReadScenes, markSceneAsRead } = useGameProgress();
+const { currentLevel, currentScene, currentDialogue, readScenes, resetReadScenes, markSceneAsRead } = useGameProgress();
 const { unlockLevel } = useUnlockLevels();
 
 const dialogueEnd = ref(false);
 const showInteractions = ref(false);
-const prevScene = ref("");
+const prevScene = ref({});
 
 const sceneData = computed(() => script.value?.scenes?.[currentScene.value] ?? {});
 const dialogue = computed(() => sceneData.value?.dialogues?.[currentDialogue.value] ?? {});
 const currentInteraction = computed(() => sceneData.value?.interactions?.[0] || {});
 const nextLevel = computed(() => sceneData.value?.unlocks || script.value?.unlocks);
 
-// 控制對話Log
-const showLog = ref(false);
-const logMessages = ref([]);
-
-// 使得全螢幕皆可點擊
-const handleBackgroundClick = (event) => {
-  const interactionElements = document.querySelectorAll(".interaction-box");
-  for (let element of interactionElements) {
-    if (element.contains(event.target)) {
-      return;
-    }
-  }
-  nextDialogue();
-};
-
-const getInteractionComponent = (interaction) => {
-  switch (interaction.type) {
-    case "input":
-      return defineAsyncComponent(() => import("~/components/Interaction/Input.vue"));
-    case "choice":
-      return defineAsyncComponent(() => import("~/components/Interaction/Choices.vue"));
-    case "puzzle":
-      return defineAsyncComponent(() => import("~/components/Interaction/Puzzle.vue"));
-    default:
-      return "div";
-  }
-};
-
-// 多角色顯示
 const activeCharacters = computed(() => {
   let characters = sceneData.value.characters ? [...sceneData.value.characters] : [];
 
@@ -113,10 +65,43 @@ const activeCharacters = computed(() => {
   return characters;
 });
 
+// 控制對話Log
+const showLog = ref(false);
+const logMessages = ref([]);
+
+const getInteractionComponent = (interaction) => {
+  switch (interaction.type) {
+    case "input":
+      return defineAsyncComponent(() => import("~/components/Interaction/Input.vue"));
+    case "choice":
+      return defineAsyncComponent(() => import("~/components/Interaction/Choices.vue"));
+    case "puzzle":
+      return defineAsyncComponent(() => import("~/components/Interaction/Puzzle.vue"));
+    default:
+      return "div";
+  }
+};
+
+// 上一句對話
+const prevDialogue = () => {
+  if (dialogueEnd.value) dialogueEnd.value = false;
+  if (currentDialogue.value > 0) {
+    currentDialogue.value--;
+    logMessages.value.pop();
+  } else {
+    if (prevScene.value.scene) {
+      currentScene.value = prevScene.value.scene;
+      currentDialogue.value = prevScene.value.dialogue;
+      prevScene.value = {};
+    }
+  }
+};
+
 // 下一句對話
 const nextDialogue = () => {
   if (!sceneData.value.dialogues) return;
 
+  // 跑對話陣列
   if (currentDialogue.value < sceneData.value.dialogues.length - 1) {
     logMessages.value.push({ character: dialogue.value.character, text: dialogue.value.text });
     currentDialogue.value++;
@@ -132,6 +117,10 @@ const nextDialogue = () => {
   // 有定義 next scene 的話，跳去該 scene
   const nextScene = sceneData.value?.next;
   if (nextScene) {
+    prevScene.value = {
+      scene: currentScene.value,
+      dialogue: currentDialogue.value
+    }
     markSceneAsRead(currentScene.value);
     currentScene.value = nextScene;
     currentDialogue.value = 0;
@@ -139,23 +128,12 @@ const nextDialogue = () => {
     return;
   }
 
-  // 否則根據順序跳下一個 scene 或結束
-  const sceneKeys = Object.keys(script.value?.scenes || {});
-  const currentSceneIndex = sceneKeys.indexOf(currentScene.value);
-
-  if (currentSceneIndex !== -1 && currentSceneIndex < sceneKeys.length - 1) {
-    markSceneAsRead( currentScene.value);
-    currentScene.value = sceneKeys[currentSceneIndex + 1];
-    currentDialogue.value = 0;
-    showInteractions.value = false;
-  } else {
-    const unlocks = sceneData.value.unlocks || [];
-    if (unlocks.length > 0) {
-      for (const key of unlocks) {
-        unlockLevel(key);
-      }
+  // 判斷還有沒有下一個scene
+  if (!sceneData.value?.next) {
+    const unlocks = sceneData.value?.unlocks || script.value?.unlocks || [];
+    for (const key of unlocks) {
+      unlockLevel(key);
     }
-
     dialogueEnd.value = true;
   }
 };
@@ -174,7 +152,8 @@ const handleInteractionSuccess = (result) => {
 const resetScenes = () => {
   currentDialogue.value = 0;
   dialogueEnd.value = false;
-  if (dialogueEnd.value){
+  prevScene.value = {};
+  if (dialogueEnd.value) {
     unlockLevel(nextLevel.value);
   }
   resetReadScenes();
@@ -189,20 +168,33 @@ const goBack = () => {
 const { loading, progress, preloadImages } = usePreload();
 
 onMounted(async () => {
-    await preloadImages([sceneData.value.background, ...((sceneData.value.characters || []).map(c => c.avatar))]);
-    if (route.query.level) {
-      currentLevel.value = route.query.level;
-      currentDialogue.value = 0;
+  await preloadImages([sceneData.value.background, ...((sceneData.value.characters || []).map(c => c.avatar))]);
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      prevDialogue();
+    } else if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      nextDialogue();
     }
+  });
+  window.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+    prevDialogue();
+  });
+  if (route.query.level) {
+    currentLevel.value = route.query.level;
+    currentDialogue.value = 0;
+  } else {
+    router.push("/game", { query: { level: currentLevel.value } });
+  }
 });
 
 // 監聽 `route.query`，確保 `currentLevel` 即時更新
 watchEffect(async () => {
-    currentLevel.value = route.query.level;
-    script.value = await fetchLevelScript(currentLevel.value);
-    currentScene.value = "scene1";
-    currentDialogue.value = 0;
-    dialogueEnd.value = false;
-    showInteractions.value = false;
+  currentLevel.value = route.query.level;
+  script.value = await fetchLevelScript(currentLevel.value);
+  currentScene.value = "scene1";
+  currentDialogue.value = 0;
+  dialogueEnd.value = false;
+  showInteractions.value = false;
 });
 </script>

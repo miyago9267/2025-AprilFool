@@ -7,7 +7,7 @@
         ✖
     </button>
     <h2 class="text-2xl font-bold mb-4 text-center">對話記錄</h2>
-    <div class="max-h-96 overflow-y-auto bg-gray-100 p-4 rounded">
+    <div ref="logContainer" class="max-h-96 overflow-y-auto bg-gray-100 p-4 rounded">
         <div v-for="(log, index) in logMessages" :key="index" class="mb-2">
         <p v-if="log.character" class="text-sm font-bold">{{ log.character }}</p>
         <p class="text-base">{{ log.text }}</p>
@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from "vue";
+import { defineProps, defineEmits, ref, onUpdated } from "vue";
 
 defineProps({
     show: Boolean,
@@ -29,4 +29,12 @@ const emit = defineEmits(["close"]);
 const closeModal = () => {
     emit("close");
 };
+
+const logContainer = ref(null);
+
+onUpdated(() => {
+    if (logContainer.value) {
+        logContainer.value.scrollTop = logContainer.value.scrollHeight;
+    }
+});
 </script>
