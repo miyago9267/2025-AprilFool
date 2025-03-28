@@ -96,8 +96,9 @@
         "next": "scene2-1"
       },
       "scene2-1": {
-        "background": "/images/bg/school_middle.jpg",
+        "background": "/images/bg/gym.jpg",
         "dialogues":[
+          { "character": "", "text": "（匠由拉面把你們救了出來）" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "還好有人來救我們，不然我真的以為我吃不了晚餐了" },
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "結果你只在乎晚餐嗎..." },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "謝謝你回來幫我們開門" },
@@ -187,6 +188,7 @@
       "scene5": {
         "background": "/images/bg/library.jpg",
         "dialogues": [
+          { "character": "", "text": "（稍晚，你們在圖書館集合）" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "應該連上這個網址載下檔案就行了吧？" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "不會中毒吧？" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "拜託不要，雖然電腦系統會自動還原，但如果搞到硬體層就不好了" },

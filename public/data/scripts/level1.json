@@ -258,6 +258,7 @@
       "scene8": {
         "background": "/images/bg/pool.jpg",
         "dialogues": [
+          { "character": "", "text": "（你們來到了游泳池）" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "更衣室很大耶，要從哪裡開始找啊？" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }],"text": "提示不是還有下文嗎？要不再拿出來看看？" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "對耶，那最後一句「望其項背即為所求」是什麼意思" }

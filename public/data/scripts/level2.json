@@ -63,7 +63,7 @@
               { "text": "把卡片泡泡水", "next": "scene11" },
               { "text": "試試看拓印", "next": "scene12" },
               { "text": "用火烤烤看", "next": "scene13" },
-              { "text": "去化學實驗室看看", "next": "scene14", "requires": ["scene13"] },
+              { "text": "嗯？什麼味道", "next": "scene14", "requires": ["scene13"] },
               { "text": "沒有隱藏訊息", "next": "scene15" }
             ]
           }
@@ -144,6 +144,7 @@
       "scene2": {
         "background": "/images/bg/lab.jpg",
         "dialogues": [
+          { "character": "", "text": "（你們來到了化學實驗室）" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "好久沒來實驗室了，我是文組的耶" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "得去器材室找點東西來檢驗" },
           { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "我只有化學課來過耶，來這裡要幹嘛" },

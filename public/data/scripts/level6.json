@@ -40,7 +40,7 @@
         "scene13": {
             "background": "/images/bg/office.jpg",
             "dialogues": [
-                { "character": "提示3", "text": "對著空白處長按五秒吧" }
+                { "character": "提示3", "text": "對著credit頁面下的空白處長按五秒吧" }
             ],
             "next": "scene1"
         },
