@@ -43,30 +43,16 @@ const startY = ref(0);
 const scrollLeft = ref(0);
 const scrollTop = ref(0);
 const levels = ref({});
-const unlockedLevels = ref([]);
 const isMobile = ref(window.innerWidth <= 768); // 判斷是否為手機
+
+const { currentUnlockedLevels } = useGameProgress();
+const { initialUnlockLevels } = useUnlockLevels();
 
 // 監聽視窗大小變化，確保正確檢測裝置
 const checkDevice = () => {
   isMobile.value = window.innerWidth <= 768;
 };
 window.addEventListener("resize", checkDevice);
-
-// 讀取解鎖關卡
-const loadUnlockedLevels = () => {
-  const storedLevels = localStorage.getItem("unlockedLevels");
-  if (!storedLevels) {
-    localStorage.setItem("unlockedLevels", JSON.stringify(unlockedLevels.value));
-  }
-  unlockedLevels.value = storedLevels ? JSON.parse(storedLevels) : ["level0"];
-};
-
-// 監聽 localStorage 變化，確保解鎖狀態即時更新
-const handleStorageChange = (event) => {
-  if (event.key === "unlockedLevels") {
-    loadUnlockedLevels();
-  }
-};
 
 // 讀取關卡數據
 const fetchLevels = async () => {
@@ -88,7 +74,6 @@ const fetchLevels = async () => {
     );
 
     levels.value = Object.fromEntries(results.filter(([, v]) => v));
-    loadUnlockedLevels();
   } catch (error) {
     console.error("載入關卡時發生錯誤：", error);
   }
@@ -96,30 +81,21 @@ const fetchLevels = async () => {
 
 onMounted(() => {
     fetchLevels();
-    loadUnlockedLevels();
-    window.addEventListener("storage", handleStorageChange);
 });
 
 onUnmounted(() => {
-    window.removeEventListener("storage", handleStorageChange);
     window.removeEventListener("resize", checkDevice);
 });
 
-// 監聽 `route`，當返回 `levels` 頁面時，確保 `unlockedLevels` 重新載入
-watchEffect(() => {
-  if (route.name === "levels") {
-    loadUnlockedLevels();
-  }
-});
-
 // 過濾出已解鎖的關卡
+
 const filteredLevels = computed(() => {
   return Object.entries(levels.value)
-    .filter(([key]) => unlockedLevels.value.includes(key))
+    .filter(([key]) => currentUnlockedLevels.value.includes(key))
     .map(([key, value]) => ({
       id: key,
       name: value.name
-    }));
+  }));
 });
 
 // 拖曳滾動 (桌面端)
@@ -163,13 +139,21 @@ const endTouch = () => {
 };
 
 const selectLevel = (levelId) => {
-  if (!unlockedLevels.value.includes(levelId)) return;
+  if (!currentUnlockedLevels.value.includes(levelId)) return;
   router.push({ path: "/game", query: { level: levelId } });
 };
 
 const goBack = () => {
   router.push("/");
 };
+
+watchEffect(() => {
+  console.log("當前關卡：", currentUnlockedLevels.value);
+  if (route.name == "levels" && !window.localStorage.getItem("unlockedLevels")) {
+    initialUnlockLevels();
+  }
+});
+
 </script>
 
 <style>

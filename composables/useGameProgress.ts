@@ -21,6 +21,10 @@ export function useGameProgress() {
     return localStorage.getItem("firstLoad") === null;
   });
 
+  const currentUnlockedLevels = useState<string[]>("unlockedLevels", () => {
+    return JSON.parse(localStorage.getItem("unlockedLevels") || '["level0"]');
+  });
+
   watch(currentLevel, (newLevel) => {
     localStorage.setItem("currentLevel", newLevel);
   });
@@ -40,6 +44,10 @@ export function useGameProgress() {
       initialProgress();
       firstLoad.value = false;
     }
+  });
+
+  watch(currentUnlockedLevels, (newLevels) => {
+    localStorage.setItem("unlockedLevels", JSON.stringify(newLevels));
   });
 
   const markSceneAsRead = (scene: string) => {
@@ -63,5 +71,7 @@ export function useGameProgress() {
     firstLoad.value = false;
   }
 
-  return { firstLoad ,currentLevel, currentScene, currentDialogue, readScenes, markSceneAsRead, resetReadScenes, initialProgress  };
+  return {
+      firstLoad ,currentLevel, currentScene, currentDialogue, readScenes, markSceneAsRead, resetReadScenes, initialProgress, currentUnlockedLevels
+  };
 }
