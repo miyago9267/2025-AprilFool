@@ -17,7 +17,7 @@
     <CharacterImage v-for="(character, index) in activeCharacters" class="z-[-1]" :key="`${character.name}-${index}`" :src="character.avatar"
       :position="character.position" />
 
-    <InteractionItemShow v-if="dialogue?.type === 'image'" :src="dialogue.src" :caption="dialogue.caption" />
+    <InteractionItemShow v-if="dialogue?.type === 'image'" :src="dialogue.src" :caption="dialogue.caption" @click="nextDialogue" />
 
     <DialogBox v-else-if="sceneData?.dialogues" :dialogue="dialogue" @next="nextDialogue" />
 
