@@ -37,7 +37,7 @@ const router = useRouter();
 const showCredit = ref(false);
 const showConfirm = ref(false);
 const { currentScene, currentDialogue, initialProgress, firstLoad } = useGameProgress();
-const { initialUnlockLevels } = useUnlockLevels();
+const { initialUnlockLevels, currentUnlockedLevels } = useUnlockLevels();
 
 // 預加載素材
 const { loading, progress, preloadImages } = usePreload();
@@ -56,5 +56,11 @@ const resetProgress = () => {
 
 onMounted(async () => {
   await preloadImages();
+});
+
+watchEffect(() => {
+  if (!window.localStorage.getItem("unlockedLevels")) {
+    initialUnlockLevels();
+  }
 });
 </script>

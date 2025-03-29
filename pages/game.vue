@@ -157,6 +157,7 @@ const resetScenes = () => {
   logMessages.value = [];
   if (dialogueEnd.value) {
     unlockLevel(nextLevel.value);
+    currentUnlockedLevels.value = JSON.parse(window.localStorage.getItem("unlockedLevels"));
   }
   resetReadScenes();
 };

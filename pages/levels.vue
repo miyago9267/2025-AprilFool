@@ -148,10 +148,10 @@ const goBack = () => {
 };
 
 watchEffect(() => {
-  console.log("當前關卡：", currentUnlockedLevels.value);
-  if (route.name == "levels" && !window.localStorage.getItem("unlockedLevels")) {
+  if (!window.localStorage.getItem("unlockedLevels")) {
     initialUnlockLevels();
   }
+  currentUnlockedLevels.value = JSON.parse(window.localStorage.getItem("unlockedLevels"));
 });
 
 </script>
