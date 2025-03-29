@@ -9,12 +9,12 @@
                 { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "我只是去廁所洗個手，回來圖書館時就不見了，只在現場看到了怪盜XD的卡片" },
                 { "type": "image", "src": "/images/items/05.png", "caption": "怪盜XD卡片" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "沒想到我們運氣這麼好，剛好順路接連遇上需要協助的人" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "是啊，省得我們去學生會來回跑確認訊息" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "是啊，省得我們去學生會來回跑確認訊息" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "話說，你的卡片上有留下什麼資訊嗎？方不方便借我們看一下" },
                 { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "這沒問題，但是上面除了怪盜XD的圖案以外沒有其他內容了" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "跟瑞穗同學的狀況一樣，而不是跟匠由同學收到的卡片一樣直接顯示資訊" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "跟瑞穗同學的狀況一樣，而不是跟匠由同學收到的卡片一樣直接顯示資訊" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "會不會看瑞穗同學的卡片一樣是寫隱藏訊息呢？" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "（嗅嗅）聞起來沒有氨水味，起碼就算有，原理大概也不一樣了" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "（嗅嗅）聞起來沒有氨水味，起碼就算有，原理大概也不一樣了" },
                 { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "那個...除了卡片以外，還有別的東西" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "哭啊...你怎麼不早說" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "請問其他東西是指什麼呢？" },
@@ -24,12 +24,12 @@
                 { "type": "image", "src": "/images/items/usb.png", "caption": "USB裡面的內容" },
                 { "character": "", "text": "𒈨 𒊭 𒁉 𒋫 𒈪 𒅀 1        Ασσυρια 2<br>Major-Arcana-V 1        むろまちばくふ 1<br><br>VENI VIDI VICI" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "啥？真的很奇怪，這是什麼奇怪的檔案" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "這是告訴我們要去哪裡的線索" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "這是告訴我們要去哪裡的線索" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "啊？你看出來了嗎？太快了吧" },
                 { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "咦？真的假的？" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "這局是文組的局" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "你們要猜猜看嗎？我可以給你們提示，可以和你們說的是" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "前四行是一組的，提示我們要去哪裡，而最後一行是抵達那裡之後才會揭示的" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "這局是文組的局" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "你們要猜猜看嗎？我可以給你們提示，可以和你們說的是" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "前四行是一組的，提示我們要去哪裡，而最後一行是抵達那裡之後才會揭示的" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "我猜猜看" }
             ],
             "next": "scene1-1"
@@ -57,31 +57,31 @@
             "background": "/images/bg/library.jpg",
             "dialogues": [
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "不行，我想不出來" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "給你點提示，這是藏頭，每一行代表一個字。" },
-                { "character": "你", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 50, "y": 60 } }], "text": "唔...我再想想。" }
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "給你點提示，這是藏頭，每一行代表一個字。" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 50, "y": 60 } }], "text": "唔...我再想想。" }
             ],
             "next": "scene1-1"
         },
         "scene11": {
             "background": "/images/bg/library.jpg",
             "dialogues": [
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "首先，第一行𒈨 𒊭 𒁉 𒋫 𒈪 𒅀 ，這是楔形文字，意思是美索不達米亞" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "再來，Ασσυρια是希臘文的亞述文明" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "接著，Major Arcana指的是大阿卡那塔羅牌，而第五號牌是教皇" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "最後，むろまちばくふ指的是室町幕府" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "有頭緒了嗎？" }
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "首先，第一行𒈨 𒊭 𒁉 𒋫 𒈪 𒅀 ，這是楔形文字，意思是美索不達米亞" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "再來，Ασσυρια是希臘文的亞述文明" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "接著，Major Arcana指的是大阿卡那塔羅牌，而第五號牌是教皇" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "最後，むろまちばくふ指的是室町幕府" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "有頭緒了嗎？" }
             ],
             "next": "scene1-1"
         },
         "scene12": {
             "background": "/images/bg/library.jpg",
             "dialogues": [
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "首先，第一行𒈨 𒊭 𒁉 𒋫 𒈪 𒅀 ，這是楔形文字，意思是美索不達米亞" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "再來，Ασσυρια是希臘文的亞述文明" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "接著，Major Arcana指的是大阿卡那塔羅牌，而第五號牌是教皇" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "最後，むろまちばくふ指的是室町幕府" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "而每行的最後一個數字，指的是第幾個字" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "將這幾個藏頭字組合起來，就可以得到「美術教室」" }
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "首先，第一行𒈨 𒊭 𒁉 𒋫 𒈪 𒅀 ，這是楔形文字，意思是美索不達米亞" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "再來，Ασσυρια是希臘文的亞述文明" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "接著，Major Arcana指的是大阿卡那塔羅牌，而第五號牌是教皇" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "最後，むろまちばくふ指的是室町幕府" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "而每行的最後一個數字，指的是第幾個字" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "將這幾個藏頭字組合起來，就可以得到「美術教室」" }
             ],
             "next": "scene2"
         },
@@ -99,9 +99,9 @@
             "dialogues": [
                 { "character": "", "text": "（你們來到了美術教室）" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "美術教室很大耶，我要從哪裡找起" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "別急，這時候就需要用到下一個提示了" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "還記得剛剛文字檔案的最後一行嗎？" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "猜猜他是什麼意思呢" }
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "別急，這時候就需要用到下一個提示了" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "還記得剛剛文字檔案的最後一行嗎？" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "猜猜他是什麼意思呢" }
             ],
             "next": "scene3-1"
         },
@@ -127,9 +127,9 @@
             "background": "/images/bg/artclassroom.jpg",
             "dialogues": [
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "是那個美術用的人體結構模型嗎？" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "為什麼你會這麼覺得呢？" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "為什麼你會這麼覺得呢？" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "沒有，只是覺得裡面可能會藏東西" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "完全沒有邏輯的推論呢...答錯了喔" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "完全沒有邏輯的推論呢...答錯了喔" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "咦？那會是什麼" }
             ],
             "next": "scene3-1"
@@ -138,9 +138,9 @@
             "background": "/images/bg/artclassroom.jpg",
             "dialogues": [
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "是寫生用的畫板嗎？" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "為什麼你會這麼覺得呢？" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "為什麼你會這麼覺得呢？" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "或許上面會寫著一些資訊，提示我們的下一個線索之類的" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "想法蠻有趣的，可惜不對喔" }
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "想法蠻有趣的，可惜不對喔" }
             ],
             "next": "scene3-1"
         },
@@ -148,9 +148,9 @@
             "background": "/images/bg/artclassroom.jpg",
             "dialogues": [
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "是牆上那幅卡拉瓦喬的畫嗎" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "為什麼你會這麼覺得呢？" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "為什麼你會這麼覺得呢？" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "因為那段文字看起來不像英文，我猜是義大利文之類的" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "想法蠻有趣的，可惜這是拉丁文，而不是義大利文喔" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "想法蠻有趣的，可惜這是拉丁文，而不是義大利文喔" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "哇...好可惜" }
             ],
             "next": "scene3-1"
@@ -159,9 +159,9 @@
             "background": "/images/bg/artclassroom.jpg",
             "dialogues": [
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "是亞森羅平全集嗎？" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "為什麼你會這麼覺得呢？這裡根本沒有亞森羅平全集呀" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "為什麼你會這麼覺得呢？這裡根本沒有亞森羅平全集呀" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "沒有...就亂猜的" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "喂...不知道就說不知道嘛" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "喂...不知道就說不知道嘛" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "如果真的是亞森羅平全集那應該回去圖書室吧" }
             ],
             "next": "scene3-1"
@@ -170,23 +170,23 @@
             "background": "/images/bg/artclassroom.jpg",
             "dialogues": [
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "是不是那個凱撒大帝的石膏雕像" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "你有根據嗎？還是猜的呢" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "你有根據嗎？還是猜的呢" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "因為VENI VIDI VICI是拉丁文的「我來，我見，我征服」" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "而這句話是出自於凱撒大帝的名言" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "正確答案，雖然我還沒見到實際上的正解我也不敢肯定是不是這樣就是了" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "但線索是連貫的，我願意相信" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "正確答案，雖然我還沒見到實際上的正解我也不敢肯定是不是這樣就是了" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "但線索是連貫的，我願意相信" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "那我們去看看那個石膏像吧" },
                 { "character": "", "text": "（你們將石膏像拿了起來）" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "裡面是中空的耶！" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "裡面是中空的耶！" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "果然，你猜的沒錯，這裡有一個留著怪盜XD記號的小盒子" },
                 { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "裡面是不是就裝著我的戒指呢？" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "快打開來看看吧" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "不行，上鎖了，上面有個四位的密碼" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "我看看喔，其中第1、3、4碼是數字，第2位是「+-×÷%.」共六種符號" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "不行，上鎖了，上面有個四位的密碼" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "我看看喔，其中第1、3、4碼是數字，第2位是「+-×÷%.」共六種符號" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "是運算嗎？可是題目在哪裡呀？" },
                 { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "咦？盒子下面好像還有字樣" },
                 { "type": "image", "src": "/images/items/integral.png", "caption": "積分題" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "啥？是微積分" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "啥？是微積分" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "看來這道積分題的答案就是密碼了" }
             ],
             "next": "scene4-1"
@@ -213,7 +213,7 @@
             "background": "/images/bg/artclassroom.jpg",
             "dialogues": [
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "密碼不對耶..." },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "我不會微積分啦..." },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "我不會微積分啦..." },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "要不要用計算機，wolframAlpha之類的" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "我再試試看" }
             ],
@@ -224,16 +224,16 @@
             "dialogues": [
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "答案是...π ！" },
                 { "character": "盒子", "text": "（咖洽）" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "打開了！" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "打開了！" },
                 { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "哇！是我弄丟的戒指，太感謝你們了" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "這樣就又解決一起案件了呢" },
                 { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "東西我就收下了，謝謝你們" },
                 { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "啊...時間不早了，我得趕緊回去關圖書館的門了" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "已經快傍晚了，我們趕緊回去學生會彙報今天解決的事情吧" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "（看了一下手機）好哇" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "咦咦咦！？學生會長打了好多通電話給我我都沒有接到" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "（看了一下手機）好哇" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "咦咦咦！？學生會長打了好多通電話給我我都沒有接到" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "發生什麼事情了嗎？這麼急著聯絡你" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "不曉得耶，我們趕緊去學生會辦公室找他問問看吧" }
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "不曉得耶，我們趕緊去學生會辦公室找他問問看吧" }
             ],
             "next": "scene6"
         },
@@ -241,11 +241,11 @@
             "background": "/images/bg/office2.jpg",
             "dialogues": [
                 { "character": "", "text": "（你們回到了學生會辦公室）" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "會長，你找我有什麼事情嗎？" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "會長，你找我有什麼事情嗎？" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "我們正好要回和你報告今天解決的案件，怎麼了嗎？" },
                 { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "你們聽我說，不好了！" },
                 { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "又有學生收到怪盜XD的卡片了" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/06.png", "position": { "x": 70, "y": 60 } }], "text": "怪盜XD還在暗中做怪嗎，這次被偷了什麼" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "怪盜XD還在暗中做怪嗎，這次被偷了什麼" },
                 { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "不不不，還沒有，這次收到的不是偷走的證明" },
                 { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "而是「犯罪預告信」！" },
                 { "character": "眾人", "text": "咦咦咦？？？" }
