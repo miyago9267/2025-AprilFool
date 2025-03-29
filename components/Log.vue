@@ -10,7 +10,7 @@
     <div ref="logContainer" class="max-h-96 overflow-y-auto bg-gray-100 p-4 rounded">
         <div v-for="(log, index) in logMessages" :key="index" class="mb-2">
         <p v-if="log.character" class="text-sm font-bold">{{ log.character }}</p>
-        <p class="text-base">{{ log.text }}</p>
+        <p class="text-base" v-html="log.text"></p>
         </div>
     </div>
     </div>
