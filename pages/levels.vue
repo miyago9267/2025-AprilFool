@@ -9,15 +9,15 @@
       >
       </div>
       <!-- 返回按鈕 -->
-      <div class="absolute z-10 top-4 left-4 text-black px-4 py-2 rounded-xl bg-gray-100 border-2 border-[#823A96] border-solid hover:bg-gray-200 select-none font-text"
+      <div class="absolute z-10 top-4 left-4 text-xl text-black px-4 py-2 rounded-xl bg-gray-100 border-2 border-[#823A96] border-solid hover:bg-gray-200 select-none font-text"
           @click="goBack">
-          ⬅ 回到開始畫面
+          回到開始畫面
       </div>
 
       <!-- 關卡滾動容器 -->
       <div ref="levelsContainer"
-           :class="isMobile ? 'overflow-y-auto h-full w-3/4' : 'overflow-x-auto w-4/5'"
-           class="relative cursor-grab select-none flex items-center scrollbar-hidden"
+           :class="isMobile ? 'overflow-y-auto h-[70vh] w-3/4' : 'overflow-x-auto w-4/5'"
+           class="relative cursor-grab select-none flex items-center justify-center scrollbar-hidden"
            @mousedown="!isMobile && startDrag"
            @mousemove="!isMobile && onDrag"
            @mouseup="!isMobile && endDrag"
@@ -157,7 +157,7 @@ const goBack = () => {
   router.push("/");
 };
 
-watchEffect(() => {
+onActivated(() => {
   if (!window.localStorage.getItem("unlockedLevels")) {
     initialUnlockLevels();
   }

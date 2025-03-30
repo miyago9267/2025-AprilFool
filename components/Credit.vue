@@ -14,7 +14,7 @@
           <li>美術設計：Caryolite</li>
           <li>劇情編寫：Miyago9267/Caryolite</li>
         </ul>
-        <span class="opacity-0 text-xl hover:opacity-100 transition-opacity duration-[10000ms]">
+        <span class="opacity-0 text-xl hover:opacity-100 transition-opacity duration-[5000ms]">
           answer{4pRi1Fo01}
         </span>
       </div>

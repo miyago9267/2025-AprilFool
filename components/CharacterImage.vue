@@ -1,6 +1,6 @@
 <template>
   <div class="absolute w-full h-full overflow-hidden">
-    <img :src="src" class="character absolute max-h-[80vh]"
+    <img :src="src" class="character absolute lg:max-h-[80vh] max-h-[60vh]"
          :class="effectClass"
          :style="{
             left: position?.x ? `${Math.min(90, Math.max(10, position.x))}%` : '50%',
