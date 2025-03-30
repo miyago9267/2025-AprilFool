@@ -1,13 +1,17 @@
 <template>
-    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border border-black p-4 shadow-lg z-10">
-        <div class="grid grid-cols-3 grid-rows-3 gap-1">
-            <div v-for="(tile, index) in tiles" :key="index" class="w-20 h-20 bg-gray-300 flex items-center justify-center text-lg cursor-pointer" :class="{ 'bg-white cursor-default': tile === 0 }"
+    <div class="fixed w-[280px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+        bg-white border border-black shadow-lg rounded-xl z-10">
+        <div class="grid grid-cols-3 grid-rows-3 gap-1 place-items-center m-4">
+            <div
+                v-for="(tile, index) in tiles" :key="index"
+                class="w-20 h-20 bg-[#E2DBEA] grid place-content-center text-xl cursor-pointer select-none rounded-lg"
+                :class="{ 'bg-white cursor-default': tile === 0 }"
                 @click="move(index)">
                 <span v-if="tile !== 0">{{ tile }}</span>
             </div>
         </div>
-        <div class="mt-2 text-center">
-            <button class="bg-blue-500 text-white px-4 py-1 rounded" @click="shuffle">打亂</button>
+        <div class="mt-2 mb-6 text-center">
+            <button class="select-bar" @click="shuffle">打亂</button>
             <div v-if="isWin" class="mt-2 font-bold text-green-600">你完成拼圖了！</div>
         </div>
     </div>
@@ -42,7 +46,7 @@ function shuffle() {
             tiles.value[i] = tempJ
             tiles.value[j] = tempI
         }
-    } while (!isSolvable(tiles.value))
+    } while (!isSolvable(tiles.value) || isWin.value)
 }
 
 function isSolvable(arr: number[]) {
@@ -83,4 +87,22 @@ init()
 </script>
 
 <style scoped>
+.select-bar {
+    /* Rectangle 5 */
+    box-sizing: border-box;
+
+    width: 260px;
+    height: 44px;
+
+    border: 2px solid #823A96;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.select-bar:hover {
+    background: #823A96;
+    color: #fff;
+    border: 2px solid #823A96;
+    border-radius: 20px;
+}
 </style>
