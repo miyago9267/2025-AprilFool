@@ -135,7 +135,8 @@
                 { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 50, "y": 60 } }], "text": "等下等下等下，我加入就是了嘛QQ 不要耍我啦" },
                 { "character": "旁白", "text": "（怪盜XD的事件，就在一片打鬧中，落下了帷幕）" }
             ]
-        }
+        },
+        "unlocks": ["end1"]
     },
-    "unlocks": ["level8"]
+    "unlocks": ["end1"]
 }
