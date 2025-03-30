@@ -154,7 +154,7 @@
                 { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 70, "y": 60 } }], "text": "對，他要求我輸入密碼才能打開" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "......" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "我大概可以猜到怪盜XD的犯案手法了" },
-                { "character": "眾人", "text": "！？」" },
+                { "character": "眾人", "text": "！？" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "真的假的，那你也知道怪盜XD是誰了嗎" },
                 { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "不會真的是我們身邊的誰假扮混進了吧" },
                 { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "欸欸欸不要看我啊" },
