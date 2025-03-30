@@ -101,6 +101,10 @@ export default defineNuxtConfig({
 		themes: ['dark'],
 	},
 
+	css: [
+		'~/styles/global.css',
+	],
+
 	compatibilityDate: '2024-07-17',
 	hooks: {
 		'nitro:build:public-assets': () => {

@@ -1,0 +1,8 @@
+@font-face{
+    font-family:'StarLovePencil';
+    src: url('/fonts/StarLovePencil-Regular.ttf') format('truetype');
+}
+
+.font-text {
+    font-family: 'StarLovePencil', sans-serif;
+}

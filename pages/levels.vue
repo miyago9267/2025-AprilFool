@@ -1,18 +1,26 @@
 <template>
-  <div class="w-screen h-screen flex flex-col justify-center items-center bg-gray-900 text-white relative">
+  <div class="w-screen h-screen flex flex-col justify-center items-center text-white relative">
+      <div
+        class="background w-full h-full absolute top-0 left-0 z-0"
+        style="
+          background-image: url('/images/bg/background_base.png');
+          background-size: cover;
+          background-position: center;"
+      >
+      </div>
       <!-- 返回按鈕 -->
-      <button class="absolute top-4 left-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
+      <div class="absolute z-10 top-4 left-4 text-black px-4 py-2 rounded-xl bg-gray-100 border-2 border-[#823A96] border-solid hover:bg-gray-200 select-none font-text"
           @click="goBack">
           ⬅ 回到開始畫面
-      </button>
+      </div>
 
       <!-- 關卡滾動容器 -->
       <div ref="levelsContainer"
-           :class="isMobile ? 'overflow-y-auto h-full w-3/4' : 'overflow-x-auto w-3/4'"
+           :class="isMobile ? 'overflow-y-auto h-full w-3/4' : 'overflow-x-auto w-4/5'"
            class="relative cursor-grab select-none flex items-center scrollbar-hidden"
-           @mousedown="!isMobile && startDrag" 
-           @mousemove="!isMobile && onDrag" 
-           @mouseup="!isMobile && endDrag" 
+           @mousedown="!isMobile && startDrag"
+           @mousemove="!isMobile && onDrag"
+           @mouseup="!isMobile && endDrag"
            @mouseleave="!isMobile && endDrag"
            @touchstart="isMobile && startTouch"
            @touchmove="isMobile && onTouchMove"
@@ -20,9 +28,11 @@
         <div ref="levelsWrapper"
              :class="isMobile ? 'flex flex-col gap-6 py-4' : 'flex gap-6 py-4'">
           <div v-for="(level, levelId) in filteredLevels" :key="levelId"
-              class="w-64 h-40 flex flex-col justify-center items-center rounded-lg text-white text-lg font-bold transition-transform mx-4 bg-blue-500 cursor-pointer hover:scale-105"
+              class="w-58 h-30 flex flex-col justify-center items-center rounded-lg text-black
+              text-lg font-bold transition-transform mx-4 border-2 border-[#823A96] border-solid bg-white
+              cursor-pointer hover:scale-105"
               @click="selectLevel(level.id)">
-              <span>{{ level.name }}</span>
+              <span class="font-text text-xl">{{ level.name }}</span>
           </div>
         </div>
       </div>
@@ -165,4 +175,5 @@ watchEffect(() => {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 </style>
