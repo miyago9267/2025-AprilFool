@@ -2,11 +2,39 @@
     "name": "END",
     "scenes": {
         "scene1": {
-        "background": "/images/bg/clubroom.jpg",
-        "dialogues": [
-            { "character": "", "text": "這是一場冒險這是一場腥風血雨的開始……" },
-            { "character": "", "text": "哇哈哈哈哈哈哈哈哈哈哈"}
-        ]
-      }
+            "background": "/images/bg/clubroom.jpg",
+            "dialogues": [
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "嗚呼呼！！！今天也很和平呢" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "不和平的話才可怕呢" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "哪有，怎麼不來點好玩的案件讓我們解決" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "我真的不想再找貓了" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "你們兩個怎麼這有幹勁啊" },
+                { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "我也不懂有什麼好嗨的" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "喂！黒雨，就是說你Mrs怪盜XD，我真摯的好友yo，出點謎題來玩玩吧" },
+                { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "不要勒，吃大便" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "你說蝦米！？" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "你們兩個會不會太幼稚了點啊" },
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "唉...今天的偵探社也是吵吵鬧鬧的一天呢" },
+                { "character": "", "text": "（怪盜XD的事件，就在一片打鬧中，落下了帷幕）" }
+            ],
+            "next": "thx"
+        },
+        "thx": {
+            "background": "/images/bg/black.jpg",
+            "dialogues": [
+                { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 50, "y": 60 } }], "text": "嗨，大家，我是Miyago" },
+                { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 50, "y": 60 } }], "text": "對，把自己寫進故事裡面還要被偷小黃本真是有夠羞恥的" },
+                { "character": "和月有幸", "avatars": [{ "src": "/images/chara/11.png", "position": { "x": 50, "y": 60 } }], "text": "哭啊，我也是，我還被偷什麼暈船日記" },
+                { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 50, "y": 60 } }], "text": "隨著去年製作了巴別塔精神病院" },
+                { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 50, "y": 60 } }], "text": "讓我更想要花心思去構思一些劇本，做出一款更有趣的遊戲作為企劃展示給大眾" },
+                { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 50, "y": 60 } }], "text": "所以今年很榮幸和我們的watsuki老師aka和月一起參與製作了這次的企劃" },
+                { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 50, "y": 60 } }], "text": "本來是作為一個很認真的劇本，但後來越寫越想塞入一些愚人節的<ruby>橋段<rt>爛梗</rt></ruby>" },
+                { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 50, "y": 60 } }], "text": "所以添加了不少捏他和吐槽的內容" },
+                { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 50, "y": 60 } }], "text": "雖然不是第一次嘗試製作這種類型的遊戲" },
+                { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 50, "y": 60 } }], "text": "但有這麼高完成度並且還有配合的美術真的是頭一次" },
+                { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 50, "y": 60 } }], "text": "總之，感謝你們可以看到這啦" },
+                { "character": "水源米亞果", "avatars": [{ "src": "/images/chara/09.png", "position": { "x": 50, "y": 60 } }], "text": "期待我們明年，下一個企劃再次見面，掰噗" }
+            ]
+        }
     }
 }

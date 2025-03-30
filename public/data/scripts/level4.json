@@ -203,7 +203,8 @@
                     "id": "box-password",
                     "placeholder": "盒子的密碼是？",
                     "answers": [
-                        { "value": "3.14", "next": "scene5" }
+                        { "value": "3.14", "next": "scene5" },
+                        { "value": "放棄", "next": "scene5" }
                     ],
                     "onFailure": "scene41"
                 }

@@ -230,6 +230,7 @@
             "placeholder": "怪盜XD設下的答案是？",
             "answers": [
               { "value": "answer{eating_like_an_asian}", "next": "scene6" },
+              { "value": "eating_like_an_asian}", "next": "scene54" },
               { "value": "kqfl{jfynsl_qnpj_fs_fxnfs}", "next": "scene51" },
               { "value": "ZnN4Ymp3e2pmeW5zbF9xbnBqX2ZzX2Z4bmZzfQo=", "next": "scene52" }
             ],
@@ -267,6 +268,16 @@
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "咦？不是這樣嗎？" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "我們前一次是用base64解碼解開的吧？照理說流程應該會一樣的" },
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "抱歉...我再試試看" }
+        ],
+        "next": "scene5-1"
+      },
+      "scene54": {
+        "background": "/images/bg/library.jpg",
+        "dialogues": [
+          { "character": "系統視窗", "text": "逼逼！答案錯誤！" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "咦？不是這樣嗎？" },
+          { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "在打CTF的時候，格式會長flag{result}，所以連括號外面的都要放進去喔" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "原來如此！我再試試看" }
         ],
         "next": "scene5-1"
       },
