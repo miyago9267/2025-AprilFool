@@ -58,13 +58,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const router = useRouter();
 const showCredit = ref(false);
 const showConfirm = ref(false);
-const { currentScene, currentDialogue, initialProgress, firstLoad } = useGameProgress();
-const { initialUnlockLevels, currentUnlockedLevels } = useUnlockLevels();
+const { currentScene, currentDialogue, initialProgress, firstLoad, currentUnlockedLevels } = useGameProgress();
+const { initialUnlockLevels } = useUnlockLevels();
 const { loading, progress, preloadImages } = usePreload();
 
 const imagesToPreload = ref([]);
@@ -78,10 +78,35 @@ const buttonTheme = " text-black px-8 py-4 rounded-lg hover:bg-gray-300 transiti
 
 const mobileCharaStyle = ref({});
 
+
 const getRandomMobileCharaImage = () => {
   const nums = ['01', '02', '04', '07', '08', '09', '10', '11', 'nobita'];
   const rand = nums[Math.floor(Math.random() * nums.length)];
   return `/images/chara/${rand}.png`;
+};
+
+// Konami Code: ↑ ↑ ↓ ↓ ← → ← → B A
+const konamiCode = [
+  "ArrowUp", "ArrowUp",
+  "ArrowDown", "ArrowDown",
+  "ArrowLeft", "ArrowRight",
+  "ArrowLeft", "ArrowRight",
+  "b", "a"
+];
+
+let konamiIndex = 0;
+
+const onKeyDown = (e) => {
+  if (e.key === konamiCode[konamiIndex]) {
+    konamiIndex++;
+    if (konamiIndex === konamiCode.length) {
+      currentUnlockedLevels.value = ["level0", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "end1"];
+      alert("Konami Code 啟動：已解鎖全部關卡！");
+      konamiIndex = 0;
+    }
+  } else {
+    konamiIndex = 0;
+  }
 };
 
 const startGame = () => {
@@ -93,14 +118,19 @@ const resetProgress = () => {
   router.go(0);
 };
 
-onMounted(async () => {
-  await preloadImages();
+onMounted(() => {
+  window.addEventListener("keydown", onKeyDown);
+  preloadImages();
   mobileCharaStyle.value = {
     backgroundImage: `linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1)), url('${getRandomMobileCharaImage()}')`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'end',
   };
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("keydown", onKeyDown);
 });
 
 watchEffect(() => {
