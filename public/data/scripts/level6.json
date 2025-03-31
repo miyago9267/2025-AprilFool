@@ -15,7 +15,8 @@
                         { "value": "answer{4pRi1Fo01}", "next": "scene2"},
                         { "value": "提示", "next": "scene11" },
                         { "value": "提示2", "next": "scene12" },
-                        { "value": "提示3", "next": "scene13" }
+                        { "value": "提示3", "next": "scene13" },
+                        { "value": "放棄", "next": "scene15" }
                     ],
                     "onFailure": "scene14"
                 }
@@ -51,6 +52,16 @@
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "別急嘛，只是輸入錯了而已" }
             ],
             "next": "scene1"
+        },
+        "scene15": {
+            "background": "/images/bg/office.jpg",
+            "dialogues": [
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "誒？錯了，為什麼" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "算了，我來吧，我看出來了，回首頁點工作人員列表下面是吧" },
+                { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "喏，密碼不就出來了嗎" }
+
+            ],
+            "next": "scene2"
         },
         "scene2": {
             "background": "/images/bg/office.jpg",

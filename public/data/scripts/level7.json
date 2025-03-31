@@ -72,7 +72,8 @@
             "dialogues": [
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "我們去向學生會問過了，在他們手中收到的清單裡，根本就沒有你" },
                 { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 50, "y": 60 } }], "text": "那又如何，有可能我只是沒有上報，或者是才剛被偷還沒機會把資料呈上去罷了" },
-                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "..." }
+                { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 20, "y": 60 } }], "text": "確實有可能，但你，是看我們調查得這麼快才臨時起意想一起演戲的吧" },
+                { "character": "怪盜XD", "avatars": [{ "src": "/images/chara/03.png", "position": { "x": 50, "y": 60 } }], "text": "雖然是被你瞎猜中的，但確實是臨時起意呢，是看你們跟瑞穗同學進來圖書館才開始準備的" }
             ],
             "next": "scene2"
         },

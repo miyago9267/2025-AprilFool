@@ -246,7 +246,7 @@
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "看起來答案還是一樣是亂碼，是不是解錯了" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "應該沒錯，做了兩次base64解碼之後已經不是base64的樣子了" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "但是這確實不像是自然語言，會不會還經過了什麼加密呢？" },
-          { "character": "提示", "text": "凱撒大帝 shift 5" }
+          { "character": "提示", "text": "凱撒密碼" }
         ],
         "next": "scene5-1"
       },
