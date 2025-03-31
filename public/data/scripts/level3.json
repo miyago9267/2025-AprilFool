@@ -157,8 +157,10 @@
             "type": "input",
             "id": "decode-url",
             "placeholder": "這段文字的解答是？",
-            "correctAnswer": "https://phantomthief.xd/file/secret.exe",
-            "onSuccess": "scene4",
+            "answers":[
+              {"value": "https://phantomthief.xd/file/secret.exe", "next": "scene4"},
+              {"value": "放棄", "next": "scene4"}
+            ],
             "onFailure": "scene31"
           }
         ]

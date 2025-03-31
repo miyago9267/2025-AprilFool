@@ -77,9 +77,6 @@ export default defineNuxtConfig({
 			]
 		}
 	},
-
-	ssr: false,
-
 	typescript: {
 		tsConfig: {
 			compilerOptions: {

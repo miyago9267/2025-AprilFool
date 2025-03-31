@@ -318,7 +318,7 @@
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "這本書先借我們，我們待會幫你拿去放" },
           { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "誒...是可以啊，這本書放在日本文學分類的三號櫃上面" },
           { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "拿過去那裡應該就會看到其他集數了，照集數順序放就行了" },
-          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "感激不禁" },
+          { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "感激不盡" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "感覺那一櫃總有些蹊蹺，如果那是整個系列的書，也許在那個櫃子藏有什麼線索也不一定" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "事不宜遲，我們趕緊去看看吧" },
           { "character": "", "text": "（你們移動到了黒雨說的書櫃）" },
