@@ -19,7 +19,7 @@
 
     <InteractionItemShow v-if="dialogue?.type === 'image'" :src="dialogue.src" :caption="dialogue.caption" @click="nextDialogue" />
 
-    <DialogBox v-else-if="sceneData?.dialogues" :dialogue="dialogue" @next="nextDialogue" />
+    <DialogBox v-else-if="sceneData?.dialogues" :dialogue="dialogue" @next="nextDialogue" @contextmenu.prevent="prevDialogue" />
 
     <Log :show="showLog" :logMessages="logMessages" @close="showLog = false" />
 
@@ -188,8 +188,10 @@ onMounted(async () => {
 
 // 監聽 `route.query`，確保 `currentLevel` 即時更新
 watchEffect(async () => {
+  loading.value = true;
   currentLevel.value = route.query.level;
   script.value = await fetchLevelScript(currentLevel.value);
+  loading.value = false;
 });
 </script>
 

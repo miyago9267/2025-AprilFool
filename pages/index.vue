@@ -27,18 +27,21 @@
       <ul class="text-2xl font-bold mb-8 text-center list-none px-0">
         <li>
           <div
+            class="select-none"
             :class="buttonTheme"
             @click="startGame">
             開始遊戲</div>
         </li>
         <li>
           <div
+            class="select-none"
             :class="buttonTheme"
             @click="showCredit = !showCredit">
             製作名單</div>
         </li>
         <li>
           <div
+            class="select-none"
             :class="buttonTheme"
             @click="showConfirm=!showConfirm">
             重置進度</div>

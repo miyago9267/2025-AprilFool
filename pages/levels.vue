@@ -34,6 +34,7 @@ import { fetchLevelIndex } from "~/composables/useLevelScript";
 const router = useRouter();
 const route = useRoute();
 const levelsContainer = ref(null);
+const levelsWrapper = ref(null);
 const levels = ref({});
 const isMobile = ref(window.innerWidth <= 768); // 判斷是否為手機
 
@@ -73,6 +74,17 @@ const fetchLevels = async () => {
 
 onMounted(() => {
 	fetchLevels();
+
+	const wrapper = levelsWrapper.value;
+	if (wrapper) {
+		const onWheel = (e) => {
+			if (!isMobile.value && Math.abs(e.deltaX) < Math.abs(e.deltaY)) {
+				e.preventDefault();
+				wrapper.scrollLeft += e.deltaY;
+			}
+		};
+		wrapper.addEventListener('wheel', onWheel, { passive: false });
+	}
 });
 
 onUnmounted(() => {
