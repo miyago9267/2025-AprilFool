@@ -9,3 +9,13 @@
 <script setup>
 defineProps(["dialogue"]);
 </script>
+
+<style scoped>
+.dialog-box{
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+</style>

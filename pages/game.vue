@@ -1,7 +1,7 @@
 <template>
   <Loading v-if="loading" :show="loading" :progress="progress" />
   <div v-else class="visual-novel relative w-screen h-screen flex flex-col justify-end items-center">
-    <div class="absolute inset-0 z-5 cursor-pointer select-none" @click="nextDialogue"></div>
+    <div id="fullscreen-interactor" class="absolute inset-0 z-5 cursor-pointer select-none" @click="nextDialogue"></div>
     <div class="absolute z-10 top-4 left-4 text-xl text-black px-4 py-2 rounded-xl bg-gray-100 border-2 border-[#823A96] border-solid hover:bg-gray-200 select-none font-text"
           @click="goBack">
           回到開始畫面
@@ -192,3 +192,13 @@ watchEffect(async () => {
   script.value = await fetchLevelScript(currentLevel.value);
 });
 </script>
+
+<style scoped>
+#fullscreen-interactor {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+</style>
