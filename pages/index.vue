@@ -114,6 +114,8 @@ const startGame = () => {
 };
 
 const resetProgress = () => {
+  initialProgress();
+  initialUnlockLevels();
   firstLoad.value = true;
   router.go(0);
 };
@@ -133,7 +135,7 @@ onBeforeUnmount(() => {
   window.removeEventListener("keydown", onKeyDown);
 });
 
-watchEffect(() => {
+onActivated(() => {
   if (!window.localStorage.getItem("unlockedLevels")) {
     initialUnlockLevels();
   }
