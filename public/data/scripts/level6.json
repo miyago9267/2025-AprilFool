@@ -10,7 +10,7 @@
                 {
                     "type": "input",
                     "id": "file_password",
-                    "placeholder": "提示可打「提示」",
+                    "placeholder": "提示可打「提示」，可輸入「放棄」跳過",
                     "answers": [
                         { "value": "answer{4pRi1Fo01}", "next": "scene2"},
                         { "value": "提示", "next": "scene11" },

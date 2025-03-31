@@ -43,7 +43,7 @@
                 {
                     "type": "input",
                     "id": "box-password",
-                    "placeholder": "開放查資料，要提示打「提示」，跳過可打「放棄」",
+                    "placeholder": "開放查資料，要提示打「提示」，可輸入「放棄」跳過",
                     "answers": [
                         { "value": "提示", "next": "scene11" },
                         { "value": "美術教室", "next": "scene2" },
@@ -201,7 +201,7 @@
                 {
                     "type": "input",
                     "id": "box-password",
-                    "placeholder": "盒子的密碼是？可用計算機",
+                    "placeholder": "盒子的密碼是？可用計算機，亦可輸入「放棄」跳過",
                     "answers": [
                         { "value": "3.14", "next": "scene5" },
                         { "value": "π", "next": "scene42"},
