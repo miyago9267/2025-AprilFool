@@ -37,26 +37,29 @@ function init() {
 }
 
 function shuffle() {
-    do {
-        tiles.value = [...Array(8).keys()].map(i => i + 1).concat(0)
-        for (let i = tiles.value.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1))
-            const tempI = tiles.value[i] ?? 0
-            const tempJ = tiles.value[j] ?? 0
-            tiles.value[i] = tempJ
-            tiles.value[j] = tempI
-        }
-    } while (!isSolvable(tiles.value) || isWin.value)
-}
+    // 先用正解的順序初始化
+    tiles.value = [...Array(8).keys()].map(i => i + 1).concat(0)
 
-function isSolvable(arr: number[]) {
-    let inv = 0
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = i + 1; j < arr.length; j++) {
-            if (arr[i] !== undefined && arr[j] !== undefined && arr[i]! > arr[j]!) inv++
-        }
+    // 執行合法的隨機移動來打亂順序，確保有解
+    for (let i = 0; i < 1000; i++) {
+        const empty = tiles.value.indexOf(0)
+        const row = Math.floor(empty / size)
+        const col = empty % size
+        const moves: number[] = []
+
+        if (row > 0) moves.push(empty - size)       // 上
+        if (row < size - 1) moves.push(empty + size) // 下
+        if (col > 0) moves.push(empty - 1)           // 左
+        if (col < size - 1) moves.push(empty + 1)    // 右
+
+        const target = moves[Math.floor(Math.random() * moves.length)] ?? 0
+        const temp = tiles.value[empty] ?? 0
+        tiles.value[empty] = tiles.value[target] ?? 0
+        tiles.value[target] = temp
     }
-    return inv % 2 === 0
+
+    // 防止打亂後剛好就是完成狀態
+    if (isWin.value) shuffle()
 }
 
 function move(index: number) {
