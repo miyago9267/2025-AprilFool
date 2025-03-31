@@ -24,7 +24,7 @@
           { "character": "路人A", "text": "欸欸他們在談什麼啊（窸窸窣窣）" },
           { "character": "路人B", "text": "不知道，好像是在講內衣什麼的（窸窸窣窣）" },
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60, "effect": "shake" } }], "text": "呃...請你小聲一點，其他人在看了" },
-          { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "幫我找到兇手吧！兇手把我它偷走讓我現在沒內衣穿了啦" },
+          { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "幫我找到兇手吧！兇手把它偷走讓我現在沒內衣穿了啦" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "呃...冒昧問一下，你只有一件內衣嗎" },
           { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60, "effect": "jump"} }], "text": "對（大聲）" },
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "（正常人應該不會只買一件內衣吧）" },
