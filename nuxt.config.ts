@@ -90,6 +90,8 @@ export default defineNuxtConfig({
 		typeCheck: true
 	},
 
+	ssr: false,
+
 	vite: {
 		plugins: [removeConsole()]
 	},
