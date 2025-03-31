@@ -1,10 +1,9 @@
 <template>
   <div class="absolute w-full h-full overflow-hidden">
-    <img :src="src" class="character absolute lg:max-h-[80vh] max-h-[60vh]"
+    <img :src="src" class="character absolute lg:max-h-[80vh] max-h-[70vh] md:top-[60%] top-[65%]"
          :class="effectClass"
          :style="{
             left: position?.x ? `${Math.min(90, Math.max(10, position.x))}%` : '50%',
-            top: position?.y ? `${position.y}%` : '70%',
             transform: 'translate(-50%, -50%) scale(' + (position?.size || 1) + ')'
          }">
   </div>
@@ -70,4 +69,5 @@ const effectClass = computed(() => {
 .animate-shake {
     animation: shake 0.4s ease-in-out;
 }
+
 </style>
