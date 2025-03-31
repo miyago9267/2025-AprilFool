@@ -62,12 +62,13 @@ const effectClass = computed(() => {
 
 @keyframes shake {
     0%, 100% { transform: translate(-50%, -50%) scale(var(--scale, 1)); }
-    25% { transform: translate(calc(-50% -5px), -50%) scale(var(--scale, 1)); }
-    50% { transform: translate(calc(-50% +5px), -50%) scale(var(--scale, 1)); }
-    75% { transform: translate(calc(-50% -5px), -50%) scale(var(--scale, 1)); }
+    25% { transform: translate(calc(-50% - 5px), -50%) scale(var(--scale, 1)); }
+    50% { transform: translate(calc(-50% + 5px), -50%) scale(var(--scale, 1)); }
+    75% { transform: translate(calc(-50% - 5px), -50%) scale(var(--scale, 1)); }
 }
 .animate-shake {
     animation: shake 0.4s ease-in-out;
+    transform-origin: center center;
 }
 
 </style>

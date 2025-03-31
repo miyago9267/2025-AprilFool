@@ -47,7 +47,7 @@
         "dialogues": [
           { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "我嘗試能不能把門給揚了" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "你行嗎？別衝動啊" },
-          { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "呀啊啊啊啊！！！！！！！" },
+          { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60, "effect": "shake" } }], "text": "呀啊啊啊啊！！！！！！！" },
           { "character": "", "text": "（砰）" },
           { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "呃啊啊啊...頭暈眼花..." },
           { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "好像看到外星人了" },
@@ -66,7 +66,7 @@
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "我來吧" },
           { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "謝啦" },
           { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "嘿呀～" },
-          { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "搆是搆著了，但太小了爬不出去" },
+          { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60, "effect": "jump" } }], "text": "搆是搆著了，但太小了爬不出去" },
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "看來還是太勉強了嗎" }
         ],
         "next": "scene1-1"
@@ -88,7 +88,7 @@
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "你幫我看看外面有沒有人，有人的話直接喊人求救" },
           { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "好哇我看看，那個叫啥來著長得比較高那位同學再借我一下" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "我叫工藤啦" },
-          { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "隨便啦，嘿呦" },
+          { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60, "effect": "jump" } }], "text": "隨便啦，嘿呦" },
           { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "咦？是剛才那個在門口說要鎖門的那個同學耶" },
           { "character": "瑞穗仙汝", "avatars": [{ "src": "/images/chara/07.png", "position": { "x": 30, "y": 60 } }], "text": "嘿！同學！幫幫忙，我們被鎖在體育室裡面了！" },
           { "character": "匠由拉面", "avatars": [{ "src": "/images/chara/10.png", "position": { "x": 30, "y": 60 } }], "text": "啊！？你們怎麼還在，我去幫你們開門" }
@@ -298,7 +298,7 @@
         "background": "/images/bg/library.jpg",
         "dialogues": [
           { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "黒雨同學，方便請教一下嗎？" },
-          { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "咦！？嚇我一跳" },
+          { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60, "effect": "shake" } }], "text": "咦！？嚇我一跳" },
           { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "你們怎麼回來了，還沒有回去嗎？" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "我們是來詢問一下櫃台有沒有撿到匠由同學遺失的物品的" },
           { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "我幫你查查看喔" },
@@ -315,9 +315,9 @@
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "有點可疑喔～借我看看" },
           { "character": "匠由拉面", "avatars": [{ "src": "/images/chara/10.png", "position": { "x": 30, "y": 60 } }], "text": "誒誒誒不要啊啊啊啊啊" },
           { "character": "", "text": "（箱子在爭搶中掉在地上打開了）" },
-          { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "呃...這個是...情趣娃娃嗎" },
-          { "character": "匠由拉面", "avatars": [{ "src": "/images/chara/10.png", "position": { "x": 30, "y": 60 } }], "text": "對啦QQ我就是被偷走這個啦，不然你以為我為什麼委託秘密調查" },
-          { "character": "匠由拉面", "avatars": [{ "src": "/images/chara/10.png", "position": { "x": 30, "y": 60 } }], "text": "你們滿意了吧，我的臉丟光光了啦，嗚啊啊啊" },
+          { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60} }], "text": "呃...這個是...情趣娃娃嗎" },
+          { "character": "匠由拉面", "avatars": [{ "src": "/images/chara/10.png", "position": { "x": 30, "y": 60, "effect": "shake" } }], "text": "對啦QQ我就是被偷走這個啦，不然你以為我為什麼委託秘密調查" },
+          { "character": "匠由拉面", "avatars": [{ "src": "/images/chara/10.png", "position": { "x": 30, "y": 60, "effect": "shake" } }], "text": "你們滿意了吧，我的臉丟光光了啦，嗚啊啊啊" },
           { "character": "", "text": "（匠由拉面哭著跑掉了）" },
           { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "呃...雖然不是故意的，但一瞬間感覺對他蠻抱歉的" },
           { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "你在幹什麼啦，既然找到了就不需要過問當事人的細節了啦" },

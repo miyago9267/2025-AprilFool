@@ -186,7 +186,7 @@
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "是運算嗎？可是題目在哪裡呀？" },
                 { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "咦？盒子下面好像還有字樣" },
                 { "type": "image", "src": "/images/items/integral.png", "caption": "積分題" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "啥？是微積分" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60, "effect": "shake" } }], "text": "啥？是微積分，這不是文組的局了" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "看來這道積分題的答案就是密碼了" }
             ],
             "next": "scene4-1"
@@ -216,7 +216,7 @@
             "background": "/images/bg/artclassroom.jpg",
             "dialogues": [
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "密碼不對耶..." },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "我不會微積分啦..." },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60, "effect": "shake"} }], "text": "我不會微積分啦..." },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "要不要用計算機，wolframAlpha之類的" },
                 { "character": "你", "avatars": [{ "src": "/images/chara/04.png", "position": { "x": 50, "y": 60 } }], "text": "我再試試看" },
                 { "character": "提示", "text": "密碼是小數"}
@@ -245,7 +245,7 @@
                 { "character": "黒雨筷子", "avatars": [{ "src": "/images/chara/02.png", "position": { "x": 30, "y": 60 } }], "text": "啊...時間不早了，我得趕緊回去關圖書館的門了" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "已經快傍晚了，我們趕緊回去學生會彙報今天解決的事情吧" },
                 { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "（看了一下手機）好哇" },
-                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "咦咦咦！？學生會長打了好多通電話給我我都沒有接到" },
+                { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 , "effect": "jump"} }], "text": "咦咦咦！？學生會長打了好多通電話給我我都沒有接到" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "發生什麼事情了嗎？這麼急著聯絡你" },
                 { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "不曉得耶，我們趕緊去學生會辦公室找他問問看吧" }
             ],
@@ -257,7 +257,7 @@
                 { "character": "", "text": "（你們回到了學生會辦公室）" },
                 { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "會長，你找我有什麼事情嗎？" },
                 { "character": "工藤彌什", "avatars": [{ "src": "/images/chara/01.png", "position": { "x": 30, "y": 60 } }], "text": "我們正好要回和你報告今天解決的案件，怎麼了嗎？" },
-                { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "你們聽我說，不好了！" },
+                { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60, "effect": "jump" } }], "text": "你們聽我說，不好了！" },
                 { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "又有學生收到怪盜XD的卡片了" },
                 { "character": "耶比大熊", "avatars": [{ "src": "/images/chara/nobita.png", "position": { "x": 70, "y": 60 } }], "text": "怪盜XD還在暗中做怪嗎，這次被偷了什麼" },
                 { "character": "學生會長", "avatars": [{ "src": "/images/chara/08.png", "position": { "x": 70, "y": 60 } }], "text": "不不不，還沒有，這次收到的不是偷走的證明" },
