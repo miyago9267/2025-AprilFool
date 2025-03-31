@@ -1,6 +1,6 @@
 #!/bin/bash
 user="user"
-name="2025-Aprilfool"
+name="2025-aprilfool"
 port="2025"
 
 docker build \
