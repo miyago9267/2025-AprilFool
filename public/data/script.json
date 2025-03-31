@@ -8,10 +8,6 @@
     "level5": { "src": "/data/scripts/level5.json" },
     "level6": { "src": "/data/scripts/level6.json" },
     "level7": { "src": "/data/scripts/level7.json" },
-    "end1":   { "src": "/data/scripts/end1.json" },
-    "level8": { "src": "/data/scripts/level8.json" },
-    "level9": { "src": "/data/scripts/level9.json" },
-    "level10": { "src": "/data/scripts/level10.json" },
-    "end2":   { "src": "/data/scripts/end2.json" }
+    "end1":   { "src": "/data/scripts/end1.json" }
   }
 }
