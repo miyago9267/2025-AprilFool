@@ -179,10 +179,6 @@ onMounted(async () => {
       nextDialogue();
     }
   });
-  window.addEventListener("contextmenu", (event) => {
-    event.preventDefault();
-    prevDialogue();
-  });
   if (route.query.level) {
     currentLevel.value = route.query.level;
   } else {
