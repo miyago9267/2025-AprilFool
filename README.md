@@ -1,5 +1,14 @@
 # 2025 水源家愚人節企劃
 
+## 簡介
+
+本企劃為水源宮語 2025 年愚人節推出的互動式網頁冒險遊戲，由以下成員共同策劃與製作。
+遊戲採用網頁互動模式，玩家可以在線上進行遊玩，毋須下載任何應用程式。
+玩家將扮演偵探社成員，破解層層關卡與謎題，揭開怪盜 XD 的真實身分。
+本作靈感源自名偵探柯南與怪盜小子基德，融合了輕鬆詼諧的對話風格與挑戰智力的謎題設計。
+玩家將與社團成員一同踏上破案旅程，解決發生於校園中的離奇事件。
+本遊戲共分為數個關卡，每個關卡包含獨立的故事與互動機制，完成關卡後將解鎖下一段劇情。
+
 ## 成員
 
 - 網頁端：`@miyago9267`
@@ -7,7 +16,22 @@
 
 ## 規格
 
+`Vue.js` + `Nuxt` + `Uno CSS`
+
+專案結構為nuxt3原生結構
+
+### 使用方式
+
+遊戲可直接透過瀏覽器進入主畫面開始遊玩，推薦使用桌機或橫向螢幕體驗最佳。
+所有進度會自動儲存於本機端，重新整理頁面後可從上次離開的地方繼續。
+
 ### 劇本JSON Schema
+
+路徑：`/public/scripts/`
+
+#### 關卡
+
+每個 level 內包含一系列 scene，可支援對話、選項、互動元件等複合敘事格式。
 
 ```json
 {
@@ -15,40 +39,67 @@
     "level0": {
       "name": "章節名稱",
       "scenes": {
-        "scene1": {
-          "background": "/images/bg/black.jpg",
-          "dialogues": [
-            { "character": "", "text": "這是一場冒險這是一場腥風血雨的開始……" },
-            { "character": "Alice", "avatar": "/images/chara/01.png", "position": { "x": 20, "y": 65 }, "text": "箱子上鎖了，我們有密碼可以打開它嗎？" },
-            { "character": "Bob", "avatar": "/images/chara/02.png", "position": { "x": 80, "y": 65 }, "text": "我來試試看吧！" }
-          ],
-          "interactions": [
-            {
-              "type": "input", // input, choice
-              "id": "gate-password",
-              "placeholder": "密碼是？",
-              "correctAnswer": "5678",
-              "onSuccess": "scene2",
-              "onFailure": "scene3"
-            }
-          ]
-        },
-        "scene2": {
-          "background": "/images/bg/box.jpg",
-          "dialogues": [
-            { "character": "Alice", "text": "打開了！" }
-          ]
-        },
-        ,
-        "scene3": {
-          "background": "/images/bg/box.jpg",
-          "dialogues": [
-            { "character": "Alice", "text": "白癡！不是這樣啦" }
-          ]
-        }
-      },
-      "unlocks": ["level1"]
+      }
     }
   }
+}
+```
+
+#### 場景
+
+```json
+{
+  "scene0": {
+    "name": "場景名稱",
+    "description": "場景描述",
+    "dialogue": [
+      對話
+    ],
+    "interactions": [
+      互動元件
+    ]
+  }
+}
+```
+
+#### 對話
+
+```json
+{
+  "character": "角色名稱",
+  "text": "對話內容",
+  "avatar": [
+    {
+      "src": "角色圖片路徑",
+      "position": {
+        "x": 50,
+        "y": 60,
+        "effect": "特效"
+      }
+    }
+  ]
+}
+
+```
+
+#### 互動元件
+
+```json
+{
+  "type": "choice",
+  "id": "選項ID",
+  "choices": [
+    { "text": "選項1", "next": "導向" },
+    { "text": "選項2", "next": "導向" },
+  ],
+},
+{
+  "type": "input",
+  "id": "輸入框ID",
+  "placeholder": "提示詞",
+  "answers": [
+    { "value": "輸入值", "next": "導向" },
+  ],
+  "onFailure": "導向"
 }
 ```
